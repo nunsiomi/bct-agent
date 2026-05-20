@@ -41,7 +41,16 @@
       "Bash(tee /tmp/dc-build.log)",
       "Bash(curl -s http://localhost:3000/)",
       "Bash(curl -s -i -X POST http://localhost:8001/generate-review -H 'Content-Type: application/json' -H 'Origin: http://localhost:3000' -d '{\"persona\":\"x\",\"product\":\"y\"}')",
-      "Bash(tee /tmp/eval-docker.log)"
+      "Bash(tee /tmp/eval-docker.log)",
+      "Bash(docker exec *)",
+      "Bash(curl -s http://localhost:8001/health)",
+      "Bash(curl -s http://localhost:8002/health)",
+      "Bash(tee /tmp/eval-regional.log)",
+      "Bash(az --version)",
+      "Bash(az account *)",
+      "Read(//c/Program Files/Microsoft SDKs/Azure/CLI2/wbin/**)",
+      "Read(//c/Program Files \\(x86\\)/Microsoft SDKs/Azure/CLI2/wbin/**)",
+      "Read(//c/Users/USER/AppData/Local/Microsoft/WinGet/Packages//**)"
     ]
   }
 }
