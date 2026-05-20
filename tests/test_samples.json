@@ -1,0 +1,186 @@
+{
+  "task_a": {
+    "description": "Test cases for Task A — User Modeling. POST to /generate-review",
+    "endpoint": "POST /generate-review",
+    "expected_response_shape": {
+      "rating": "float (1.0 - 5.0)",
+      "review": "string",
+      "confidence": "float (0.0 - 1.0)",
+      "nigerian_context_applied": "boolean"
+    },
+    "tests": [
+      {
+        "id": "TA-01",
+        "label": "Strong Nigerian persona — food",
+        "priority": "high",
+        "notes": "Core test. Expect Pidgin in review, rating 3.5-4.5, nigerian_context_applied: true",
+        "input": {
+          "persona": "Lagos food blogger in her 30s, grew up in Surulere, very price conscious, writes in a mix of English and Pidgin, rates generously but complains loudly about portion size and value for money",
+          "product": "Peppered snail and fried plantain combo at a bukka in Yaba, Lagos. Costs ₦2,500"
+        }
+      },
+      {
+        "id": "TA-02",
+        "label": "Nigerian professional — tech product",
+        "priority": "high",
+        "notes": "Expect long detailed review, rating 2.5-4.0, formal tone, mentions alternatives",
+        "input": {
+          "persona": "Abuja-based software engineer, 27, analytical reviewer, writes long detailed reviews, rarely gives 5 stars, always mentions alternatives, follows tech Twitter",
+          "product": "Infinix Hot 40 Pro smartphone, bought from Slot Nigeria for ₦189,000"
+        }
+      },
+      {
+        "id": "TA-03",
+        "label": "Blunt low-rater",
+        "priority": "medium",
+        "notes": "Expect short review, rating 1.0-2.5, formal English, low confidence_cap applied",
+        "input": {
+          "persona": "Retired civil servant in Port Harcourt, very hard to impress, short reviews, rates mostly 1 to 2 stars, writes in formal English, compares everything to how things were in the 80s",
+          "product": "Fried rice and chicken at a fast food restaurant in GRA Port Harcourt, ₦4,800"
+        }
+      },
+      {
+        "id": "TA-04",
+        "label": "Cold-start — minimal persona",
+        "priority": "high",
+        "notes": "Tests fallback to population priors. Should still return valid review with reasonable rating",
+        "input": {
+          "persona": "Nigerian user",
+          "product": "Shawarma"
+        }
+      },
+      {
+        "id": "TA-05",
+        "label": "Cross-domain — fashion product",
+        "priority": "medium",
+        "notes": "Non-food item. Expect emoji-style tone, high rating, brand references",
+        "input": {
+          "persona": "Fashion-forward university student in Lagos Island, shops online frequently, writes emoji-heavy reviews, very brand conscious, rates 4 to 5 stars mostly",
+          "product": "Ankara midi dress ordered from Jiji Nigeria, delivered in 3 days, ₦12,000"
+        }
+      },
+      {
+        "id": "TA-06",
+        "label": "Edge case — very unhappy user",
+        "priority": "medium",
+        "notes": "Expect low rating 1.0-2.0, long complaint-heavy review, confidence_cap should fire if pct_5star high",
+        "input": {
+          "persona": "Frequent Yelp reviewer, extremely detail-oriented, has left over 200 reviews, never gives 5 stars on principle, writes 3 to 4 paragraph reviews, Lagos mainland resident",
+          "product": "Cold jollof rice served 45 minutes late at a restaurant in Ikeja that charged ₦6,500 for the meal"
+        }
+      }
+    ]
+  },
+  "task_b": {
+    "description": "Test cases for Task B — Recommendation. POST to /recommend",
+    "endpoint": "POST /recommend",
+    "expected_response_shape": {
+      "recommendations": [
+        {
+          "rank": "integer (1-5)",
+          "title": "string",
+          "reason": "string",
+          "match_score": "float (0.0 - 100.0)"
+        }
+      ],
+      "fallback_used": "boolean"
+    },
+    "tests": [
+      {
+        "id": "TB-01",
+        "label": "Standard — Movies with niche",
+        "priority": "high",
+        "notes": "Core flow test. Expect 5 ranked movies, Nigerian/African titles favoured, fallback_used: false",
+        "input": {
+          "persona": "Lagos professional, late 20s, watches Nollywood and Hollywood action films, rates thrillers highly, hasn't explored sci-fi or documentaries, watches on Netflix",
+          "domain": "Movies",
+          "niche": "psychological thriller"
+        }
+      },
+      {
+        "id": "TB-02",
+        "label": "Cold-start — minimal persona, no niche",
+        "priority": "high",
+        "notes": "Tests cold-start handling. Should still return 5 recommendations using population priors",
+        "input": {
+          "persona": "Nigerian user who likes watching films",
+          "domain": "Movies",
+          "niche": null
+        }
+      },
+      {
+        "id": "TB-03",
+        "label": "Cross-domain — same persona, different domain",
+        "priority": "high",
+        "notes": "Same persona as TB-01 but Books domain. Recommendations should feel connected to thriller affinity",
+        "input": {
+          "persona": "Lagos professional, late 20s, watches Nollywood and Hollywood action films, rates thrillers highly, hasn't explored sci-fi or documentaries, watches on Netflix",
+          "domain": "Books",
+          "niche": "African fiction"
+        }
+      },
+      {
+        "id": "TB-04",
+        "label": "Food with niche",
+        "priority": "medium",
+        "notes": "Domain switching test. Expect locally relevant food picks with ₦ price awareness",
+        "input": {
+          "persona": "Abuja food lover, mid 30s, prefers local Nigerian cuisine over continental, very price sensitive, visits restaurants mostly on weekends, has tried suya spots across Abuja",
+          "domain": "Food",
+          "niche": "street food under ₦3000"
+        }
+      },
+      {
+        "id": "TB-05",
+        "label": "Music — Other domain path",
+        "priority": "medium",
+        "notes": "Tests Other domain handling. Expect Afrobeats/Amapiano picks, fallback_used: false",
+        "input": {
+          "persona": "University student in Ibadan, loves Afrobeats and Amapiano, follows Burna Boy and Asake closely, discovers music on TikTok, creates study playlists",
+          "domain": "Music",
+          "niche": "Afrobeats for late night studying"
+        }
+      },
+      {
+        "id": "TB-06",
+        "label": "Fallback trigger — unrecognised domain",
+        "priority": "high",
+        "notes": "Must return fallback_used: true and general lifestyle recommendations. Critical for graceful degradation score",
+        "input": {
+          "persona": "Lagos entrepreneur, early 30s, reads business content, watches motivational content, very goal oriented",
+          "domain": "xyzqq",
+          "niche": null
+        }
+      },
+      {
+        "id": "TB-07",
+        "label": "Skincare — Other domain with niche",
+        "priority": "medium",
+        "notes": "Tests niche narrowing on a non-preset domain. Expect locally available Nigerian products",
+        "input": {
+          "persona": "Young Nigerian woman in Lagos, mid 20s, very conscious about skin health, follows skincare creators on Instagram, prefers affordable products available locally, has oily skin",
+          "domain": "Skincare",
+          "niche": "affordable Nigerian-made products for oily skin"
+        }
+      },
+      {
+        "id": "TB-08",
+        "label": "Cross-domain cold-start — hardest case",
+        "priority": "high",
+        "notes": "Minimal persona + unfamiliar domain. Tests agent's ability to reason with almost no signal. Should not crash.",
+        "input": {
+          "persona": "New user",
+          "domain": "Books",
+          "niche": null
+        }
+      }
+    ]
+  },
+  "run_order": [
+    "TA-01", "TA-04",
+    "TB-01", "TB-04", "TB-05", "TB-07",
+    "TB-03", "TB-02", "TB-08", "TB-06",
+    "TA-02", "TA-03", "TA-05", "TA-06"
+  ],
+  "notes": "Run high priority tests first. TB-06 (fallback) and TB-08 (cold-start) are likely judge test cases. TA-04 and TB-02 test cold-start handling which is worth 25pts in Task B scoring."
+}

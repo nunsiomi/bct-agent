@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BCT LLM Agent Challenge — Technical Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #0D0E12;
+  --paper: #F5F3EE;
+  --card: #FFFFFF;
+  --teal: #0A6E5C;
+  --teal-l: #E0F5F0;
+  --coral: #C84B2F;
+  --coral-l: #FAEDE9;
+  --amber: #B87212;
+  --amber-l: #FDF2DF;
+  --purple: #4630A8;
+  --purple-l: #ECEAF9;
+  --gray: #6B7280;
+  --border: #E2DDD5;
+  --accent: #0A6E5C;
+  --heading: 'Syne', sans-serif;
+  --body: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(245,243,238,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.nav-brand {
+  font-family: var(--heading);
+  font-weight: 800; font-size: 14px;
+  letter-spacing: .08em; color: var(--ink);
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-brand .dot { width:8px;height:8px;border-radius:50%;background:var(--teal);}
+.nav-links { display:flex;gap:28px; }
+.nav-links a {
+  font-size:13px;font-weight:500;color:var(--gray);
+  text-decoration:none;letter-spacing:.02em;
+  transition:color .15s;
+}
+.nav-links a:hover { color:var(--ink); }
+.nav-badge {
+  font-family:var(--mono);font-size:11px;
+  padding:3px 10px;border-radius:12px;
+  background:var(--teal);color:#fff;
+}
+
+/* HERO */
+.hero {
+  padding: 80px 40px 60px;
+  max-width: 860px; margin: 0 auto;
+  position: relative;
+}
+.hero-eyebrow {
+  font-family:var(--mono);font-size:11px;
+  color:var(--teal);letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:18px;
+  display:flex;align-items:center;gap:8px;
+}
+.hero-eyebrow::before {
+  content:'';display:block;
+  width:28px;height:1px;background:var(--teal);
+}
+h1 {
+  font-family:var(--heading);
+  font-size:clamp(36px,5vw,58px);
+  font-weight:800;line-height:1.05;
+  letter-spacing:-.02em;margin-bottom:24px;
+}
+h1 em { font-style:normal;color:var(--teal); }
+.hero-desc {
+  font-size:17px;color:var(--gray);
+  max-width:600px;margin-bottom:36px;
+  font-weight:300;
+}
+.hero-meta {
+  display:flex;gap:24px;flex-wrap:wrap;
+}
+.meta-pill {
+  display:flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:12px;
+  padding:5px 12px;border-radius:20px;
+  border:1px solid var(--border);
+  background:var(--card);color:var(--ink);
+}
+.meta-pill .icon { font-size:14px; }
+
+/* LAYOUT */
+.container { max-width:960px;margin:0 auto;padding:0 40px; }
+
+/* SECTIONS */
+section { padding:72px 0; border-top:1px solid var(--border); }
+section:first-child { border-top:none; }
+.section-label {
+  font-family:var(--mono);font-size:10px;
+  color:var(--teal);letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:10px;
+}
+h2 {
+  font-family:var(--heading);
+  font-weight:700;font-size:28px;
+  letter-spacing:-.02em;margin-bottom:8px;
+}
+h3 {
+  font-family:var(--heading);
+  font-weight:600;font-size:18px;
+  letter-spacing:-.01em;margin-bottom:8px;
+  margin-top:32px;
+}
+p { color:#3D3D3D;margin-bottom:14px; }
+
+/* CARDS */
+.card-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px; }
+.card {
+  background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:24px;
+}
+.card-grid-3 { grid-template-columns:1fr 1fr 1fr; }
+.card.teal { border-left:3px solid var(--teal); }
+.card.coral { border-left:3px solid var(--coral); }
+.card.amber { border-left:3px solid var(--amber); }
+.card.purple { border-left:3px solid var(--purple); }
+.card-tag {
+  display:inline-block;font-family:var(--mono);
+  font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;padding:2px 8px;
+  border-radius:8px;margin-bottom:10px;
+}
+.tag-teal { background:var(--teal-l);color:var(--teal); }
+.tag-coral { background:var(--coral-l);color:var(--coral); }
+.tag-amber { background:var(--amber-l);color:var(--amber); }
+.tag-purple { background:var(--purple-l);color:var(--purple); }
+.card h4 {
+  font-family:var(--heading);font-weight:600;
+  font-size:15px;margin-bottom:8px;
+}
+.card p { font-size:13px;color:var(--gray);margin-bottom:0; }
+
+/* FRAMEWORK COMPARISON */
+.compare-table {
+  width:100%;border-collapse:collapse;
+  margin-top:24px;overflow:hidden;
+  border-radius:12px;border:1px solid var(--border);
+}
+.compare-table th {
+  background:var(--ink);color:#fff;
+  font-family:var(--heading);font-weight:600;
+  font-size:13px;padding:12px 16px;
+  text-align:left;
+}
+.compare-table td {
+  padding:11px 16px;font-size:13px;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.compare-table tr:last-child td { border-bottom:none; }
+.compare-table tr:nth-child(even) td { background:#FAFAF8; }
+.check { color:var(--teal);font-weight:700; }
+.cross { color:var(--coral);font-weight:700; }
+.winner-row td { background:var(--teal-l)!important; }
+.winner-badge {
+  display:inline-block;background:var(--teal);
+  color:#fff;font-family:var(--mono);
+  font-size:10px;padding:2px 7px;border-radius:6px;
+  margin-left:6px;
+}
+
+/* DIAGRAMS */
+.diagram-wrap {
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:32px;
+  margin-top:28px;overflow:hidden;
+}
+.diagram-title {
+  font-family:var(--heading);font-weight:600;
+  font-size:13px;letter-spacing:.04em;
+  color:var(--gray);margin-bottom:20px;
+  display:flex;align-items:center;gap:8px;
+}
+.diagram-title::before {
+  content:'';display:block;
+  width:3px;height:14px;
+  background:var(--teal);border-radius:2px;
+}
+svg.diag { width:100%;height:auto; }
+/* shared SVG helpers */
+.c-teal rect { fill:#E0F5F0;stroke:#0A6E5C; }
+.c-coral rect { fill:#FAEDE9;stroke:#C84B2F; }
+.c-amber rect { fill:#FDF2DF;stroke:#B87212; }
+.c-purple rect { fill:#ECEAF9;stroke:#4630A8; }
+.c-gray rect { fill:#F3F4F6;stroke:#9CA3AF; }
+.th { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;fill:#0D0E12; }
+.ts { font-family:'DM Sans',sans-serif;font-size:10px;fill:#6B7280; }
+.arr { stroke:#0A6E5C;fill:none; }
+.s { stroke:#0A6E5C; }
+.b { stroke:#E2DDD5; }
+
+/* UI DEMO */
+.ui-demo {
+  border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  margin-top:28px;box-shadow:0 4px 24px rgba(0,0,0,.06);
+}
+.demo-bar {
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:10px 16px;
+  background:#F0EDEA;
+  border-bottom:1px solid var(--border);
+}
+.demo-brand {
+  font-family:var(--mono);font-size:12px;
+  font-weight:500;color:var(--ink);
+}
+.demo-brand span { color:var(--purple); }
+.demo-tabs {
+  display:flex;gap:4px;
+  background:#E2DDD5;border-radius:20px;padding:3px;
+}
+.demo-tab {
+  padding:4px 14px;border-radius:16px;
+  font-size:12px;font-weight:500;
+  cursor:pointer;border:none;
+  background:transparent;color:var(--gray);
+  transition:all .15s;font-family:var(--body);
+}
+.demo-tab.active {
+  background:#fff;color:var(--ink);
+  border:1px solid var(--border);
+}
+.demo-status {
+  font-family:var(--mono);font-size:11px;
+  padding:2px 8px;border-radius:10px;
+  background:#DFFAF0;color:#0A6E5C;
+  display:flex;align-items:center;gap:5px;
+}
+.demo-dot { width:6px;height:6px;border-radius:50%;background:#0A6E5C;display:inline-block; }
+.demo-split { display:grid;grid-template-columns:1fr 1fr;min-height:340px; }
+.demo-panel { padding:20px; }
+.demo-panel-r { border-left:1px solid var(--border); }
+.demo-label {
+  font-family:var(--mono);font-size:10px;
+  letter-spacing:.1em;color:var(--gray);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.demo-field { margin-bottom:12px; }
+.demo-field label {
+  display:block;font-size:12px;
+  color:var(--gray);margin-bottom:4px;
+}
+.demo-field textarea, .demo-field input, .demo-field select {
+  width:100%;font-size:13px;
+  padding:7px 10px;
+  border:1px solid var(--border);border-radius:8px;
+  background:#FAFAF8;color:var(--ink);
+  resize:none;font-family:var(--body);
+}
+.demo-field textarea { height:88px;line-height:1.5; }
+.niche-row { margin-top:6px;border-left:2px solid var(--border);padding-left:10px; }
+.niche-row label { font-size:11px;color:var(--gray); }
+.run-btn {
+  width:100%;padding:9px;font-size:13px;
+  font-weight:500;border-radius:8px;
+  border:1.5px solid var(--teal);
+  color:var(--teal);background:transparent;
+  cursor:pointer;margin-top:6px;
+  font-family:var(--body);transition:background .15s;
+}
+.run-btn:hover { background:var(--teal-l); }
+.out-card {
+  border:1px solid var(--border);border-radius:10px;
+  padding:14px 16px;margin-bottom:10px;
+  background:#FAFAF8;
+}
+.stars { color:var(--amber);font-size:15px;letter-spacing:1px;margin-bottom:6px; }
+.review-text { font-size:13px;line-height:1.65;color:var(--ink); }
+.meta-row { display:flex;gap:6px;margin-top:8px;flex-wrap:wrap; }
+.pill {
+  font-size:11px;padding:2px 8px;border-radius:10px;
+  background:#F3F4F6;color:var(--gray);
+  border:1px solid var(--border);
+}
+.pill.ng { background:var(--amber-l);color:var(--amber);border-color:#E0A93C; }
+.rec-card {
+  display:flex;gap:10px;border:1px solid var(--border);
+  border-radius:10px;padding:10px 12px;
+  margin-bottom:8px;background:#FAFAF8;
+}
+.rank-n { font-size:18px;font-weight:600;color:#D1D5DB;min-width:22px;text-align:center;padding-top:2px; }
+.rec-title { font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px; }
+.rec-sub { font-size:12px;color:var(--gray);line-height:1.5; }
+.rec-score {
+  font-size:11px;color:var(--teal);
+  background:var(--teal-l);border-radius:10px;
+  padding:2px 7px;margin-top:4px;display:inline-block;
+}
+.fb-warn {
+  margin-top:6px;padding:8px 10px;border-radius:8px;
+  background:var(--amber-l);border-left:3px solid var(--amber);
+  font-size:12px;color:#6B4200;display:none;
+}
+.fb-warn.show { display:block; }
+.fb-fallback {
+  margin-top:6px;padding:8px 10px;border-radius:8px;
+  background:var(--teal-l);border-left:3px solid var(--teal);
+  font-size:12px;color:#0A4035;display:none;
+}
+.fb-fallback.show { display:block; }
+.fb-actions { display:flex;gap:6px;margin-top:6px; }
+.fb-btn {
+  font-size:11px;padding:3px 10px;border-radius:10px;
+  cursor:pointer;border:1px solid var(--amber);
+  background:transparent;color:var(--amber);
+  font-family:var(--body);font-weight:500;
+}
+.panel-b-wrap { display:none; }
+.panel-b-wrap.show { display:grid;grid-template-columns:1fr 1fr; }
+.panel-a-wrap { display:grid;grid-template-columns:1fr 1fr; }
+.panel-a-wrap.hide { display:none; }
+.opt-badge {
+  font-size:10px;padding:1px 6px;border-radius:8px;
+  background:#F3F4F6;color:var(--gray);margin-left:4px;
+}
+
+/* REFERENCES */
+.ref-grid { display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px; }
+.ref-card {
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:18px;
+  display:flex;gap:14px;align-items:flex-start;
+  text-decoration:none;color:var(--ink);
+  transition:border-color .15s, box-shadow .15s;
+}
+.ref-card:hover {
+  border-color:var(--teal);
+  box-shadow:0 2px 12px rgba(10,110,92,.1);
+}
+.ref-icon {
+  width:36px;height:36px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.ref-icon.kaggle { background:var(--teal-l); }
+.ref-icon.github { background:#F3F4F6; }
+.ref-icon.paper { background:var(--coral-l); }
+.ref-body {}
+.ref-title { font-family:var(--heading);font-size:13px;font-weight:600;margin-bottom:3px; }
+.ref-sub { font-size:12px;color:var(--gray); }
+.ref-tag {
+  font-family:var(--mono);font-size:10px;
+  padding:1px 6px;border-radius:6px;
+  display:inline-block;margin-top:5px;
+}
+.ref-tag.k { background:var(--teal-l);color:var(--teal); }
+.ref-tag.g { background:#F3F4F6;color:#374151; }
+.ref-tag.p { background:var(--coral-l);color:var(--coral); }
+
+/* CALLOUT */
+.callout {
+  border-left:3px solid var(--teal);
+  padding:16px 20px;background:var(--teal-l);
+  border-radius:0 10px 10px 0;
+  margin:24px 0;
+}
+.callout p { font-size:13px;color:#0A4035;margin-bottom:0; }
+
+/* CODE */
+code {
+  font-family:var(--mono);font-size:12px;
+  background:#F0EDEA;padding:2px 6px;
+  border-radius:4px;color:var(--coral);
+}
+pre {
+  background:#0D0E12;color:#E0F5F0;
+  padding:20px;border-radius:12px;
+  font-family:var(--mono);font-size:12px;
+  overflow-x:auto;margin:16px 0;
+  line-height:1.6;
+}
+pre .kw { color:#7DD3C0; }
+pre .str { color:#F9D784; }
+pre .cm { color:#6B7280; }
+
+/* FOOTER */
+footer {
+  text-align:center;padding:48px 40px;
+  border-top:1px solid var(--border);
+  font-size:12px;color:var(--gray);
+  font-family:var(--mono);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity:0;transform:translateY(16px); }
+  to { opacity:1;transform:translateY(0); }
+}
+.hero { animation:fadeUp .5s ease both; }
+
+/* RESPONSIVE */
+@media(max-width:700px) {
+  .card-grid,.card-grid-3,.ref-grid { grid-template-columns:1fr; }
+  .demo-split,.panel-b-wrap.show,.panel-a-wrap { grid-template-columns:1fr; }
+  nav { padding:0 20px; }
+  .nav-links { display:none; }
+  .container { padding:0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span class="dot"></span>
+    PERSONA · LLM AGENT
+  </div>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#framework">Framework</a>
+    <a href="#llm">LLM</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#langgraph">LangGraph</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#demo">UI Demo</a>
+    <a href="#references">References</a>
+  </div>
+  <span class="nav-badge">BCT Hackathon 3.0</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">DSN × BCT LLM Agent Challenge</div>
+  <h1>Technical <em>Design</em><br/>Documentation</h1>
+  <p class="hero-desc">An LLM-powered user modeling and recommendation system built on LangGraph, grounding behavioral intelligence in Yelp, Amazon, and Goodreads data.</p>
+  <div class="hero-meta">
+    <span class="meta-pill"><span class="icon">📅</span> Deadline: 24 May 2026</span>
+    <span class="meta-pill"><span class="icon">🛠</span> Stack: LangGraph · FastAPI · Docker</span>
+    <span class="meta-pill"><span class="icon">🤖</span> LLM: Claude API (Sonnet 4)</span>
+    <span class="meta-pill"><span class="icon">🎯</span> Tasks A + B</span>
+    <span class="meta-pill"><span class="icon">🇳🇬</span> Nigerian Context ✓</span>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section id="overview">
+<div class="container">
+  <div class="section-label">01 — Overview</div>
+  <h2>Two Tasks. One Shared Brain.</h2>
+  <p>The BCT challenge asks teams to build LLM-based agents that understand how people behave, what they want, and what they'll choose next. We solve this with a shared persona builder that feeds two task-specific agent pipelines — both containerised and independently deployable.</p>
+
+  <div class="card-grid">
+    <div class="card teal">
+      <span class="card-tag tag-teal">Task A</span>
+      <h4>User Modeling</h4>
+      <p>Takes a user persona + product details as input. Outputs a simulated star rating and written review that captures the user's tone, rating behaviour, and cultural context — including Nigerian English and Pidgin markers.</p>
+    </div>
+    <div class="card coral">
+      <span class="card-tag tag-coral">Task B</span>
+      <h4>Recommendation</h4>
+      <p>Takes a user persona + domain as input. Routes through domain validation, retrieval, and LLM reasoning to produce a ranked, explained recommendation list — handling cold-start, cross-domain, and niche queries.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Key design principle:</strong> Datasets are consumed at development time only. The runtime app accepts free-text persona descriptions with no raw data access — behavioral understanding is baked into the agent's prompt architecture.</p>
+  </div>
+</div>
+</section>
+
+<!-- FRAMEWORK CHOICE -->
+<section id="framework">
+<div class="container">
+  <div class="section-label">02 — Framework Selection</div>
+  <h2>Why LangGraph over CrewAI and OpenClaw</h2>
+  <p>We evaluated three agentic frameworks before committing. The decision came down to control, observability, and how well each maps to a scoreable solution paper.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Criterion</th>
+        <th>OpenClaw</th>
+        <th>CrewAI</th>
+        <th>LangGraph <span class="winner-badge">CHOSEN</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Maturity</strong></td>
+        <td><span class="cross">✗</span> Relatively early-stage, limited community</td>
+        <td><span class="check">✓</span> Active community, good docs</td>
+        <td><span class="check">✓✓</span> Backed by LangChain team, production-grade</td>
+      </tr>
+      <tr>
+        <td><strong>State control</strong></td>
+        <td><span class="cross">✗</span> Limited explicit state management</td>
+        <td>⚠️ Implicit state via role-based agents</td>
+        <td><span class="check">✓✓</span> Explicit typed state schema — every node reads/writes a defined state object</td>
+      </tr>
+      <tr>
+        <td><strong>Conditional routing</strong></td>
+        <td><span class="cross">✗</span> Hard to implement custom edges</td>
+        <td>⚠️ Possible but not first-class</td>
+        <td><span class="check">✓✓</span> Conditional edges are a core primitive — perfect for our fallback logic</td>
+      </tr>
+      <tr>
+        <td><strong>Debuggability</strong></td>
+        <td><span class="cross">✗</span> Black-box execution</td>
+        <td>⚠️ Some visibility</td>
+        <td><span class="check">✓✓</span> Full graph trace in LangSmith — every node input/output inspectable</td>
+      </tr>
+      <tr class="winner-row">
+        <td><strong>Solution paper fit</strong></td>
+        <td><span class="cross">✗</span> Hard to diagram or explain</td>
+        <td>⚠️ Role metaphor can be described</td>
+        <td><span class="check">✓✓</span> Graph nodes + edges map directly to an architecture diagram — judges can read both</td>
+      </tr>
+      <tr>
+        <td><strong>Multi-graph support</strong></td>
+        <td><span class="cross">✗</span> No native concept</td>
+        <td>⚠️ Separate crews required</td>
+        <td><span class="check">✓✓</span> Two independent graphs sharing a common node — exactly our architecture</td>
+      </tr>
+      <tr>
+        <td><strong>Nigerian context injection</strong></td>
+        <td>⚠️ Prompt-only</td>
+        <td>⚠️ Prompt-only</td>
+        <td><span class="check">✓✓</span> Dedicated context node with typed state injection at every downstream node</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The core reason</h3>
+  <p>LangGraph treats an agent as a <strong>directed graph with typed state</strong>. Every node is a function that reads from and writes to a shared state object. Every edge is explicit — including conditional edges that route based on state values. This means our domain validation fallback, our Nigerian context injection, and our cold-start routing are all first-class, inspectable, testable code — not prompt hacks buried in a role description.</p>
+  <p>For a competition where the solution paper is read first, this matters enormously. A LangGraph architecture can be drawn as a diagram and explained node by node. CrewAI's role-based metaphor is harder to map to a precise architecture diagram, and OpenClaw lacks the community and tooling to make this credible under a 6-day deadline.</p>
+
+  <pre><span class="cm"># LangGraph: what our state looks like</span>
+<span class="kw">from</span> langgraph.graph <span class="kw">import</span> StateGraph
+<span class="kw">from</span> typing <span class="kw">import</span> TypedDict, Optional
+
+<span class="kw">class</span> AgentState(TypedDict):
+    persona_text: str
+    fingerprint: Optional[dict]          <span class="cm"># built by persona builder</span>
+    nigerian_context: Optional[dict]     <span class="cm"># injected by context node</span>
+    domain: Optional[str]                <span class="cm"># task B only</span>
+    niche: Optional[str]                 <span class="cm"># task B optional</span>
+    domain_valid: Optional[bool]         <span class="cm"># drives conditional edge</span>
+    output: Optional[dict]               <span class="cm"># final result</span></pre>
+</div>
+</section>
+
+<!-- SYSTEM ARCHITECTURE -->
+<section id="architecture">
+<div class="container">
+  <div class="section-label">03 — System Architecture</div>
+  <h2>High-Level System Workflow</h2>
+  <p>The system has two distinct phases. In the development phase, all three datasets are consumed, signals extracted, and the persona schema calibrated. In the runtime phase, the app accepts only a free-text persona — no raw data access.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">System Architecture — Dataset Consumption &amp; Runtime Flow</div>
+    <svg class="diag" viewBox="0 0 780 700" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="#0A6E5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <!-- DEV band -->
+    <rect x="0" y="8" width="780" height="14" fill="#E0F5F0" opacity="0.7"/>
+    <text x="10" y="19" style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;fill:#0A6E5C">DEVELOPMENT TIME</text>
+    <!-- Source docs row -->
+    <rect x="14" y="28" width="180" height="44" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="104" y="46" text-anchor="middle" dominant-baseline="central">Final_Report_Yelp.pdf</text>
+    <text class="ts" x="104" y="62" text-anchor="middle" dominant-baseline="central">Star schema · fake review stats</text>
+    <rect x="204" y="28" width="180" height="44" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="294" y="46" text-anchor="middle" dominant-baseline="central">YelpAnalysis_report.pdf</text>
+    <text class="ts" x="294" y="62" text-anchor="middle" dominant-baseline="central">Field schema · elite behaviour</text>
+    <rect x="394" y="28" width="180" height="44" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="484" y="46" text-anchor="middle" dominant-baseline="central">Presentation PPTX</text>
+    <text class="ts" x="484" y="62" text-anchor="middle" dominant-baseline="central">EDA visuals · paper figures</text>
+    <!-- dataset row -->
+    <rect x="14" y="94" width="180" height="44" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="104" y="112" text-anchor="middle" dominant-baseline="central">Yelp Dataset</text>
+    <text class="ts" x="104" y="128" text-anchor="middle" dominant-baseline="central">6.9M reviews · users · biz</text>
+    <rect x="204" y="94" width="180" height="44" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="294" y="112" text-anchor="middle" dominant-baseline="central">Amazon Reviews</text>
+    <text class="ts" x="294" y="128" text-anchor="middle" dominant-baseline="central">Product reviews · ratings</text>
+    <rect x="394" y="94" width="180" height="44" rx="7" fill="#ECEAF9" stroke="#4630A8" stroke-width="0.5"/>
+    <text class="th" x="484" y="112" text-anchor="middle" dominant-baseline="central">Goodreads 10M</text>
+    <text class="ts" x="484" y="128" text-anchor="middle" dominant-baseline="central">Book ratings · shelves</text>
+    <!-- arrows to signals -->
+    <line x1="104" y1="138" x2="104" y2="162" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <line x1="294" y1="138" x2="294" y2="162" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <line x1="484" y1="138" x2="484" y2="162" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <!-- signals extracted -->
+    <rect x="14" y="162" width="180" height="58" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="104" y="181" text-anchor="middle" dominant-baseline="central">Signals</text>
+    <text class="ts" x="104" y="197" text-anchor="middle" dominant-baseline="central">avg_stars · elite · tone</text>
+    <text class="ts" x="104" y="211" text-anchor="middle" dominant-baseline="central">category · price range</text>
+    <rect x="204" y="162" width="180" height="58" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="294" y="181" text-anchor="middle" dominant-baseline="central">Signals</text>
+    <text class="ts" x="294" y="197" text-anchor="middle" dominant-baseline="central">rating bias · affinity</text>
+    <text class="ts" x="294" y="211" text-anchor="middle" dominant-baseline="central">verbosity · intent</text>
+    <rect x="394" y="162" width="180" height="58" rx="7" fill="#ECEAF9" stroke="#4630A8" stroke-width="0.5"/>
+    <text class="th" x="484" y="181" text-anchor="middle" dominant-baseline="central">Signals</text>
+    <text class="ts" x="484" y="197" text-anchor="middle" dominant-baseline="central">genre taste · shelf diversity</text>
+    <text class="ts" x="484" y="211" text-anchor="middle" dominant-baseline="central">review length</text>
+    <!-- converge to persona schema -->
+    <path d="M104,220 L104,248 L278,248" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <path d="M294,220 L294,248" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <path d="M484,220 L484,248 L314,248" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <rect x="180" y="236" width="228" height="40" rx="7" fill="#FDF2DF" stroke="#B87212" stroke-width="0.5"/>
+    <text class="th" x="294" y="252" text-anchor="middle" dominant-baseline="central">Persona Schema — baked in</text>
+    <text class="ts" x="294" y="267" text-anchor="middle" dominant-baseline="central">rating_bias · tone · category · price</text>
+    <!-- calibration note -->
+    <rect x="420" y="242" width="200" height="28" rx="7" fill="#FDF2DF" stroke="#B87212" stroke-width="0.5"/>
+    <text class="ts" x="520" y="254" text-anchor="middle" dominant-baseline="central">Calibration: 5★ cap · elite sampling</text>
+    <text class="ts" x="520" y="266" text-anchor="middle" dominant-baseline="central">from zzhang83 + hemachandarn docs</text>
+    <line x1="420" y1="256" x2="410" y2="256" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <!-- runtime band -->
+    <rect x="0" y="290" width="780" height="14" fill="#F0EDEA" opacity="0.8"/>
+    <text x="10" y="301" style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;fill:#6B7280">RUNTIME — baked-in schema only</text>
+    <!-- baked in arrow -->
+    <path d="M294,276 L294,318" fill="none" stroke="#B87212" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a1)"/>
+    <!-- user input -->
+    <rect x="190" y="318" width="210" height="38" rx="7" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="0.5"/>
+    <text class="th" x="295" y="333" text-anchor="middle" dominant-baseline="central">User persona (free text)</text>
+    <text class="ts" x="295" y="348" text-anchor="middle" dominant-baseline="central">Fresh description — no raw data</text>
+    <line x1="295" y1="356" x2="295" y2="380" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <!-- persona builder -->
+    <rect x="130" y="380" width="330" height="38" rx="7" fill="#ECEAF9" stroke="#4630A8" stroke-width="0.5"/>
+    <text class="th" x="295" y="396" text-anchor="middle" dominant-baseline="central">Persona Builder Node</text>
+    <text class="ts" x="295" y="410" text-anchor="middle" dominant-baseline="central">Fingerprint + Nigerian context injection</text>
+    <!-- ng context -->
+    <rect x="476" y="388" width="152" height="24" rx="7" fill="#FDF2DF" stroke="#B87212" stroke-width="0.5"/>
+    <text class="ts" x="552" y="400" text-anchor="middle" dominant-baseline="central">Nigerian context node</text>
+    <line x1="476" y1="400" x2="462" y2="400" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <!-- split -->
+    <path d="M295,418 L295,438 L140,438 L140,458" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <path d="M295,418 L295,438 L470,438 L470,458" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <!-- container A -->
+    <rect x="40" y="446" width="202" height="224" rx="10" fill="none" stroke="#0A6E5C" stroke-width="0.5" stroke-dasharray="5 3"/>
+    <text class="ts" x="141" y="442" text-anchor="middle">Container 1 — Task A</text>
+    <rect x="50" y="458" width="182" height="38" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="141" y="474" text-anchor="middle" dominant-baseline="central">Review Generator</text>
+    <text class="ts" x="141" y="488" text-anchor="middle" dominant-baseline="central">Simulate review + rating</text>
+    <line x1="141" y1="496" x2="141" y2="518" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <rect x="50" y="518" width="182" height="38" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="141" y="534" text-anchor="middle" dominant-baseline="central">Quality Checker</text>
+    <text class="ts" x="141" y="548" text-anchor="middle" dominant-baseline="central">ROUGE · BERTScore · RMSE</text>
+    <rect x="50" y="563" width="182" height="26" rx="6" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text style="font-size:10px;fill:#0A4035;font-family:'DM Sans',sans-serif" x="141" y="576" text-anchor="middle" dominant-baseline="central">5★ confidence cap applied</text>
+    <line x1="141" y1="590" x2="141" y2="614" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <rect x="96" y="614" width="90" height="28" rx="14" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="0.5"/>
+    <text class="th" x="141" y="628" text-anchor="middle" dominant-baseline="central">Output A</text>
+    <!-- container B -->
+    <rect x="368" y="446" width="244" height="224" rx="10" fill="none" stroke="#C84B2F" stroke-width="0.5" stroke-dasharray="5 3"/>
+    <text class="ts" x="490" y="442" text-anchor="middle">Container 2 — Task B</text>
+    <rect x="378" y="458" width="224" height="38" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="490" y="474" text-anchor="middle" dominant-baseline="central">Domain Resolver + Validator</text>
+    <text class="ts" x="490" y="488" text-anchor="middle" dominant-baseline="central">Parse · validate · fallback</text>
+    <line x1="490" y1="496" x2="490" y2="518" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <rect x="378" y="518" width="224" height="38" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="490" y="534" text-anchor="middle" dominant-baseline="central">Retrieval + Reasoning</text>
+    <text class="ts" x="490" y="548" text-anchor="middle" dominant-baseline="central">Embed · niche-aware · ranked</text>
+    <rect x="378" y="563" width="224" height="26" rx="6" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text style="font-size:10px;fill:#5A2210;font-family:'DM Sans',sans-serif" x="490" y="576" text-anchor="middle" dominant-baseline="central">Category signals from Yelp EDA</text>
+    <line x1="490" y1="590" x2="490" y2="614" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a1)"/>
+    <rect x="445" y="614" width="90" height="28" rx="14" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="0.5"/>
+    <text class="th" x="490" y="628" text-anchor="middle" dominant-baseline="central">Output B</text>
+    </svg>
+  </div>
+</div>
+</section>
+
+<!-- LANGGRAPH STRUCTURE -->
+<section id="langgraph">
+<div class="container">
+  <div class="section-label">04 — LangGraph Structure</div>
+  <h2>Graph Nodes &amp; Edge Routing</h2>
+  <p>Each task is a separate <code>StateGraph</code>. Both graphs share the persona builder and Nigerian context nodes. Task B introduces a conditional edge from the domain validator — routing to the clarification node if the domain is unclear, or proceeding directly to retrieval if recognised.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">LangGraph Node-Edge Structure — Both Tasks</div>
+    <svg class="diag" viewBox="0 0 760 640" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="#0A6E5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <!-- START -->
+    <rect x="300" y="16" width="100" height="30" rx="15" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="0.5"/>
+    <text class="th" x="350" y="31" text-anchor="middle" dominant-baseline="central">START</text>
+    <line x1="350" y1="46" x2="350" y2="66" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <!-- persona builder -->
+    <rect x="170" y="66" width="360" height="48" rx="8" fill="#ECEAF9" stroke="#4630A8" stroke-width="0.5"/>
+    <text class="th" x="350" y="84" text-anchor="middle" dominant-baseline="central">Persona Builder</text>
+    <text class="ts" x="350" y="102" text-anchor="middle" dominant-baseline="central">Behavioral fingerprint extraction</text>
+    <!-- ng badge -->
+    <rect x="545" y="76" width="152" height="28" rx="7" fill="#FDF2DF" stroke="#B87212" stroke-width="0.5"/>
+    <text class="ts" x="621" y="88" text-anchor="middle" dominant-baseline="central">Nigerian Context</text>
+    <text class="ts" x="621" y="100" text-anchor="middle" dominant-baseline="central">Pidgin · local prefs</text>
+    <line x1="545" y1="90" x2="532" y2="90" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <!-- split -->
+    <path d="M350,114 L350,134 L140,134 L140,158" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <path d="M350,114 L350,134 L560,134 L560,158" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <!-- TASK A container -->
+    <rect x="22" y="146" width="236" height="386" rx="10" fill="none" stroke="#0A6E5C" stroke-width="0.5" stroke-dasharray="5 3"/>
+    <text class="ts" x="140" y="142" text-anchor="middle">Task A — user modeling</text>
+    <rect x="32" y="158" width="216" height="44" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="140" y="176" text-anchor="middle" dominant-baseline="central">Review Generator</text>
+    <text class="ts" x="140" y="192" text-anchor="middle" dominant-baseline="central">Simulate rated review text</text>
+    <line x1="140" y1="202" x2="140" y2="232" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <rect x="32" y="232" width="216" height="44" rx="7" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="th" x="140" y="250" text-anchor="middle" dominant-baseline="central">Quality Checker</text>
+    <text class="ts" x="140" y="266" text-anchor="middle" dominant-baseline="central">ROUGE · BERTScore · RMSE</text>
+    <line x1="140" y1="276" x2="140" y2="304" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <rect x="90" y="304" width="100" height="28" rx="14" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="0.5"/>
+    <text class="th" x="140" y="318" text-anchor="middle" dominant-baseline="central">Output A</text>
+    <!-- TASK B container -->
+    <rect x="440" y="146" width="278" height="472" rx="10" fill="none" stroke="#C84B2F" stroke-width="0.5" stroke-dasharray="5 3"/>
+    <text class="ts" x="579" y="142" text-anchor="middle">Task B — recommendation</text>
+    <rect x="450" y="158" width="258" height="44" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="579" y="176" text-anchor="middle" dominant-baseline="central">Domain Resolver</text>
+    <text class="ts" x="579" y="192" text-anchor="middle" dominant-baseline="central">Parse domain + niche input</text>
+    <line x1="579" y1="202" x2="579" y2="232" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <rect x="450" y="232" width="258" height="44" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="579" y="250" text-anchor="middle" dominant-baseline="central">Domain Validator</text>
+    <text class="ts" x="579" y="266" text-anchor="middle" dominant-baseline="central">Known domain? → route decision</text>
+    <!-- unclear branch -->
+    <path d="M708,254 L738,254 L738,302 L712,302" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <text class="ts" x="734" y="282" text-anchor="middle" style="fill:#9CA3AF">unclear</text>
+    <rect x="450" y="288" width="258" height="44" rx="7" fill="#FDF2DF" stroke="#B87212" stroke-width="0.5"/>
+    <text class="th" x="579" y="306" text-anchor="middle" dominant-baseline="central">Clarification Node</text>
+    <text class="ts" x="579" y="322" text-anchor="middle" dominant-baseline="central">Ask user OR lifestyle fallback</text>
+    <!-- known shortcut -->
+    <path d="M579,276 L579,296" fill="none" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <!-- confirmed arrow -->
+    <path d="M579,332 L579,356" fill="none" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <text class="ts" x="598" y="346" style="fill:#9CA3AF">confirmed</text>
+    <rect x="450" y="356" width="258" height="44" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="579" y="374" text-anchor="middle" dominant-baseline="central">Retrieval Node</text>
+    <text class="ts" x="579" y="390" text-anchor="middle" dominant-baseline="central">Embedding search · cold-start</text>
+    <line x1="579" y1="400" x2="579" y2="428" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <rect x="450" y="428" width="258" height="44" rx="7" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="th" x="579" y="446" text-anchor="middle" dominant-baseline="central">Reasoning + Ranking</text>
+    <text class="ts" x="579" y="462" text-anchor="middle" dominant-baseline="central">LLM re-ranks · explains · niches</text>
+    <line x1="579" y1="472" x2="579" y2="500" stroke="#0A6E5C" stroke-width="1.5" marker-end="url(#a2)"/>
+    <rect x="529" y="500" width="100" height="28" rx="14" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="0.5"/>
+    <text class="th" x="579" y="514" text-anchor="middle" dominant-baseline="central">Output B</text>
+    <!-- legend -->
+    <rect x="22" y="598" width="10" height="10" rx="2" fill="#ECEAF9" stroke="#4630A8" stroke-width="0.5"/>
+    <text class="ts" x="38" y="606">Shared node</text>
+    <rect x="108" y="598" width="10" height="10" rx="2" fill="#E0F5F0" stroke="#0A6E5C" stroke-width="0.5"/>
+    <text class="ts" x="124" y="606">Task A</text>
+    <rect x="174" y="598" width="10" height="10" rx="2" fill="#FAEDE9" stroke="#C84B2F" stroke-width="0.5"/>
+    <text class="ts" x="190" y="606">Task B</text>
+    <rect x="240" y="598" width="10" height="10" rx="2" fill="#FDF2DF" stroke="#B87212" stroke-width="0.5"/>
+    <text class="ts" x="256" y="606">Fallback/clarify</text>
+    <line x1="346" y1="603" x2="370" y2="603" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <text class="ts" x="376" y="606">Known-domain shortcut</text>
+    </svg>
+  </div>
+</div>
+</section>
+
+<!-- UPDATED WORKFLOW WITH DATASETS -->
+<section id="workflow">
+<div class="container">
+  <div class="section-label">05 — Data Workflow</div>
+  <h2>How All Three Datasets Are Consumed</h2>
+  <p>Each dataset contributes distinct behavioral signals that feed into different parts of the persona schema. Elite Yelp users are prioritised for sampling based on findings from the analysis reports — they have 5–7× more reviews and more consistent rating patterns.</p>
+
+  <div class="card-grid card-grid-3" style="margin-top:24px;">
+    <div class="card teal">
+      <span class="card-tag tag-teal">Yelp</span>
+      <h4>Behavioral richness</h4>
+      <p>Primary source. Extract <code>avg_stars</code>, <code>review_count</code>, <code>yelping_since</code>, <code>elite</code> status, category affinity, price range sensitivity. Filter for elite users first — 5–7× richer profiles.</p>
+    </div>
+    <div class="card coral">
+      <span class="card-tag tag-coral">Amazon</span>
+      <h4>Product intent</h4>
+      <p>Secondary source. Extract purchase-intent signals, rating bias per product category, verified vs. unverified review patterns. Most useful for Task B product domain recommendations.</p>
+    </div>
+    <div class="card purple">
+      <span class="card-tag tag-purple">Goodreads</span>
+      <h4>Genre taste</h4>
+      <p>Tertiary source. Extract genre affinity from shelf behaviour, reading velocity, review length distribution. Most relevant for Task B when domain is Books.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:28px;">
+    <p><strong>Calibration insight from uploaded reports:</strong> The zzhang83 analysis found that 56.5% of fake reviews are 5-star while true reviews cluster at 3.5–4 stars. Our quality checker node caps confidence on 5-star outputs accordingly. The hemachandarn report confirmed the elite user sampling strategy — dropping the <code>friends</code> column and filtering <code>elite_ever = true</code> reduces data size from 720MB to 10MB per file while retaining the most behaviorally rich users.</p>
+  </div>
+</div>
+</section>
+
+<!-- UI DEMO -->
+<section id="demo">
+<div class="container">
+  <div class="section-label">06 — UI Demo</div>
+  <h2>Interactive Agent Interface</h2>
+  <p>Each container ships with a lightweight FastAPI backend and a single-page HTML frontend. The UI exposes both tasks via tabs. Task B includes domain selection, optional niche narrowing, and graceful fallback for unrecognised domains.</p>
+
+  <div class="ui-demo">
+    <div class="demo-bar">
+      <div class="demo-brand"><span>PERSONA</span> · LLM Agent</div>
+      <div class="demo-tabs">
+        <button class="demo-tab active" onclick="switchDemo('a')">Task A — modeling</button>
+        <button class="demo-tab" onclick="switchDemo('b')">Task B — recommendation</button>
+      </div>
+      <div class="demo-status"><span class="demo-dot"></span>Running</div>
+    </div>
+
+    <!-- TASK A -->
+    <div id="da" class="demo-split panel-a-wrap">
+      <div class="demo-panel">
+        <div class="demo-label">Inputs</div>
+        <div class="demo-field">
+          <label>User persona</label>
+          <textarea>Frequent Lagos food blogger. Rates 4–5 stars mostly, sensitive to value for money. Uses casual Nigerian English with Pidgin phrases, often references local food culture.</textarea>
+        </div>
+        <div class="demo-field">
+          <label>Product / item details</label>
+          <input type="text" value="Jollof rice + peppered chicken — Chicken Republic, Lekki"/>
+        </div>
+        <button class="run-btn">Generate review ↗</button>
+      </div>
+      <div class="demo-panel demo-panel-r">
+        <div class="demo-label">Generated output</div>
+        <div class="out-card">
+          <div class="stars">★★★★☆</div>
+          <div class="review-text">"Abeg, this Chicken Republic Lekki na always deliver. The jollof was on point — smoky, well-seasoned, the way mama go make am. Peppered chicken was tender but small small on the pepper side for my taste. Overall e worth the price sha, better than some ₦5k restaurant wey go disappoint you."</div>
+          <div class="meta-row">
+            <span class="pill">Rating: 4.0</span>
+            <span class="pill">Confidence: 88%</span>
+            <span class="pill ng">Nigerian context ✓</span>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#9CA3AF">ROUGE-L: 0.63 · BERTScore: 0.81 · Behavioral fidelity: high</div>
+      </div>
+    </div>
+
+    <!-- TASK B -->
+    <div id="db" class="panel-b-wrap">
+      <div class="demo-panel">
+        <div class="demo-label">Inputs</div>
+        <div class="demo-field">
+          <label>User persona</label>
+          <textarea>Lagos professional, 28, watches Nollywood + action films. Has rated comedy and thriller films highly. Hasn't explored sci-fi yet.</textarea>
+        </div>
+        <div class="demo-field">
+          <label>Domain</label>
+          <select id="dom-sel" onchange="handleDomain(this.value)" style="width:100%;font-size:13px;padding:7px 10px;border:1px solid #E2DDD5;border-radius:8px;background:#FAFAF8;color:#0D0E12;font-family:'DM Sans',sans-serif;">
+            <option value="">— select a domain —</option>
+            <option value="Movies">Movies</option>
+            <option value="Food">Food</option>
+            <option value="Books">Books</option>
+            <option value="other">Other…</option>
+          </select>
+          <div id="oth-wrap" style="display:none" class="niche-row">
+            <label>Specify domain</label>
+            <input type="text" id="oth-inp" placeholder="e.g. music, skincare, hotels…" oninput="validateDomain(this.value)"/>
+            <div class="fb-warn" id="fw">We don't recognise that domain. Could you be more specific?
+              <div class="fb-actions">
+                <button class="fb-btn" onclick="clearDomain()">Clear and retype</button>
+                <button class="fb-btn" onclick="proceedFallback()" style="background:var(--amber-l)">Proceed with general lifestyle</button>
+              </div>
+            </div>
+            <div class="fb-fallback" id="ff">No specific domain detected — defaulting to general lifestyle recommendations.</div>
+          </div>
+          <div id="niche-wrap" style="display:none" class="niche-row">
+            <label>Niche it down <span class="opt-badge">optional</span></label>
+            <input type="text" id="niche-inp" placeholder="e.g. psychological thriller, Afrobeats-era…"/>
+          </div>
+        </div>
+        <button class="run-btn">Get recommendations ↗</button>
+      </div>
+      <div class="demo-panel demo-panel-r">
+        <div class="demo-label">Ranked recommendations</div>
+        <div id="recs-norm">
+          <div class="rec-card"><div class="rank-n">1</div><div><div class="rec-title">The Gravedigger's Wife (2021)</div><div class="rec-sub">Somali drama. Matches emotionally grounded storytelling with strong character arcs.</div><span class="rec-score">Match: 94</span></div></div>
+          <div class="rec-card"><div class="rank-n">2</div><div><div class="rec-title">Blood Diamond (2006)</div><div class="rec-sub">Action-drama, African setting — direct crossover from thriller affinity.</div><span class="rec-score">Match: 89</span></div></div>
+          <div class="rec-card"><div class="rank-n">3</div><div><div class="rec-title">District 9 (2009)</div><div class="rec-sub">Sci-fi gateway — South African grounding, lowest-risk cold-start into new genre.</div><span class="rec-score">Match: 82</span></div></div>
+        </div>
+        <div id="recs-fall" style="display:none">
+          <div class="rec-card"><div class="rank-n">1</div><div><div class="rec-title">Atomic Habits — James Clear</div><div class="rec-sub">High-impact lifestyle read. Matches goal-oriented professional persona.</div><span class="rec-score">Match: 88</span></div></div>
+          <div class="rec-card"><div class="rank-n">2</div><div><div class="rec-title">Calm (app)</div><div class="rec-sub">Wellness tool — fits Lagos professional pace and work pressure signals.</div><span class="rec-score">Match: 81</span></div></div>
+          <div class="rec-card"><div class="rank-n">3</div><div><div class="rec-title">Afrobeats workout playlist</div><div class="rec-sub">Cross-domain pick — music + fitness. Culturally resonant.</div><span class="rec-score">Match: 76</span></div></div>
+          <div class="meta-row" style="margin-top:4px;"><span class="pill ng">Fallback: general lifestyle ✓</span></div>
+        </div>
+        <div style="font-size:11px;color:#9CA3AF;margin-top:6px">NDCG@10: 0.84 · Hit rate: 0.91 · Contextual relevance: high</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>UI Design Decisions</h3>
+  <div class="card-grid" style="margin-top:16px;">
+    <div class="card amber">
+      <span class="card-tag tag-amber">No dataset selector</span>
+      <h4>Why we removed it</h4>
+      <p>Datasets are consumed at dev time only. The UI accepts free-text persona descriptions — the behavioral understanding is already baked into the agent's prompt architecture. A dataset dropdown would imply runtime data access that doesn't exist.</p>
+    </div>
+    <div class="card teal">
+      <span class="card-tag tag-teal">Graceful fallback</span>
+      <h4>Unrecognised domain handling</h4>
+      <p>When the domain validator can't match the user's input, the UI surfaces two choices: retype for clarity, or proceed with general lifestyle recommendations. This gives the user agency rather than silently failing — and demonstrates defensive agent design.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- LLM CHOICE -->
+<section id="llm">
+<div class="container">
+  <div class="section-label">07 — LLM Selection</div>
+  <h2>Powered by Claude API</h2>
+  <p>All LLM calls across both tasks — persona fingerprinting, review generation, reasoning, and ranking — are made through the <strong>Anthropic Claude API</strong> using <code>claude-sonnet-4-20250514</code>. Claude is chosen for its nuanced instruction-following, long-context reasoning, and strong performance on text generation tasks requiring cultural and tonal specificity.</p>
+
+  <div class="card-grid" style="margin-top:24px;">
+    <div class="card teal">
+      <span class="card-tag tag-teal">Model</span>
+      <h4>claude-sonnet-4-20250514</h4>
+      <p>Optimal balance of quality and speed for this use case. Strong at persona-conditioned generation, structured JSON output, and multi-turn reasoning — all required across our LangGraph nodes.</p>
+    </div>
+    <div class="card purple">
+      <span class="card-tag tag-purple">Context window</span>
+      <h4>200K tokens</h4>
+      <p>Allows the full persona fingerprint, behavioral history summary, domain context, and Nigerian localization instructions to be injected in a single prompt without truncation.</p>
+    </div>
+    <div class="card amber">
+      <span class="card-tag tag-amber">Nigerian context</span>
+      <h4>Instruction-following fidelity</h4>
+      <p>Claude reliably follows nuanced style instructions — switching register to Nigerian Pidgin, anchoring reviews in local price references (₦), and producing culturally grounded recommendation reasoning.</p>
+    </div>
+    <div class="card coral">
+      <span class="card-tag tag-coral">Structured output</span>
+      <h4>JSON-mode generation</h4>
+      <p>Both task outputs are requested as structured JSON — review text + star rating for Task A, ranked recommendation list with match scores and reasoning for Task B. Claude returns clean, parseable responses without fences.</p>
+    </div>
+  </div>
+
+  <h3>How Claude sits inside LangGraph</h3>
+  <p>Each LangGraph node that requires LLM reasoning calls the Claude API directly via the Anthropic Python SDK. The node receives the current <code>AgentState</code>, constructs a targeted prompt, calls Claude, parses the response, and writes the result back to state. No LangChain LLM wrappers are used — direct API calls keep the implementation transparent and easy to debug in LangSmith.</p>
+
+  <pre><span class="cm"># Example: persona builder node calling Claude</span>
+<span class="kw">import</span> anthropic
+
+client = anthropic.Anthropic()
+
+<span class="kw">def</span> persona_builder_node(state: AgentState) -> AgentState:
+    prompt = f<span class="str">"""
+    You are a behavioral analyst. Extract a structured persona fingerprint
+    from this description. Include: rating_bias (1-5 float), tone (formal/casual/pidgin),
+    price_sensitivity (low/medium/high), category_affinity (list),
+    nigerian_markers (list of cultural signals).
+
+    Persona: {state['persona_text']}
+
+    Respond with JSON only, no preamble.
+    """</span>
+    response = client.messages.create(
+        model=<span class="str">"claude-sonnet-4-20250514"</span>,
+        max_tokens=<span class="str">1000</span>,
+        messages=[{<span class="str">"role"</span>: <span class="str">"user"</span>, <span class="str">"content"</span>: prompt}]
+    )
+    state[<span class="str">'fingerprint'</span>] = json.loads(response.content[<span class="str">0</span>].text)
+    <span class="kw">return</span> state</pre>
+</div>
+</section>
+
+<!-- EVALUATION METRICS -->
+<section id="metrics">
+<div class="container">
+  <div class="section-label">08 — Evaluation Metrics</div>
+  <h2>How the Submission Is Scored</h2>
+  <p>The competition uses a 100-point rubric. Task A metrics are qualitative and automated; Task B metrics are heavily quantitative with human evaluation for contextual relevance. Understanding this scoring shapes every design decision.</p>
+
+  <h3>Task A — User Modeling</h3>
+  <div class="card-grid card-grid-3" style="margin-top:16px;">
+    <div class="card teal">
+      <span class="card-tag tag-teal">Review Text Quality</span>
+      <h4>ROUGE / BERTScore</h4>
+      <p><strong>ROUGE-L</strong> measures longest common subsequence overlap between generated and reference reviews — rewards fluency and structure. <strong>BERTScore F1</strong> uses contextual embeddings to measure semantic similarity — more forgiving of paraphrasing. Target: ROUGE-L &gt; 0.55, BERTScore &gt; 0.78.</p>
+    </div>
+    <div class="card coral">
+      <span class="card-tag tag-coral">Rating Accuracy</span>
+      <h4>RMSE</h4>
+      <p><strong>Root Mean Square Error</strong> between predicted star rating and ground truth. Lower is better. Our quality checker caps 5-star confidence based on real Yelp distribution data — most genuine reviews cluster at 3.5–4 stars — which keeps RMSE in range.</p>
+    </div>
+    <div class="card purple">
+      <span class="card-tag tag-purple">Human Evaluation</span>
+      <h4>Behavioural Fidelity</h4>
+      <p>Judges assess whether the generated review sounds like it came from the described persona — tone match, rating consistency, cultural authenticity. This is where <strong>Nigerian contextualization earns bonus marks</strong>. Pidgin usage, ₦ price references, and local food vocabulary all contribute.</p>
+    </div>
+  </div>
+
+  <h3>Task B — Recommendation <span style="font-family:var(--mono);font-size:12px;color:var(--gray);font-weight:400">(100 pts breakdown)</span></h3>
+  <div style="margin-top:16px;border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+    <table style="width:100%;border-collapse:collapse;">
+      <thead>
+        <tr style="background:var(--ink);">
+          <th style="padding:12px 16px;font-family:var(--heading);font-size:13px;color:#fff;text-align:left;font-weight:600;">Criterion</th>
+          <th style="padding:12px 16px;font-family:var(--heading);font-size:13px;color:#fff;text-align:left;font-weight:600;">Metric</th>
+          <th style="padding:12px 16px;font-family:var(--heading);font-size:13px;color:#fff;text-align:center;font-weight:600;">Points</th>
+          <th style="padding:12px 16px;font-family:var(--heading);font-size:13px;color:#fff;text-align:left;font-weight:600;">Our approach</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:11px 16px;font-size:13px;font-weight:600;">Ranking Quality</td>
+          <td style="padding:11px 16px;font-size:13px;"><code>NDCG@10 / Hit Rate</code></td>
+          <td style="padding:11px 16px;font-size:13px;text-align:center;font-weight:700;color:var(--teal);">30</td>
+          <td style="padding:11px 16px;font-size:13px;color:var(--gray);">Embedding retrieval + Claude re-ranking. Reasoning node justifies each position, improving NDCG over pure similarity search.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);background:#FAFAF8;">
+          <td style="padding:11px 16px;font-size:13px;font-weight:600;">Cold-Start &amp; Cross-Domain</td>
+          <td style="padding:11px 16px;font-size:13px;"><code>Held-out user eval</code></td>
+          <td style="padding:11px 16px;font-size:13px;text-align:center;font-weight:700;color:var(--teal);">25</td>
+          <td style="padding:11px 16px;font-size:13px;color:var(--gray);">Domain-agnostic persona fingerprint handles cold-start. Open "Other" domain field with niche narrowing handles cross-domain explicitly.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:11px 16px;font-size:13px;font-weight:600;">Contextual Relevance</td>
+          <td style="padding:11px 16px;font-size:13px;"><code>Human evaluation</code></td>
+          <td style="padding:11px 16px;font-size:13px;text-align:center;font-weight:700;color:var(--teal);">20</td>
+          <td style="padding:11px 16px;font-size:13px;color:var(--gray);">Claude's reasoning node explains each recommendation in persona-specific terms. Nigerian context layer surfaces culturally resonant picks.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);background:#FAFAF8;">
+          <td style="padding:11px 16px;font-size:13px;font-weight:600;">Solution Paper</td>
+          <td style="padding:11px 16px;font-size:13px;"><code>Judge review (4–8 pages)</code></td>
+          <td style="padding:11px 16px;font-size:13px;text-align:center;font-weight:700;color:var(--teal);">15</td>
+          <td style="padding:11px 16px;font-size:13px;color:var(--gray);">This documentation is the paper's technical backbone. Architecture diagrams, node-edge explanations, dataset methodology, and ablation notes all drawn from here.</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px;font-size:13px;font-weight:600;">Code Reproducibility</td>
+          <td style="padding:11px 16px;font-size:13px;"><code>Judge attempts to run it</code></td>
+          <td style="padding:11px 16px;font-size:13px;text-align:center;font-weight:700;color:var(--teal);">10</td>
+          <td style="padding:11px 16px;font-size:13px;color:var(--gray);">Docker Compose spins up both containers. Clear README, modular LangGraph node structure, well-commented conditional edges and fallback logic.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout" style="margin-top:28px;">
+    <p><strong>Key scoring insight:</strong> The brief explicitly states <em>"the solution paper is what we read first"</em> and that <em>"additional marks"</em> are awarded for Nigerian contextualisation. Both of these are baked into our architecture from day one — not afterthoughts. The Nigerian context node injects localization at the LangGraph state level, ensuring every downstream Claude call inherits it automatically.</p>
+  </div>
+</div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+<div class="container">
+  <div class="section-label">09 — References</div>
+  <h2>Datasets, Repositories &amp; Papers</h2>
+
+  <h3>Kaggle Datasets</h3>
+  <div class="ref-grid">
+    <a class="ref-card" href="https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset" target="_blank">
+      <div class="ref-icon kaggle">📊</div>
+      <div class="ref-body">
+        <div class="ref-title">Yelp Open Dataset</div>
+        <div class="ref-sub">6.9M reviews · 174K businesses · users · check-ins · tips. Primary behavioral signal source.</div>
+        <span class="ref-tag k">Kaggle · Official</span>
+      </div>
+    </a>
+    <a class="ref-card" href="https://www.kaggle.com/datasets/dongrelaxman/amazon-reviews-dataset" target="_blank">
+      <div class="ref-icon kaggle">📦</div>
+      <div class="ref-body">
+        <div class="ref-title">Amazon Reviews Dataset</div>
+        <div class="ref-sub">Product reviews with star ratings, verified status, and metadata. Used for cross-domain product signals.</div>
+        <span class="ref-tag k">Kaggle</span>
+      </div>
+    </a>
+    <a class="ref-card" href="https://www.kaggle.com/datasets/bahramjannesarr/goodreads-book-datasets-10m" target="_blank">
+      <div class="ref-icon kaggle">📚</div>
+      <div class="ref-body">
+        <div class="ref-title">Goodreads Book Datasets 10M</div>
+        <div class="ref-sub">10M book ratings + shelf behaviour. Used for genre affinity and reading velocity signals.</div>
+        <span class="ref-tag k">Kaggle</span>
+      </div>
+    </a>
+  </div>
+
+  <h3>GitHub Repositories</h3>
+  <div class="ref-grid">
+    <a class="ref-card" href="https://github.com/zzhang83/Yelp_Sentiment_Analysis" target="_blank">
+      <div class="ref-icon github">⌨️</div>
+      <div class="ref-body">
+        <div class="ref-title">zzhang83 / Yelp_Sentiment_Analysis</div>
+        <div class="ref-sub">Pre-built Yelp data loaders, SQL schema, fake review detection (CNN+LSTM, SVM ensemble), sentiment analysis. Adapted for signal extraction pipeline.</div>
+        <span class="ref-tag g">GitHub</span>
+      </div>
+    </a>
+    <a class="ref-card" href="https://github.com/hemachandarn/Yelp-Dataset" target="_blank">
+      <div class="ref-icon github">⌨️</div>
+      <div class="ref-body">
+        <div class="ref-title">hemachandarn / Yelp-Dataset</div>
+        <div class="ref-sub">Exploratory analysis with business, user, review table joins. Elite user filtering strategy and friend-count feature engineering.</div>
+        <span class="ref-tag g">GitHub</span>
+      </div>
+    </a>
+  </div>
+
+  <h3>Reference Papers &amp; Articles</h3>
+  <div class="ref-grid">
+    <a class="ref-card" href="https://medium.com/@zhiwei_zhang/final-blog-642fb9c7e781" target="_blank">
+      <div class="ref-icon paper">📝</div>
+      <div class="ref-body">
+        <div class="ref-title">Yelp ML &amp; Visualization — Final Blog</div>
+        <div class="ref-sub">Zhiwei Zhang et al. — sentiment analysis, fake review detection workflow, and feature engineering methodology.</div>
+        <span class="ref-tag p">Medium</span>
+      </div>
+    </a>
+    <a class="ref-card" href="https://yannawut.medium.com/data-analysis-find-a-good-book-using-goodreads-data-and-python-43af50fb711f" target="_blank">
+      <div class="ref-icon paper">📗</div>
+      <div class="ref-body">
+        <div class="ref-title">Goodreads Data Analysis with Python</div>
+        <div class="ref-sub">Genre affinity extraction, shelf behaviour patterns, and rating distribution analysis. Informs Goodreads persona schema design.</div>
+        <span class="ref-tag p">Medium</span>
+      </div>
+    </a>
+  </div>
+
+  <h3>Uploaded Analysis Reports</h3>
+  <div class="ref-grid">
+    <div class="ref-card" style="cursor:default;">
+      <div class="ref-icon paper">📄</div>
+      <div class="ref-body">
+        <div class="ref-title">Final_Report_Yelp.pdf</div>
+        <div class="ref-sub">Brown University — 6-state Yelp analysis. Star schema, fake review detection (93% F1), sentiment SVM, price vs. income mapping. Key finding: 56.5% of fake reviews are 5-star.</div>
+        <span class="ref-tag p">Uploaded PDF</span>
+      </div>
+    </div>
+    <div class="ref-card" style="cursor:default;">
+      <div class="ref-icon paper">📄</div>
+      <div class="ref-body">
+        <div class="ref-title">YelpAnalysis_report.pdf</div>
+        <div class="ref-sub">Drexel University — full schema documentation, elite user behaviour analysis, business &amp; user table field mapping. Informs elite user sampling strategy.</div>
+        <span class="ref-tag p">Uploaded PDF</span>
+      </div>
+    </div>
+    <div class="ref-card" style="cursor:default;">
+      <div class="ref-icon paper">📊</div>
+      <div class="ref-body">
+        <div class="ref-title">Yelp_Data1030_Final_Presentation.pptx</div>
+        <div class="ref-sub">Visual EDA presentation from same team as Final_Report_Yelp. Charts and figures suitable for inclusion in the solution paper.</div>
+        <span class="ref-tag p">Uploaded PPTX</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  PERSONA · LLM Agent — BCT Hackathon 3.0 · Team Arion · Documentation v2.0
+</footer>
+
+<script>
+// Demo tab switch
+function switchDemo(t){
+  document.querySelectorAll('.demo-tab').forEach((el,i)=>el.classList.toggle('active',i===(t==='a'?0:1)));
+  document.getElementById('da').classList.toggle('hide',t==='b');
+  document.getElementById('db').classList.toggle('show',t==='b');
+}
+
+// Domain handling
+const knownDomains=['movie','film','food','eat','restaurant','book','read','music','skincare','beauty','hotel','travel','fashion','sport','game','tech','gadget','fitness','health','drink'];
+const nichePH={Movies:'e.g. psychological thriller, 90s Nollywood…',Food:'e.g. street food, fine dining, vegetarian…',Books:'e.g. self-help, Afrofuturism, short stories…'};
+
+function handleDomain(v){
+  document.getElementById('oth-wrap').style.display=v==='other'?'block':'none';
+  const nw=document.getElementById('niche-wrap');
+  const ni=document.getElementById('niche-inp');
+  hideFb();
+  document.getElementById('recs-fall').style.display='none';
+  document.getElementById('recs-norm').style.display='block';
+  if(!v){nw.style.display='none';return;}
+  if(v==='other'){nw.style.display='none';document.getElementById('oth-inp').focus();}
+  else{ni.placeholder=nichePH[v]||'Narrow it down further…';nw.style.display='block';}
+}
+
+function validateDomain(v){
+  hideFb();
+  const nw=document.getElementById('niche-wrap');
+  const ni=document.getElementById('niche-inp');
+  if(v.trim().length<2){nw.style.display='none';return;}
+  const recognised=knownDomains.some(d=>v.toLowerCase().includes(d));
+  if(recognised){ni.placeholder=`Narrow down your ${v} preference… (optional)`;nw.style.display='block';}
+  else if(v.trim().length>4){document.getElementById('fw').classList.add('show');nw.style.display='none';}
+}
+function clearDomain(){document.getElementById('oth-inp').value='';hideFb();document.getElementById('niche-wrap').style.display='none';document.getElementById('oth-inp').focus();}
+function proceedFallback(){hideFb();document.getElementById('ff').classList.add('show');document.getElementById('niche-wrap').style.display='none';document.getElementById('recs-norm').style.display='none';document.getElementById('recs-fall').style.display='block';}
+function hideFb(){document.getElementById('fw').classList.remove('show');document.getElementById('ff').classList.remove('show');}
+</script>
+</body>
+</html>

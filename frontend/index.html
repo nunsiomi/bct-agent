@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PERSONA · LLM Agent — BCT Hackathon 3.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('bct-theme');
+    if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch (e) {}
+})();
+</script>
+<style>
+:root {
+  --ink: #F1F5F9;
+  --paper: #0A0A0F;
+  --card: #13131A;
+  --input: #1E1E2E;
+  --teal: #7C3AED;
+  --teal-l: rgba(124,58,237,.14);
+  --cyan: #06B6D4;
+  --cyan-l: rgba(6,182,212,.14);
+  --emerald: #10B981;
+  --emerald-l: rgba(16,185,129,.14);
+  --amber: #F59E0B;
+  --amber-l: rgba(245,158,11,.14);
+  --coral: #EF4444;
+  --coral-l: rgba(239,68,68,.12);
+  --purple: #06B6D4;
+  --purple-l: rgba(6,182,212,.14);
+  --gray: #94A3B8;
+  --border: #2A2A3A;
+  --gold: #FBBF24;
+  --heading: 'Unbounded', sans-serif;
+  --body: 'Manrope', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; color-scheme: dark; }
+body {
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+button { font-family: var(--body); }
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(124, 58, 237, .45);
+  outline-offset: 1px;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(19,19,26,.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.nav-brand {
+  font-family: var(--heading);
+  font-weight: 800; font-size: 14px;
+  letter-spacing: .08em; color: var(--ink);
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+.nav-badge {
+  font-family: var(--mono); font-size: 11px;
+  padding: 3px 10px; border-radius: 12px;
+  background: var(--teal); color: #fff;
+  letter-spacing: .04em;
+}
+
+/* HERO */
+.hero {
+  padding: 64px 40px 32px;
+  max-width: 960px; margin: 0 auto;
+}
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--teal); letter-spacing: .12em;
+  text-transform: uppercase; margin-bottom: 18px;
+}
+h1 {
+  font-family: var(--heading);
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -.02em; margin-bottom: 18px;
+}
+h1 em { font-style: normal; color: var(--teal); }
+.hero-desc {
+  font-size: 16px; color: var(--gray);
+  max-width: 620px; font-weight: 300;
+}
+
+/* CONTAINER */
+.container { max-width: 960px; margin: 0 auto; padding: 0 40px 56px; }
+
+/* DEMO CARD */
+.ui-demo {
+  border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 4px 30px rgba(124,58,237,.10), inset 0 1px 0 rgba(255,255,255,.02);
+}
+.demo-bar {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px; gap: 12px;
+  background: #0F0F17;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.demo-brand {
+  font-family: var(--mono); font-size: 12px;
+  font-weight: 500; color: var(--ink);
+}
+.demo-brand span { color: var(--purple); }
+.demo-tabs {
+  display: flex; gap: 4px;
+  background: #1E1E2E; border-radius: 20px; padding: 3px;
+  border: 1px solid var(--border);
+}
+.demo-tab {
+  padding: 5px 14px; border-radius: 16px;
+  font-size: 12px; font-weight: 500;
+  cursor: pointer; border: none;
+  background: transparent; color: var(--gray);
+  transition: all .15s;
+}
+.demo-tab.active {
+  background: var(--teal); color: #fff;
+  border: none;
+  box-shadow: 0 0 12px rgba(124,58,237,.35);
+}
+.demo-status {
+  font-family: var(--mono); font-size: 11px;
+  padding: 3px 10px; border-radius: 12px;
+  background: var(--emerald-l); color: var(--emerald);
+  display: flex; align-items: center; gap: 6px;
+  transition: background .25s, color .25s;
+  border: 1px solid rgba(16,185,129,.25);
+}
+.demo-status.offline { background: var(--coral-l); color: var(--coral); border-color: rgba(239,68,68,.25); }
+.demo-status.checking { background: var(--amber-l); color: var(--amber); border-color: rgba(245,158,11,.25); }
+.demo-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor; display: inline-block;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .35; }
+}
+
+.demo-split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+}
+.demo-panel { padding: 22px; }
+.demo-panel-r { border-left: 1px solid var(--border); background: #0F0F17; }
+
+.demo-label {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .12em; color: var(--gray);
+  text-transform: uppercase; margin-bottom: 12px;
+}
+
+/* FIELDS */
+.demo-field { margin-bottom: 14px; }
+.demo-field label {
+  display: block; font-size: 12px;
+  color: var(--gray); margin-bottom: 5px;
+  letter-spacing: .01em;
+}
+.demo-field textarea,
+.demo-field input,
+.demo-field select {
+  width: 100%;
+  font-size: 13.5px;
+  padding: 8px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input);
+  color: var(--ink);
+  font-family: var(--body);
+  line-height: 1.55;
+  transition: border-color .15s, background .15s, box-shadow .15s;
+}
+.demo-field textarea::placeholder,
+.demo-field input::placeholder { color: #64748B; }
+.demo-field textarea {
+  height: 96px; resize: vertical; min-height: 64px;
+}
+.demo-field textarea:focus,
+.demo-field input:focus,
+.demo-field select:focus {
+  border-color: var(--teal);
+  background: #23233A;
+  box-shadow: 0 0 0 3px rgba(124,58,237,.18);
+}
+.demo-field select { cursor: pointer; }
+
+.niche-row {
+  margin-top: 8px;
+  border-left: 2px solid var(--border);
+  padding-left: 12px;
+}
+.niche-row label { font-size: 11px; color: var(--gray); }
+.opt-badge {
+  font-size: 10px; padding: 1px 6px;
+  border-radius: 8px; background: var(--input);
+  color: var(--gray); margin-left: 4px;
+  font-family: var(--mono);
+  border: 1px solid var(--border);
+}
+
+/* RUN BUTTON */
+.run-btn {
+  width: 100%; padding: 11px;
+  font-size: 13px; font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  cursor: pointer; margin-top: 6px;
+  transition: box-shadow .2s, transform .1s, opacity .15s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  letter-spacing: .02em;
+}
+.run-btn:hover:not(:disabled) { box-shadow: 0 0 20px rgba(124,58,237,.40); }
+.run-btn:active:not(:disabled) { transform: translateY(1px); }
+.run-btn:disabled { opacity: .45; cursor: not-allowed; }
+.run-btn.loading {
+  animation: btnPulse 1.8s ease-in-out infinite;
+  opacity: 1;
+}
+@keyframes btnPulse {
+  0%, 100% { background-position: 0% 50%; box-shadow: 0 0 12px rgba(124,58,237,.30); }
+  50%      { background-position: 100% 50%; box-shadow: 0 0 22px rgba(6,182,212,.40); }
+}
+.spinner {
+  width: 13px; height: 13px;
+  border: 1.5px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* OUTPUTS */
+.out-empty {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 22px 18px;
+  text-align: center;
+  color: var(--gray);
+  font-size: 13px;
+  background: rgba(255,255,255,.02);
+}
+.out-empty .ico {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .14em;
+  color: var(--teal); display: block;
+  margin-bottom: 6px;
+}
+
+.out-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--emerald);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  background: var(--card);
+  animation: fadeUp .35s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .out-card, .rec-card, .metrics-panel { animation: none; }
+  .metric-bar-fill { transition: none; }
+  .demo-dot { animation: none; }
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 17px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-shadow: 0 0 8px rgba(251,191,36,.25);
+}
+.stars .off { color: #2A2A3A; text-shadow: none; }
+.review-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink);
+  font-style: italic;
+}
+.review-text::before { content: '“'; color: var(--emerald); margin-right: 1px; }
+.review-text::after  { content: '”'; color: var(--emerald); margin-left: 1px; }
+
+.meta-row {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-top: 12px;
+}
+.pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 2px 9px;
+  border-radius: 10px;
+  background: var(--input);
+  color: var(--gray);
+  border: 1px solid var(--border);
+}
+.pill.ng {
+  background: var(--emerald);
+  color: #fff;
+  border-color: var(--emerald);
+  font-weight: 500;
+}
+.pill.fallback {
+  background: var(--amber);
+  color: #0A0A0F;
+  border-color: var(--amber);
+  font-weight: 500;
+}
+.metric-line {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--gray);
+  margin-top: 8px;
+}
+
+/* LIVE EVAL METRICS (Task A) */
+.metrics-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-top: 12px;
+  animation: fadeUp .45s ease both;
+}
+.metrics-panel[hidden] { display: none; }
+.metrics-header {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+.metrics-header svg {
+  width: 14px; height: 14px;
+  color: var(--cyan);
+  flex: 0 0 auto;
+}
+.metrics-header span { color: var(--ink); letter-spacing: .12em; }
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.metric-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  background: rgba(255,255,255,.02);
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex; flex-direction: column; gap: 4px;
+  min-width: 0;
+}
+.metric-name {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+.metric-value {
+  font-family: var(--heading);
+  font-size: 19px; font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -.01em;
+  word-break: break-word;
+}
+.metric-status {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  border: 1px solid currentColor;
+  margin-top: 2px;
+}
+.metric-bar {
+  height: 6px;
+  background: var(--input);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.metric-bar-fill {
+  height: 100%;
+  background: currentColor;
+  border-radius: 4px;
+  transition: width .3s ease;
+}
+.metric-card.status-good {
+  border-left-color: var(--emerald);
+  color: var(--emerald);
+}
+.metric-card.status-good .metric-status { background: var(--emerald-l); }
+.metric-card.status-warn {
+  border-left-color: var(--amber);
+  color: var(--amber);
+}
+.metric-card.status-warn .metric-status { background: var(--amber-l); }
+.metric-card.status-bad {
+  border-left-color: var(--coral);
+  color: var(--coral);
+}
+.metric-card.status-bad .metric-status { background: var(--coral-l); }
+.metrics-note {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--gray);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+[data-theme="light"] .metric-card { background: rgba(15,23,42,.02); }
+
+/* RECOMMENDATIONS */
+.rec-card {
+  display: flex; gap: 12px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: var(--card);
+  animation: fadeUp .35s ease both;
+}
+.rec-card:nth-child(2) { animation-delay: .05s; }
+.rec-card:nth-child(3) { animation-delay: .1s; }
+.rec-card:nth-child(4) { animation-delay: .15s; }
+.rec-card:nth-child(5) { animation-delay: .2s; }
+.rank-n {
+  font-family: var(--heading);
+  font-size: 22px; font-weight: 800;
+  color: var(--teal);
+  min-width: 28px; text-align: center;
+  padding-top: 1px;
+  letter-spacing: -.02em;
+  text-shadow: 0 0 12px rgba(124,58,237,.35);
+}
+.rec-body { flex: 1; min-width: 0; }
+.rec-title {
+  font-family: var(--heading);
+  font-size: 14px; font-weight: 600;
+  color: var(--ink); margin-bottom: 4px;
+  letter-spacing: -.01em;
+}
+.rec-sub {
+  font-size: 12.5px; color: var(--gray);
+  line-height: 1.55;
+}
+.rec-score {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #0A0A0F;
+  background: var(--cyan);
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-top: 6px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* FALLBACK BANNERS */
+.fb-warn {
+  margin-top: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: var(--amber-l);
+  border-left: 3px solid var(--amber);
+  font-size: 12px;
+  color: #FCD34D;
+  display: none;
+}
+.fb-warn.show { display: block; }
+.fb-fallback {
+  margin-top: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: var(--emerald-l);
+  border-left: 3px solid var(--emerald);
+  font-size: 12px;
+  color: #6EE7B7;
+  display: none;
+}
+.fb-fallback.show { display: block; }
+.fb-actions {
+  display: flex; gap: 6px;
+  margin-top: 8px; flex-wrap: wrap;
+}
+.fb-btn {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--amber);
+  background: transparent;
+  color: var(--amber);
+  font-weight: 500;
+  transition: background .15s;
+}
+.fb-btn:hover { background: var(--amber-l); }
+.fb-btn.proceed {
+  background: var(--amber-l);
+}
+
+/* ERROR */
+.err-card {
+  border: 1px solid rgba(239,68,68,.35);
+  border-left: 3px solid var(--coral);
+  background: var(--coral-l);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.err-title {
+  font-family: var(--heading);
+  font-weight: 600; font-size: 13px;
+  color: var(--coral); margin-bottom: 4px;
+  letter-spacing: .01em;
+}
+.err-msg {
+  font-size: 12.5px; color: #FCA5A5;
+  line-height: 1.6;
+  word-break: break-word;
+}
+.err-retry {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--coral);
+  cursor: pointer;
+  border: none; background: transparent;
+  text-decoration: underline;
+  padding: 0;
+  letter-spacing: .04em;
+}
+.err-retry:hover { color: #F87171; }
+
+/* SKELETONS */
+.skel {
+  background: linear-gradient(90deg, #1A1A26 0%, #23233A 50%, #1A1A26 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.3s linear infinite;
+  border-radius: 6px;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+.skel-stars { height: 18px; width: 110px; margin-bottom: 10px; }
+.skel-line  { height: 11px; margin-bottom: 6px; }
+.skel-line.w90 { width: 90%; }
+.skel-line.w70 { width: 70%; }
+.skel-line.w50 { width: 50%; }
+.skel-pills { display: flex; gap: 6px; margin-top: 12px; }
+.skel-pill  { height: 16px; width: 64px; border-radius: 10px; }
+.skel-rec {
+  display: flex; gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: var(--card);
+}
+.skel-rank { width: 22px; height: 22px; border-radius: 50%; }
+.skel-rec-body { flex: 1; }
+
+/* PANELS */
+.panel { display: none; }
+.panel.active { display: grid; grid-template-columns: 1fr 1fr; }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 32px 40px 48px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--gray);
+  font-family: var(--mono);
+  letter-spacing: .04em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+  nav { padding: 0 20px; }
+  .hero { padding: 48px 20px 24px; }
+  .container { padding: 0 20px 40px; }
+  .demo-panel-r { border-left: none; border-top: 1px solid var(--border); }
+  .panel.active { grid-template-columns: 1fr; }
+  .demo-tabs { order: 3; flex: 1 1 100%; justify-content: center; }
+}
+@media (max-width: 420px) {
+  .demo-bar { gap: 8px; }
+  .demo-brand { font-size: 11px; }
+  .demo-tab { padding: 4px 10px; font-size: 11px; }
+}
+
+/* THEME TOGGLE */
+.nav-right {
+  display: flex; align-items: center; gap: 12px;
+}
+.theme-toggle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--gray);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  padding: 0;
+  transition: color .15s, border-color .15s, background .15s, transform .35s;
+}
+.theme-toggle:hover {
+  color: var(--teal);
+  border-color: var(--teal);
+  background: var(--teal-l);
+  transform: rotate(15deg);
+}
+.theme-toggle svg { width: 14px; height: 14px; display: block; }
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+/* LIGHT THEME */
+html[data-theme="light"] {
+  color-scheme: light;
+  --ink: #0F172A;
+  --paper: #FAFAFC;
+  --card: #FFFFFF;
+  --input: #F1F5F9;
+  --teal-l: rgba(124,58,237,.10);
+  --cyan-l: rgba(6,182,212,.10);
+  --emerald-l: rgba(16,185,129,.10);
+  --amber-l: rgba(245,158,11,.10);
+  --coral-l: rgba(239,68,68,.08);
+  --purple-l: rgba(6,182,212,.10);
+  --gray: #64748B;
+  --border: #E2E8F0;
+}
+[data-theme="light"] nav {
+  background: rgba(255,255,255,.85);
+}
+[data-theme="light"] .demo-bar {
+  background: #F8FAFC;
+}
+[data-theme="light"] .demo-tabs {
+  background: #F1F5F9;
+}
+[data-theme="light"] .demo-panel-r {
+  background: #FAFBFD;
+}
+[data-theme="light"] .ui-demo {
+  box-shadow: 0 4px 30px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.04);
+}
+[data-theme="light"] .demo-field textarea:focus,
+[data-theme="light"] .demo-field input:focus,
+[data-theme="light"] .demo-field select:focus {
+  background: #FFFFFF;
+}
+[data-theme="light"] .demo-field textarea::placeholder,
+[data-theme="light"] .demo-field input::placeholder { color: #94A3B8; }
+[data-theme="light"] .stars { color: #D97706; text-shadow: none; }
+[data-theme="light"] .stars .off { color: #E2E8F0; }
+[data-theme="light"] .demo-brand span { color: #0E7490; }
+[data-theme="light"] .rank-n { text-shadow: 0 0 12px rgba(124,58,237,.20); }
+[data-theme="light"] .skel {
+  background: linear-gradient(90deg, #F1F5F9 0%, #E2E8F0 50%, #F1F5F9 100%);
+}
+[data-theme="light"] .out-empty { background: rgba(15,23,42,.02); }
+[data-theme="light"] .fb-warn { color: #92400E; }
+[data-theme="light"] .fb-fallback { color: #065F46; }
+[data-theme="light"] .err-msg { color: #991B1B; }
+[data-theme="light"] .err-retry:hover { color: #B91C1C; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <span class="dot"></span>
+    PERSONA · LLM AGENT
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+    </button>
+    <span class="nav-badge">BCT Hackathon 3.0</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">DSN × BCT LLM Agent Challenge</div>
+  <h1>Persona-driven <em>review</em><br/>&amp; recommendation.</h1>
+  <p class="hero-desc">Type a free-text user persona. Generate the review they would write, or get a ranked list of recommendations grounded in their behavior — with Nigerian context baked in.</p>
+</div>
+
+<div class="container">
+  <div class="ui-demo" id="demo">
+    <div class="demo-bar">
+      <div class="demo-brand"><span>PERSONA</span> · LLM Agent</div>
+      <div class="demo-tabs" role="tablist">
+        <button class="demo-tab active" id="tab-a" role="tab" aria-selected="true" aria-controls="panel-a">Task A — modeling</button>
+        <button class="demo-tab" id="tab-b" role="tab" aria-selected="false" aria-controls="panel-b">Task B — recommendation</button>
+      </div>
+      <div class="demo-status checking" id="status" title="Checking service health…">
+        <span class="demo-dot"></span><span id="status-label">Checking…</span>
+      </div>
+    </div>
+
+    <!-- TASK A -->
+    <div id="panel-a" class="panel active" role="tabpanel" aria-labelledby="tab-a">
+      <div class="demo-panel">
+        <div class="demo-label">Inputs</div>
+        <div class="demo-field">
+          <label for="a-persona">User persona</label>
+          <textarea id="a-persona" placeholder="e.g. Frequent Lagos food blogger. Rates 4–5 stars mostly, sensitive to value for money. Uses casual Nigerian English with Pidgin phrases, often references local food culture."></textarea>
+        </div>
+        <div class="demo-field">
+          <label for="a-product">Product / item details</label>
+          <input type="text" id="a-product" placeholder="e.g. Jollof rice + peppered chicken — Chicken Republic, Lekki"/>
+        </div>
+        <button class="run-btn" id="a-run" disabled>Generate review →</button>
+      </div>
+      <div class="demo-panel demo-panel-r">
+        <div class="demo-label">Generated output</div>
+        <div id="a-output">
+          <div class="out-empty">
+            <span class="ico">› awaiting input</span>
+            Submit a persona and a product to see the generated review here.
+          </div>
+        </div>
+        <div id="a-metrics" class="metrics-panel" hidden aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- TASK B -->
+    <div id="panel-b" class="panel" role="tabpanel" aria-labelledby="tab-b">
+      <div class="demo-panel">
+        <div class="demo-label">Inputs</div>
+        <div class="demo-field">
+          <label for="b-persona">User persona</label>
+          <textarea id="b-persona" placeholder="e.g. Lagos professional, 28, watches Nollywood + action films. Has rated comedy and thriller films highly. Hasn't explored sci-fi yet."></textarea>
+        </div>
+        <div class="demo-field">
+          <label for="b-domain">Domain</label>
+          <select id="b-domain">
+            <option value="">— select a domain —</option>
+            <option value="Movies">Movies</option>
+            <option value="Food">Food</option>
+            <option value="Books">Books</option>
+            <option value="other">Other…</option>
+          </select>
+
+          <div id="b-other-wrap" class="niche-row" style="display:none">
+            <label for="b-other">Specify domain</label>
+            <input type="text" id="b-other" placeholder="e.g. music, skincare, hotels…" autocomplete="off"/>
+            <div class="fb-warn" id="b-warn">
+              We don't recognise that domain. Could you be more specific?
+              <div class="fb-actions">
+                <button class="fb-btn" id="b-clear">Clear and retype</button>
+                <button class="fb-btn proceed" id="b-proceed">Proceed with general lifestyle</button>
+              </div>
+            </div>
+            <div class="fb-fallback" id="b-fb">
+              Proceeding with general lifestyle recommendations.
+            </div>
+          </div>
+
+          <div id="b-niche-wrap" class="niche-row" style="display:none">
+            <label for="b-niche">Niche it down <span class="opt-badge">optional</span></label>
+            <input type="text" id="b-niche" placeholder="Narrow it down further…" autocomplete="off"/>
+          </div>
+        </div>
+        <button class="run-btn" id="b-run" disabled>Get recommendations →</button>
+      </div>
+      <div class="demo-panel demo-panel-r">
+        <div class="demo-label">Ranked recommendations</div>
+        <div id="b-output">
+          <div class="out-empty">
+            <span class="ico">› awaiting input</span>
+            Submit a persona and pick a domain to see ranked recommendations here.
+          </div>
+        </div>
+        <div id="b-metrics" class="metrics-panel" hidden aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  PERSONA · LLM Agent — BCT Hackathon 3.0 · Team Zenith
+</footer>
+
+<script>
+// ---------- Config ----------
+const TASK_A_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:8001'
+  : 'http://task_a:8001';
+const TASK_B_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:8002'
+  : 'http://task_b:8002';
+
+const KNOWN_DOMAINS = [
+  'movie','film','food','eat','restaurant','book','read','music',
+  'skincare','beauty','hotel','travel','fashion','sport','game',
+  'tech','gadget','fitness','health','drink'
+];
+const NICHE_PLACEHOLDER = {
+  Movies: 'e.g. psychological thriller, 90s Nollywood…',
+  Food: 'e.g. street food, fine dining, vegetarian…',
+  Books: 'e.g. self-help, Afrofuturism, short stories…'
+};
+
+// ---------- Helpers ----------
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+}[c]));
+
+function setStatus(state) {
+  const el = $('status');
+  const lbl = $('status-label');
+  el.classList.remove('offline','checking');
+  if (state === 'online') { lbl.textContent = 'Running'; }
+  else if (state === 'offline') { el.classList.add('offline'); lbl.textContent = 'Service offline'; }
+  else { el.classList.add('checking'); lbl.textContent = 'Checking…'; }
+}
+
+async function ping(url) {
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 3500);
+    const r = await fetch(url + '/health', { signal: ctrl.signal });
+    clearTimeout(t);
+    if (!r.ok) return false;
+    const j = await r.json();
+    return j && j.status === 'ok';
+  } catch { return false; }
+}
+
+async function healthLoop() {
+  setStatus('checking');
+  const [a, b] = await Promise.all([ping(TASK_A_URL), ping(TASK_B_URL)]);
+  setStatus(a && b ? 'online' : 'offline');
+}
+
+// ---------- Tabs ----------
+function activateTab(which) {
+  const isA = which === 'a';
+  $('tab-a').classList.toggle('active', isA);
+  $('tab-b').classList.toggle('active', !isA);
+  $('tab-a').setAttribute('aria-selected', String(isA));
+  $('tab-b').setAttribute('aria-selected', String(!isA));
+  $('panel-a').classList.toggle('active', isA);
+  $('panel-b').classList.toggle('active', !isA);
+}
+$('tab-a').addEventListener('click', () => activateTab('a'));
+$('tab-b').addEventListener('click', () => activateTab('b'));
+
+// ---------- Stars ----------
+function renderStars(rating) {
+  const r = Math.max(0, Math.min(5, Math.round(rating)));
+  return '<span class="stars">' +
+    '★'.repeat(r) + '<span class="off">' + '★'.repeat(5 - r) + '</span>' +
+    '</span>';
+}
+
+// ---------- Metric helpers (ROUGE-L proxy + classify + render) ----------
+function tokenize(s) {
+  return String(s || '').toLowerCase()
+    .split(/[\s.,;:!?()"“”‘’\-—–]+/u)
+    .filter(Boolean);
+}
+function lcsLen(a, b) {
+  const n = a.length, m = b.length;
+  if (!n || !m) return 0;
+  let prev = new Uint16Array(m + 1);
+  let cur  = new Uint16Array(m + 1);
+  for (let i = 1; i <= n; i++) {
+    cur[0] = 0;
+    for (let j = 1; j <= m; j++) {
+      cur[j] = a[i - 1] === b[j - 1]
+        ? prev[j - 1] + 1
+        : (prev[j] > cur[j - 1] ? prev[j] : cur[j - 1]);
+    }
+    const tmp = prev; prev = cur; cur = tmp;
+    cur.fill(0);
+  }
+  return prev[m];
+}
+function rougeL(t1, t2) {
+  const a = tokenize(t1), b = tokenize(t2);
+  const denom = Math.max(a.length, b.length, 1);
+  return lcsLen(a, b) / denom;
+}
+
+function clearMetrics() {
+  const el = $('a-metrics');
+  if (!el) return;
+  el.innerHTML = '';
+  el.hidden = true;
+}
+
+function renderMetrics(d1, d2) {
+  const el = $('a-metrics');
+  if (!el) return;
+
+  // 1. Rating RMSE (|Δ|)
+  const r1 = Number(d1.rating ?? 0);
+  const r2 = Number(d2.rating ?? 0);
+  const rmse = Math.abs(r1 - r2);
+  const rmseStatus = rmse < 0.5 ? ['good','excellent']
+                    : rmse <= 1.0 ? ['warn','ok']
+                    : ['bad','high variance'];
+
+  // 2. Text consistency
+  const rouge = rougeL(d1.review || '', d2.review || '');
+  const rougeStatus = rouge > 0.35 ? ['good','consistent']
+                    : rouge >= 0.20 ? ['warn','moderate']
+                    : ['bad','low overlap'];
+
+  // 3. Confidence (progress bar)
+  const conf = Number(d1.confidence ?? 0);
+  const confPct = Math.round(conf * 100);
+  const confStatus = conf > 0.8 ? ['good','high']
+                    : conf >= 0.6 ? ['warn','medium']
+                    : ['bad','low'];
+
+  // 4. Nigerian context
+  const ng = !!d1.nigerian_context_applied;
+  const ngStatus = ng ? ['good','✓ Applied'] : ['bad','✗ Not applied'];
+
+  // 5. Review length
+  const len = (d1.review || '').length;
+  const lenStatus = (len >= 300 && len <= 800) ? ['good','in range']
+                  : (len >= 150 && len < 300) ? ['warn','short']
+                  : len > 800 ? ['warn','long']
+                  : ['bad','too short'];
+
+  // 6. Rating validity
+  const ratingValid = r1 >= 1.0 && r1 <= 5.0;
+  const validStatus = ratingValid ? ['good','Rating valid ✓'] : ['bad','Rating out of range ✗'];
+
+  const card = (name, valueHtml, statusLabel, statusKind) =>
+    `<div class="metric-card status-${statusKind}">
+       <div class="metric-name">${esc(name)}</div>
+       <div class="metric-value">${valueHtml}</div>
+       <div class="metric-status">${esc(statusLabel)}</div>
+     </div>`;
+
+  const confCard = `
+    <div class="metric-card status-${confStatus[0]}">
+      <div class="metric-name">Confidence</div>
+      <div class="metric-value">${confPct}%</div>
+      <div class="metric-bar"><div class="metric-bar-fill" style="width:${confPct}%"></div></div>
+      <div class="metric-status">${esc(confStatus[1])}</div>
+    </div>`;
+
+  el.innerHTML = `
+    <div class="metrics-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 3v18h18"/>
+        <path d="M7 15l4-4 4 3 5-7"/>
+      </svg>
+      <span>Live Evaluation Metrics</span>
+    </div>
+    <div class="metrics-grid">
+      ${card('Rating RMSE', `<span>${rmse.toFixed(2)}</span>`, rmseStatus[1], rmseStatus[0])}
+      ${card('Text consistency', `<span>${rouge.toFixed(2)}</span>`, rougeStatus[1], rougeStatus[0])}
+      ${confCard}
+      ${card('Nigerian context', ng ? '✓' : '✗', ngStatus[1], ngStatus[0])}
+      ${card('Review length', `<span>${len} chars</span>`, lenStatus[1], lenStatus[0])}
+      ${card('Rating validity', `<span>${r1.toFixed(1)}</span>`, validStatus[1], validStatus[0])}
+    </div>
+    <div class="metrics-note">
+      Metrics computed in real time using self-consistency evaluation across two independent runs.
+    </div>`;
+
+  el.hidden = false;
+}
+
+// ---------- Task B metrics (single-call, no second API call) ----------
+function clearMetricsB() {
+  const el = $('b-metrics');
+  if (!el) return;
+  el.innerHTML = '';
+  el.hidden = true;
+}
+
+function ndcgFromScores(scores01) {
+  if (!scores01.length) return 0;
+  const dcg  = scores01.reduce((s, v, i) => s + v / Math.log2(i + 2), 0);
+  const ideal = [...scores01].sort((a, b) => b - a);
+  const idcg = ideal.reduce((s, v, i) => s + v / Math.log2(i + 2), 0);
+  return idcg > 0 ? dcg / idcg : 0;
+}
+
+const NG_KEYWORD_RE = /(lagos|naija|nigeria|nigerian|nollywood|abuja|pidgin|yoruba|igbo|hausa|jollof|suya|amala|ofada|afrobeats|burna|wizkid|davido|abeg|sha|wahala|biko|owambe|ankara|₦)/i;
+
+function renderMetricsB(data) {
+  const el = $('b-metrics');
+  if (!el) return;
+
+  const recs = Array.isArray(data && data.recommendations) ? data.recommendations : [];
+  const fallback = !!(data && data.fallback_used);
+
+  if (!recs.length) {
+    // Nothing to score against — keep the panel hidden.
+    el.hidden = true;
+    el.innerHTML = '';
+    return;
+  }
+
+  const scores100 = recs.map(r => Number(r && r.match_score) || 0);
+  const scores01  = scores100.map(s => s / 100);
+
+  // 1. NDCG@K — ranking quality (treat match_score as relevance)
+  const ndcg = ndcgFromScores(scores01);
+  const ndcgStatus = ndcg >= 0.95 ? ['good','excellent']
+                    : ndcg >= 0.80 ? ['warn','ok']
+                    : ['bad','poor order'];
+
+  // 2. Hit Rate@K — count of recs whose match_score clears a relevance bar
+  const hits = scores100.filter(s => s >= 50).length;
+  const denom = Math.max(scores100.length, 1);
+  const hitStatus = hits >= 4 ? ['good','strong']
+                  : hits >= 2 ? ['warn','partial']
+                  : ['bad','weak'];
+
+  // 3. Top match score
+  const top = scores100[0] || 0;
+  const topStatus = top >= 80 ? ['good','strong']
+                  : top >= 60 ? ['warn','ok']
+                  : ['bad','weak'];
+
+  // 4. Avg match score
+  const avg = scores100.reduce((s, v) => s + v, 0) / denom;
+  const avgStatus = avg >= 70 ? ['good','strong']
+                  : avg >= 50 ? ['warn','ok']
+                  : ['bad','weak'];
+
+  // 5. Fallback indicator
+  const fbStatus = fallback ? ['warn','fallback'] : ['good','direct match'];
+
+  // 6. Nigerian-relevance proxy — recs whose reason contains a NG marker
+  const ngCount = recs.filter(r => NG_KEYWORD_RE.test(String((r && r.reason) || ''))).length;
+  const ngStatus = ngCount >= 3 ? ['good','strong']
+                  : ngCount >= 1 ? ['warn','some']
+                  : ['bad','none'];
+
+  const card = (name, valueHtml, statusLabel, statusKind) =>
+    `<div class="metric-card status-${statusKind}">
+       <div class="metric-name">${esc(name)}</div>
+       <div class="metric-value">${valueHtml}</div>
+       <div class="metric-status">${esc(statusLabel)}</div>
+     </div>`;
+
+  el.innerHTML = `
+    <div class="metrics-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 3v18h18"/>
+        <path d="M7 15l4-4 4 3 5-7"/>
+      </svg>
+      <span>Live Evaluation Metrics</span>
+    </div>
+    <div class="metrics-grid">
+      ${card('NDCG@' + recs.length, `<span>${ndcg.toFixed(2)}</span>`, ndcgStatus[1], ndcgStatus[0])}
+      ${card('Hit Rate@' + recs.length, `<span>${hits}/${recs.length}</span>`, hitStatus[1], hitStatus[0])}
+      ${card('Top match score', `<span>${top.toFixed(0)}</span>`, topStatus[1], topStatus[0])}
+      ${card('Avg match score', `<span>${avg.toFixed(1)}</span>`, avgStatus[1], avgStatus[0])}
+      ${card('Fallback', fallback ? '✦' : '✓', fbStatus[1], fbStatus[0])}
+      ${card('Nigerian relevance', `<span>${ngCount}/${recs.length}</span>`, ngStatus[1], ngStatus[0])}
+    </div>
+    <div class="metrics-note">
+      Ranking metrics computed from match_score; relevance proxy from keyword presence in each reason.
+    </div>`;
+
+  el.hidden = false;
+}
+
+// ---------- States ----------
+function setLoadingA() {
+  $('a-output').innerHTML = `
+    <div class="out-card" aria-busy="true">
+      <div class="skel skel-stars"></div>
+      <div class="skel skel-line w90"></div>
+      <div class="skel skel-line w90"></div>
+      <div class="skel skel-line w70"></div>
+      <div class="skel-pills">
+        <div class="skel skel-pill"></div>
+        <div class="skel skel-pill"></div>
+        <div class="skel skel-pill"></div>
+      </div>
+    </div>`;
+  clearMetrics();
+}
+function setLoadingB() {
+  let html = '';
+  for (let i = 0; i < 3; i++) {
+    html += `
+      <div class="skel-rec" aria-busy="true">
+        <div class="skel skel-rank"></div>
+        <div class="skel-rec-body">
+          <div class="skel skel-line w50"></div>
+          <div class="skel skel-line w90"></div>
+          <div class="skel skel-line w70"></div>
+        </div>
+      </div>`;
+  }
+  $('b-output').innerHTML = html;
+  clearMetricsB();
+}
+
+function setErrorA(msg, retryFn) {
+  $('a-output').innerHTML = `
+    <div class="err-card" role="alert">
+      <div class="err-title">Could not generate review</div>
+      <div class="err-msg">${esc(msg)}</div>
+      <button class="err-retry" type="button">↺ Retry</button>
+    </div>`;
+  $('a-output').querySelector('.err-retry').addEventListener('click', retryFn);
+  clearMetrics();
+}
+function setErrorB(msg, retryFn) {
+  $('b-output').innerHTML = `
+    <div class="err-card" role="alert">
+      <div class="err-title">Could not fetch recommendations</div>
+      <div class="err-msg">${esc(msg)}</div>
+      <button class="err-retry" type="button">↺ Retry</button>
+    </div>`;
+  $('b-output').querySelector('.err-retry').addEventListener('click', retryFn);
+  clearMetricsB();
+}
+
+// ---------- Task A ----------
+let submitTokenA = 0;
+
+function syncRunA() {
+  const persona = $('a-persona').value.trim();
+  const product = $('a-product').value.trim();
+  $('a-run').disabled = !(persona && product);
+}
+$('a-persona').addEventListener('input', syncRunA);
+$('a-product').addEventListener('input', syncRunA);
+$('a-product').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !$('a-run').disabled) { e.preventDefault(); submitA(); }
+});
+
+async function submitA() {
+  const persona = $('a-persona').value.trim();
+  const product = $('a-product').value.trim();
+  if (!persona || !product) return;
+
+  const token = ++submitTokenA;
+  const body = JSON.stringify({ persona, product });
+
+  const btn = $('a-run');
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.classList.add('loading');
+  btn.innerHTML = '<span class="spinner"></span> Generating…';
+  setLoadingA();
+
+  let firstSucceeded = false;
+  let firstData = null;
+
+  try {
+    const resp = await fetch(TASK_A_URL + '/generate-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body
+    });
+    if (!resp.ok) {
+      let detail = `HTTP ${resp.status}`;
+      try { const j = await resp.json(); if (j && j.detail) detail = j.detail; } catch {}
+      throw new Error(detail);
+    }
+    firstData = await resp.json();
+    if (token !== submitTokenA) return;
+    renderA(firstData);
+    firstSucceeded = true;
+  } catch (err) {
+    const msg = (err && err.message) ? err.message : 'Network error — is Task A running on port 8001?';
+    if (token === submitTokenA) setErrorA(msg, submitA);
+  } finally {
+    btn.classList.remove('loading');
+    btn.innerHTML = original;
+    syncRunA();
+  }
+
+  if (!firstSucceeded || token !== submitTokenA) return;
+
+  // Fire-and-forget second call for self-consistency metrics.
+  // No loading state, no error UI — metrics simply don't appear if this fails.
+  fetch(TASK_A_URL + '/generate-review', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body
+  })
+    .then(r => r.ok ? r.json() : null)
+    .then(d2 => {
+      if (!d2 || token !== submitTokenA) return;
+      renderMetrics(firstData, d2);
+    })
+    .catch(() => { /* silent */ });
+}
+$('a-run').addEventListener('click', submitA);
+
+function renderA(data) {
+  const rating = Number(data.rating ?? 0);
+  const conf = Math.round(Number(data.confidence ?? 0) * 100);
+  const ng = !!data.nigerian_context_applied;
+  $('a-output').innerHTML = `
+    <div class="out-card">
+      ${renderStars(rating)}
+      <div class="review-text">${esc(data.review || '')}</div>
+      <div class="meta-row">
+        <span class="pill">Rating: ${rating.toFixed(1)}</span>
+        <span class="pill">Confidence: ${conf}%</span>
+        ${ng ? '<span class="pill ng">Nigerian context ✓</span>' : ''}
+      </div>
+    </div>`;
+}
+
+// ---------- Task B ----------
+let proceedingFallback = false;
+let submitTokenB = 0;
+
+function resolvedDomain() {
+  const sel = $('b-domain').value;
+  if (!sel) return '';
+  if (sel === 'other') return $('b-other').value.trim();
+  return sel;
+}
+
+function syncRunB() {
+  const persona = $('b-persona').value.trim();
+  const sel = $('b-domain').value;
+  const dom = resolvedDomain();
+  let ok = persona.length > 0 && !!dom;
+
+  if (sel === 'other' && dom) {
+    const recognised = isRecognised(dom);
+    if (!recognised && dom.length > 4 && !proceedingFallback) ok = false;
+  }
+  $('b-run').disabled = !ok;
+}
+
+function isRecognised(text) {
+  const t = text.toLowerCase();
+  return KNOWN_DOMAINS.some(d => t.includes(d));
+}
+
+function hideFallbackBanners() {
+  $('b-warn').classList.remove('show');
+  $('b-fb').classList.remove('show');
+}
+
+function handleDomainChange() {
+  const v = $('b-domain').value;
+  hideFallbackBanners();
+  proceedingFallback = false;
+  $('b-other').value = '';
+  if (v === 'other') {
+    $('b-other-wrap').style.display = 'block';
+    $('b-niche-wrap').style.display = 'none';
+    setTimeout(() => $('b-other').focus(), 30);
+  } else if (v) {
+    $('b-other-wrap').style.display = 'none';
+    $('b-niche').placeholder = NICHE_PLACEHOLDER[v] || 'Narrow it down further…';
+    $('b-niche-wrap').style.display = 'block';
+  } else {
+    $('b-other-wrap').style.display = 'none';
+    $('b-niche-wrap').style.display = 'none';
+  }
+  syncRunB();
+}
+
+function validateOther() {
+  const v = $('b-other').value.trim();
+  hideFallbackBanners();
+  proceedingFallback = false;
+  const nw = $('b-niche-wrap');
+  if (v.length < 2) { nw.style.display = 'none'; syncRunB(); return; }
+  if (isRecognised(v)) {
+    $('b-niche').placeholder = `Narrow down your ${v} preference… (optional)`;
+    nw.style.display = 'block';
+  } else if (v.length > 4) {
+    nw.style.display = 'none';
+    $('b-warn').classList.add('show');
+  } else {
+    nw.style.display = 'none';
+  }
+  syncRunB();
+}
+
+$('b-persona').addEventListener('input', syncRunB);
+$('b-domain').addEventListener('change', handleDomainChange);
+$('b-other').addEventListener('input', validateOther);
+$('b-clear').addEventListener('click', (e) => {
+  e.preventDefault();
+  $('b-other').value = '';
+  hideFallbackBanners();
+  proceedingFallback = false;
+  $('b-niche-wrap').style.display = 'none';
+  $('b-other').focus();
+  syncRunB();
+});
+$('b-proceed').addEventListener('click', (e) => {
+  e.preventDefault();
+  $('b-warn').classList.remove('show');
+  $('b-fb').classList.add('show');
+  $('b-niche-wrap').style.display = 'none';
+  proceedingFallback = true;
+  syncRunB();
+});
+$('b-other').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !$('b-run').disabled) { e.preventDefault(); submitB(); }
+});
+$('b-niche').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !$('b-run').disabled) { e.preventDefault(); submitB(); }
+});
+
+async function submitB() {
+  const persona = $('b-persona').value.trim();
+  const domain = resolvedDomain();
+  const niche = $('b-niche').value.trim();
+  if (!persona || !domain) return;
+
+  const token = ++submitTokenB;
+
+  const btn = $('b-run');
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.classList.add('loading');
+  btn.innerHTML = '<span class="spinner"></span> Fetching…';
+  setLoadingB();
+
+  try {
+    const resp = await fetch(TASK_B_URL + '/recommend', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ persona, domain, niche: niche || null })
+    });
+    if (!resp.ok) {
+      let detail = `HTTP ${resp.status}`;
+      try { const j = await resp.json(); if (j && j.detail) detail = j.detail; } catch {}
+      throw new Error(detail);
+    }
+    const data = await resp.json();
+    if (token !== submitTokenB) return;
+    renderB(data);
+    renderMetricsB(data);
+  } catch (err) {
+    const msg = (err && err.message) ? err.message : 'Network error — is Task B running on port 8002?';
+    if (token === submitTokenB) setErrorB(msg, submitB);
+  } finally {
+    btn.classList.remove('loading');
+    btn.innerHTML = original;
+    syncRunB();
+  }
+}
+$('b-run').addEventListener('click', submitB);
+
+function renderB(data) {
+  const recs = Array.isArray(data.recommendations) ? data.recommendations : [];
+  const fallback = !!data.fallback_used;
+
+  if (!recs.length) {
+    $('b-output').innerHTML = `
+      <div class="out-empty">
+        <span class="ico">› no matches</span>
+        The agent returned no recommendations for this persona + domain.
+      </div>`;
+    return;
+  }
+
+  const fallbackPill = fallback
+    ? `<div class="meta-row" style="margin-bottom:10px;">
+         <span class="pill fallback">Fallback: general lifestyle ✦</span>
+       </div>` : '';
+
+  const cards = recs.map(r => `
+    <div class="rec-card">
+      <div class="rank-n">${esc(String(r.rank ?? ''))}</div>
+      <div class="rec-body">
+        <div class="rec-title">${esc(r.title || 'Untitled')}</div>
+        <div class="rec-sub">${esc(r.reason || '')}</div>
+        <span class="rec-score">Match: ${Number(r.match_score ?? 0).toFixed(0)}</span>
+      </div>
+    </div>`).join('');
+
+  $('b-output').innerHTML = fallbackPill + cards;
+}
+
+// ---------- Theme ----------
+const THEME_KEY = 'bct-theme';
+$('theme-toggle').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
+  if (next === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  else document.documentElement.removeAttribute('data-theme');
+  try { localStorage.setItem(THEME_KEY, next); } catch {}
+});
+
+// ---------- Init ----------
+syncRunA();
+syncRunB();
+healthLoop();
+setInterval(healthLoop, 30000);
+</script>
+</body>
+</html>

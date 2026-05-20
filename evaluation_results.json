@@ -1,0 +1,172 @@
+{
+  "task_a": [
+    {
+      "test_id": "TA-01",
+      "label": "Strong Nigerian persona \u00e2\u20ac\u201d food",
+      "rating_run1": 3.5,
+      "rating_run2": 3.5,
+      "confidence": 0.85,
+      "nigerian_context_applied": true,
+      "review_length_chars": 302,
+      "review_preview": "Abeg, this peppered snail combo for \u20a62,500 is highway robbery! The snail pieces were tiny tiny, and the plantain looked ...",
+      "rougeL_consistency": 0.313,
+      "rmse_consistency": 0.0,
+      "rating_valid": true,
+      "bertscore_consistency": 0.8916
+    },
+    {
+      "test_id": "TA-02",
+      "label": "Nigerian professional \u00e2\u20ac\u201d tech product",
+      "rating_run1": 3.2,
+      "rating_run2": 2.8,
+      "confidence": 0.85,
+      "nigerian_context_applied": true,
+      "review_length_chars": 804,
+      "review_preview": "After 3 weeks with the Infinix Hot 40 Pro, I'm moderately impressed but not blown away. At \u20a6189k from Slot, it's positio...",
+      "rougeL_consistency": 0.406,
+      "rmse_consistency": 0.4,
+      "rating_valid": true,
+      "bertscore_consistency": 0.9205
+    },
+    {
+      "test_id": "TA-03",
+      "label": "Blunt low-rater",
+      "rating_run1": 1.5,
+      "rating_run2": 1.5,
+      "confidence": 0.85,
+      "nigerian_context_applied": true,
+      "review_length_chars": 242,
+      "review_preview": "Disappointing meal at \u20a64,800. The fried rice was oversalted and the chicken dry. In the 1980s, we had proper seasoning a...",
+      "rougeL_consistency": 0.4324,
+      "rmse_consistency": 0.0,
+      "rating_valid": true,
+      "bertscore_consistency": 0.9261
+    },
+    {
+      "test_id": "TA-04",
+      "label": "Cold-start \u00e2\u20ac\u201d minimal persona",
+      "rating_run1": 3.7,
+      "rating_run2": 3.7,
+      "confidence": 0.85,
+      "nigerian_context_applied": true,
+      "review_length_chars": 247,
+      "review_preview": "The shawarma was decent sha, but nothing special. Chicken was well seasoned and the wrap was fresh. However, at \u20a61,500, ...",
+      "rougeL_consistency": 0.4348,
+      "rmse_consistency": 0.0,
+      "rating_valid": true,
+      "bertscore_consistency": 0.9206
+    },
+    {
+      "test_id": "TA-05",
+      "label": "Cross-domain \u00e2\u20ac\u201d fashion product",
+      "rating_run1": 5.0,
+      "rating_run2": 5.0,
+      "confidence": 0.7,
+      "nigerian_context_applied": true,
+      "review_length_chars": 254,
+      "review_preview": "Chai! This ankara midi dress is absolutely stunning! \ud83d\ude0d\u2728 The fabric quality is top-notch and the print is so vibrant. Del...",
+      "rougeL_consistency": 0.4,
+      "rmse_consistency": 0.0,
+      "rating_valid": true,
+      "bertscore_consistency": 0.913
+    },
+    {
+      "test_id": "TA-06",
+      "label": "Edge case \u00e2\u20ac\u201d very unhappy user",
+      "rating_run1": 2.0,
+      "rating_run2": 1.5,
+      "confidence": 0.85,
+      "nigerian_context_applied": true,
+      "review_length_chars": 954,
+      "review_preview": "After waiting 45 minutes for what should be a simple jollof rice order, I was served a plate of cold, disappointing rice...",
+      "rougeL_consistency": 0.2899,
+      "rmse_consistency": 0.5,
+      "rating_valid": true,
+      "bertscore_consistency": 0.8914
+    }
+  ],
+  "task_b": [
+    {
+      "test_id": "TB-01",
+      "label": "Standard \u00e2\u20ac\u201d Movies with niche",
+      "num_recommendations": 5,
+      "fallback_used": false,
+      "expected_fallback": false,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true
+    },
+    {
+      "test_id": "TB-02",
+      "label": "Cold-start \u00e2\u20ac\u201d minimal persona, no niche",
+      "num_recommendations": 5,
+      "fallback_used": false,
+      "expected_fallback": false,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true,
+      "cold_start_handled": true
+    },
+    {
+      "test_id": "TB-03",
+      "label": "Cross-domain \u00e2\u20ac\u201d same persona, different domain",
+      "num_recommendations": 5,
+      "fallback_used": false,
+      "expected_fallback": false,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true
+    },
+    {
+      "test_id": "TB-04",
+      "label": "Food with niche",
+      "num_recommendations": 5,
+      "fallback_used": false,
+      "expected_fallback": false,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true
+    },
+    {
+      "test_id": "TB-05",
+      "label": "Music \u00e2\u20ac\u201d Other domain path",
+      "num_recommendations": 5,
+      "fallback_used": false,
+      "expected_fallback": false,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true
+    },
+    {
+      "test_id": "TB-06",
+      "label": "Fallback trigger \u00e2\u20ac\u201d unrecognised domain",
+      "num_recommendations": 5,
+      "fallback_used": true,
+      "expected_fallback": true,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true
+    },
+    {
+      "test_id": "TB-07",
+      "label": "Skincare \u00e2\u20ac\u201d Other domain with niche",
+      "num_recommendations": 5,
+      "fallback_used": false,
+      "expected_fallback": false,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true
+    },
+    {
+      "test_id": "TB-08",
+      "label": "Cross-domain cold-start \u00e2\u20ac\u201d hardest case",
+      "num_recommendations": 5,
+      "fallback_used": false,
+      "expected_fallback": false,
+      "hit": true,
+      "ndcg_proxy": 1.0,
+      "fallback_correct": true,
+      "cold_start_handled": true
+    }
+  ]
+}

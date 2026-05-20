@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data artifacts (large binaries)
+data_prep/raw/
+data_prep/artifacts/*
+!data_prep/artifacts/.gitkeep
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Docker
+*.pid

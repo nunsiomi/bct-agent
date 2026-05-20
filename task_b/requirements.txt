@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+langgraph
+anthropic
+pandas
+numpy
+python-dotenv
