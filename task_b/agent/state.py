@@ -17,6 +17,7 @@ class AgentState(TypedDict, total=False):
 
     nigerian_context: dict[str, Any]
     nigerian_context_applied: bool
+    language_region: str
 
     resolved_domain: str
     resolved_niche: str | None

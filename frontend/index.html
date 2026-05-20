@@ -348,6 +348,35 @@ h1 em { font-style: normal; color: var(--teal); }
   margin-top: 8px;
 }
 
+/* INPUT VALIDATION BANNER */
+.input-banner {
+  background: var(--amber-l);
+  border-left: 3px solid var(--amber);
+  border-radius: 8px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  color: #FCD34D;
+  display: flex; flex-direction: column; gap: 4px;
+  animation: fadeUp .3s ease both;
+}
+.input-banner[hidden] { display: none; }
+.input-banner-msg { display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+.input-banner-msg::before {
+  content: '⚠';
+  flex: 0 0 auto;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.input-banner-suggestion {
+  font-size: 11px;
+  color: var(--gray);
+  margin-left: 18px;
+  line-height: 1.45;
+}
+[data-theme="light"] .input-banner          { color: #92400E; }
+[data-theme="light"] .input-banner-suggestion { color: #92400E; opacity: .75; }
+
 /* LIVE EVAL METRICS (Task A) */
 .metrics-panel {
   background: var(--card);
@@ -754,10 +783,18 @@ html[data-theme="light"] {
       <div class="demo-panel">
         <div class="demo-label">Inputs</div>
         <div class="demo-field">
+          <div class="input-banner" id="a-banner-persona" hidden>
+            <div class="input-banner-msg"></div>
+            <div class="input-banner-suggestion"></div>
+          </div>
           <label for="a-persona">User persona</label>
           <textarea id="a-persona" placeholder="e.g. Frequent Lagos food blogger. Rates 4–5 stars mostly, sensitive to value for money. Uses casual Nigerian English with Pidgin phrases, often references local food culture."></textarea>
         </div>
         <div class="demo-field">
+          <div class="input-banner" id="a-banner-product" hidden>
+            <div class="input-banner-msg"></div>
+            <div class="input-banner-suggestion"></div>
+          </div>
           <label for="a-product">Product / item details</label>
           <input type="text" id="a-product" placeholder="e.g. Jollof rice + peppered chicken — Chicken Republic, Lekki"/>
         </div>
@@ -780,6 +817,10 @@ html[data-theme="light"] {
       <div class="demo-panel">
         <div class="demo-label">Inputs</div>
         <div class="demo-field">
+          <div class="input-banner" id="b-banner-persona" hidden>
+            <div class="input-banner-msg"></div>
+            <div class="input-banner-suggestion"></div>
+          </div>
           <label for="b-persona">User persona</label>
           <textarea id="b-persona" placeholder="e.g. Lagos professional, 28, watches Nollywood + action films. Has rated comedy and thriller films highly. Hasn't explored sci-fi yet."></textarea>
         </div>
@@ -941,6 +982,36 @@ function clearMetrics() {
   if (!el) return;
   el.innerHTML = '';
   el.hidden = true;
+}
+
+// ---------- Input validation banner helpers ----------
+function showInputBanner(id, message, suggestion) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.querySelector('.input-banner-msg').textContent = message || '';
+  el.querySelector('.input-banner-suggestion').textContent = suggestion || '';
+  el.hidden = false;
+}
+function clearInputBanner(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.hidden = true;
+}
+
+// Map a validation `code` from the 422 body to a friendly placeholder line
+// shown in the right-hand output panel.
+function placeholderForCode(code, field) {
+  const f = field === 'product' ? 'product description' : 'persona';
+  switch (code) {
+    case 'too_short':
+      return `Your ${f} is too short — add more detail above and try again.`;
+    case 'keyboard_mash':
+      return `I don't understand that input — kindly retype the ${f} using real words above.`;
+    case 'gibberish':
+      return `That doesn't look like a real ${f} — please retype it above using real words.`;
+    default:
+      return 'Adjust the highlighted field above and try again.';
+  }
 }
 
 function renderMetrics(d1, d2) {
@@ -1181,6 +1252,8 @@ function syncRunA() {
   const persona = $('a-persona').value.trim();
   const product = $('a-product').value.trim();
   $('a-run').disabled = !(persona && product);
+  clearInputBanner('a-banner-persona');
+  clearInputBanner('a-banner-product');
 }
 $('a-persona').addEventListener('input', syncRunA);
 $('a-product').addEventListener('input', syncRunA);
@@ -1212,6 +1285,20 @@ async function submitA() {
       headers: { 'Content-Type': 'application/json' },
       body
     });
+    if (resp.status === 422) {
+      let v = {};
+      try { v = await resp.json(); } catch {}
+      const field = v.field === 'product' ? 'a-banner-product' : 'a-banner-persona';
+      showInputBanner(field, v.message || 'Invalid input.', v.suggestion || '');
+      const line = placeholderForCode(v.code, v.field);
+      $('a-output').innerHTML = `
+        <div class="out-empty">
+          <span class="ico">› needs your attention</span>
+          ${esc(line)}
+        </div>`;
+      clearMetrics();
+      return;
+    }
     if (!resp.ok) {
       let detail = `HTTP ${resp.status}`;
       try { const j = await resp.json(); if (j && j.detail) detail = j.detail; } catch {}
@@ -1286,6 +1373,7 @@ function syncRunB() {
     if (!recognised && dom.length > 4 && !proceedingFallback) ok = false;
   }
   $('b-run').disabled = !ok;
+  clearInputBanner('b-banner-persona');
 }
 
 function isRecognised(text) {
@@ -1384,6 +1472,19 @@ async function submitB() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ persona, domain, niche: niche || null })
     });
+    if (resp.status === 422) {
+      let v = {};
+      try { v = await resp.json(); } catch {}
+      showInputBanner('b-banner-persona', v.message || 'Invalid input.', v.suggestion || '');
+      const line = placeholderForCode(v.code, v.field);
+      $('b-output').innerHTML = `
+        <div class="out-empty">
+          <span class="ico">› needs your attention</span>
+          ${esc(line)}
+        </div>`;
+      clearMetricsB();
+      return;
+    }
     if (!resp.ok) {
       let detail = `HTTP ${resp.status}`;
       try { const j = await resp.json(); if (j && j.detail) detail = j.detail; } catch {}

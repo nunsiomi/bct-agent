@@ -169,7 +169,7 @@
         "priority": "high",
         "notes": "Minimal persona + unfamiliar domain. Tests agent's ability to reason with almost no signal. Should not crash.",
         "input": {
-          "persona": "New user",
+          "persona": "Brand new user, no history",
           "domain": "Books",
           "niche": null
         }

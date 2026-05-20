@@ -12,8 +12,35 @@ from task_b.agent.state import AgentState
 _SYSTEM = (
     "You are a Nigerian-aware recommender. Re-rank the candidates against the "
     "persona. Pick the best 5 in priority order and explain each pick in the "
-    "persona's terms. Return JSON only, no preamble, no markdown."
+    "persona's terms. If a regional register is provided (Yoruba / Igbo / "
+    "Hausa), weave in at most 2 region-specific items across ALL 5 reasons "
+    "combined — never per-reason. Return JSON only, no preamble, no markdown."
 )
+
+
+def _regional_block(ctx: dict[str, Any], fingerprint: dict[str, Any]) -> str:
+    """Return the regional-palette prompt fragment, or '' when gated off."""
+    if not ctx or not ctx.get("apply"):
+        return ""
+    tone = str(fingerprint.get("tone", "balanced") or "balanced").lower()
+    if tone == "formal":
+        return ""
+    region = ctx.get("language_region", "pidgin_only")
+    palette = ctx.get("regional_palette") or {}
+    foods = ", ".join(palette.get("food_nouns", []))
+    interjections = ", ".join(palette.get("interjections", []))
+    praise = palette.get("praise", "")
+    disappointment = palette.get("disappointment", "")
+    return (
+        f"Detected regional register: {region}\n"
+        f"  Food/dishes (only if topically relevant): {foods or '—'}\n"
+        f"  Interjections (use at most 1): {interjections or '—'}\n"
+        f"  Praise phrase: {praise}\n"
+        f"  Disappointment phrase: {disappointment}\n"
+        "Inject AT MOST 2 region-specific items across all 5 reasons "
+        "COMBINED — not per reason. If the candidate doesn't warrant it, "
+        "use Pidgin/Nigerian English instead. Never force a phrase."
+    )
 
 
 def _format_candidates(candidates: list[dict[str, Any]]) -> str:
@@ -44,10 +71,14 @@ def build_ranker_prompt(state: AgentState) -> tuple[str, str]:
         f"Currency: {ctx.get('currency_symbol', '₦')}"
     )
 
+    regional_block = _regional_block(ctx, fingerprint)
+    regional_section = f"\nRegional palette:\n{regional_block}\n" if regional_block else ""
+
     user = (
         f"Persona description:\n{persona}\n\n"
         f"Persona fingerprint (JSON):\n{json.dumps(fingerprint, ensure_ascii=False)}\n\n"
-        f"Nigerian context:\n{ctx_lines}\n\n"
+        f"Nigerian context:\n{ctx_lines}\n"
+        f"{regional_section}\n"
         f"Domain: {domain}\nNiche: {niche}\n\n"
         f"Candidates to re-rank (do not invent new items):\n{_format_candidates(candidates)}\n\n"
         "Return JSON ONLY: a list of EXACTLY 5 items, each with keys:\n"
@@ -102,7 +133,7 @@ def reasoning_ranker_node(state: AgentState) -> AgentState:
     system, user = build_ranker_prompt(state)
 
     client = get_anthropic_client()
-    raw = call_claude(client, system=system, user=user, max_tokens=900, temperature=0.4)
+    raw = call_claude(client, system=system, user=user, max_tokens=900, temperature=0.3)
     items = parse_ranker_output(raw, candidates)
 
     if len(items) < 5:

@@ -7,12 +7,12 @@
       "rating_run2": 3.5,
       "confidence": 0.85,
       "nigerian_context_applied": true,
-      "review_length_chars": 395,
-      "review_preview": "Abeg, this peppered snail at this Yaba buka na serious scam! \u20a62,500 for what exactly? The snail pieces were so small I h...",
-      "rougeL_consistency": 0.2836,
+      "review_length_chars": 324,
+      "review_preview": "Abeg, this peppered snail and plantain combo for \u20a62,500 na daylight robbery o! The snail sweet well well, I no go lie, b...",
+      "rougeL_consistency": 0.464,
       "rmse_consistency": 0.0,
       "rating_valid": true,
-      "bertscore_consistency": 0.8702
+      "bertscore_consistency": 0.8979
     },
     {
       "test_id": "TA-02",
@@ -21,26 +21,26 @@
       "rating_run2": 3.2,
       "confidence": 0.85,
       "nigerian_context_applied": true,
-      "review_length_chars": 916,
-      "review_preview": "After using the Infinix Hot 40 Pro for 3 weeks, I can say it's a decent mid-range device but with notable compromises. T...",
-      "rougeL_consistency": 0.2937,
+      "review_length_chars": 746,
+      "review_preview": "After three weeks with the Infinix Hot 40 Pro, I can say it's a decent mid-range device but nothing groundbreaking. The ...",
+      "rougeL_consistency": 0.7138,
       "rmse_consistency": 0.0,
       "rating_valid": true,
-      "bertscore_consistency": 0.8983
+      "bertscore_consistency": 0.9477
     },
     {
       "test_id": "TA-03",
       "label": "Blunt low-rater",
       "rating_run1": 1.5,
       "rating_run2": 1.5,
-      "confidence": 0.8,
+      "confidence": 0.85,
       "nigerian_context_applied": true,
-      "review_length_chars": 239,
-      "review_preview": "Overpriced disappointment. The fried rice was bland and poorly seasoned compared to proper meals we enjoyed in the 1980s...",
-      "rougeL_consistency": 0.3077,
+      "review_length_chars": 237,
+      "review_preview": "\u20a64,800 for this substandard meal is daylight robbery. The rice was poorly seasoned and the chicken dry as leather. In th...",
+      "rougeL_consistency": 1.0,
       "rmse_consistency": 0.0,
       "rating_valid": true,
-      "bertscore_consistency": 0.9197
+      "bertscore_consistency": 1.0
     },
     {
       "test_id": "TA-04",
@@ -49,12 +49,12 @@
       "rating_run2": 3.7,
       "confidence": 0.85,
       "nigerian_context_applied": true,
-      "review_length_chars": 257,
-      "review_preview": "The shawarma was decent, nothing too special sha. The chicken was well seasoned and the vegetables were fresh, but the b...",
-      "rougeL_consistency": 0.3191,
+      "review_length_chars": 282,
+      "review_preview": "The shawarma was decent sha. Good portion size for \u20a61,500 and the chicken was well seasoned. The vegetables were fresh b...",
+      "rougeL_consistency": 0.8367,
       "rmse_consistency": 0.0,
       "rating_valid": true,
-      "bertscore_consistency": 0.9151
+      "bertscore_consistency": 0.9685
     },
     {
       "test_id": "TA-05",
@@ -63,26 +63,26 @@
       "rating_run2": 5.0,
       "confidence": 0.7,
       "nigerian_context_applied": true,
-      "review_length_chars": 270,
-      "review_preview": "Chai! This ankara midi dress is absolutely stunning! \ud83d\ude0d\u2728 The fabric quality is top-notch and the print is so vibrant. Del...",
-      "rougeL_consistency": 0.764,
+      "review_length_chars": 289,
+      "review_preview": "Omo! \ud83d\ude0d\u2728 This ankara midi dress is absolutely stunning! The fabric quality is top-notch and the print is so vibrant \ud83d\udcaf Del...",
+      "rougeL_consistency": 0.6598,
       "rmse_consistency": 0.0,
       "rating_valid": true,
-      "bertscore_consistency": 0.9523
+      "bertscore_consistency": 0.9297
     },
     {
       "test_id": "TA-06",
       "label": "Edge case \u2014 very unhappy user",
-      "rating_run1": 1.5,
-      "rating_run2": 1.5,
+      "rating_run1": 2.0,
+      "rating_run2": 2.0,
       "confidence": 0.85,
       "nigerian_context_applied": true,
-      "review_length_chars": 998,
-      "review_preview": "I ordered jollof rice at this Ikeja spot and what I got was pure disappointment. First, they kept me waiting 45 minutes ...",
-      "rougeL_consistency": 0.2357,
+      "review_length_chars": 1020,
+      "review_preview": "I've been to over 200 restaurants across Lagos, and this experience at this Ikeja spot was particularly disappointing. A...",
+      "rougeL_consistency": 0.3825,
       "rmse_consistency": 0.0,
       "rating_valid": true,
-      "bertscore_consistency": 0.8928
+      "bertscore_consistency": 0.8957
     }
   ],
   "task_b": [

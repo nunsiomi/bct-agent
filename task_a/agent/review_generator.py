@@ -12,8 +12,10 @@ from task_a.agent.state import AgentState
 
 _SYSTEM = (
     "You are simulating a Nigerian product review. Match the persona's tone, "
-    "rating tendencies, and cultural register. Return JSON only with keys: "
-    "review (string), rating (float 1-5), rationale (short)."
+    "rating tendencies, and cultural register. If a regional register is "
+    "provided (Yoruba / Igbo / Hausa), naturally weave 1-2 region-specific "
+    "items in; otherwise stay in Pidgin/Nigerian English. Return JSON only "
+    "with keys: review (string), rating (float 1-5), rationale (short)."
 )
 
 
@@ -23,6 +25,31 @@ def _ng_lists(ctx: dict[str, Any]) -> str:
         f"Cultural vocab available: {', '.join(ctx.get('cultural_vocab', []))}\n"
         f"Food brands: {', '.join(ctx.get('food_brands', []))}\n"
         f"Currency: {ctx.get('currency_symbol', '₦')}"
+    )
+
+
+def _regional_block(ctx: dict[str, Any], fingerprint: dict[str, Any]) -> str:
+    """Return the regional-palette prompt fragment, or '' when gated off."""
+    if not ctx or not ctx.get("apply"):
+        return ""
+    tone = str(fingerprint.get("tone", "balanced") or "balanced").lower()
+    if tone == "formal":
+        return ""
+    region = ctx.get("language_region", "pidgin_only")
+    palette = ctx.get("regional_palette") or {}
+    foods = ", ".join(palette.get("food_nouns", []))
+    interjections = ", ".join(palette.get("interjections", []))
+    praise = palette.get("praise", "")
+    disappointment = palette.get("disappointment", "")
+    return (
+        f"Detected regional register: {region}\n"
+        f"  Food/dishes (only if topically relevant): {foods or '—'}\n"
+        f"  Interjections (use at most 1): {interjections or '—'}\n"
+        f"  Praise phrase: {praise}\n"
+        f"  Disappointment phrase: {disappointment}\n"
+        "Inject AT MOST 2 region-specific items across the whole review, "
+        "only where they fit naturally. If the topic doesn't warrant any, "
+        "use Pidgin/Nigerian English instead. Never force a phrase."
     )
 
 
@@ -42,11 +69,15 @@ def build_review_prompt(state: AgentState) -> tuple[str, str]:
         "Keep the language neutral; do not inject Pidgin or Nigerian-specific markers.\n"
     )
 
+    regional_block = _regional_block(ctx, fingerprint)
+    regional_section = f"\nRegional palette:\n{regional_block}\n" if regional_block else ""
+
     user_prompt = (
         f"Persona description:\n{persona}\n\n"
         f"Product being reviewed:\n{product}\n\n"
         f"Persona fingerprint (JSON):\n{json.dumps(fingerprint, ensure_ascii=False)}\n\n"
-        f"Nigerian context palette:\n{_ng_lists(ctx)}\n\n"
+        f"Nigerian context palette:\n{_ng_lists(ctx)}\n"
+        f"{regional_section}\n"
         f"Behavioral grounding from similar real users:\n{summary}\n\n"
         f"{ctx_instruction}\n"
         "Write the review in the persona's voice. Be concrete about the product. "
@@ -81,7 +112,7 @@ def review_generator_node(state: AgentState) -> AgentState:
     """Produce `draft_review`, `draft_rating`, and `draft_confidence`."""
     system, user = build_review_prompt(state)
     client = get_anthropic_client()
-    raw = call_claude(client, system=system, user=user, max_tokens=600, temperature=0.8)
+    raw = call_claude(client, system=system, user=user, max_tokens=600, temperature=0.3)
 
     try:
         parsed = parse_json_block(raw)
