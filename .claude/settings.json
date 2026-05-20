@@ -40,7 +40,8 @@
       "Bash(taskkill //F //PID 23460)",
       "Bash(tee /tmp/dc-build.log)",
       "Bash(curl -s http://localhost:3000/)",
-      "Bash(curl -s -i -X POST http://localhost:8001/generate-review -H 'Content-Type: application/json' -H 'Origin: http://localhost:3000' -d '{\"persona\":\"x\",\"product\":\"y\"}')"
+      "Bash(curl -s -i -X POST http://localhost:8001/generate-review -H 'Content-Type: application/json' -H 'Origin: http://localhost:3000' -d '{\"persona\":\"x\",\"product\":\"y\"}')",
+      "Bash(tee /tmp/eval-docker.log)"
     ]
   }
 }
