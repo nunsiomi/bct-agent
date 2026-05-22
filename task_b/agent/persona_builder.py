@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from shared.utils import (
+from datasets.utils import (
     build_prompt_context,
     call_claude,
     find_similar_users,

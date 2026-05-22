@@ -21,3 +21,6 @@ data_prep/artifacts/*
 
 # Docker
 *.pid
+
+.claude/
+glovo_scrapper.py
