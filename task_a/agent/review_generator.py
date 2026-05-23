@@ -63,6 +63,16 @@ def build_review_prompt(state: AgentState) -> tuple[str, str]:
     summary = state.get("similar_users_summary", "")
     apply_ctx = state.get("nigerian_context_applied", False)
 
+    # Phase-5 grounding: real exemplar reviews + numeric rating prior.
+    exemplars_block = state.get("exemplars_block") or ""
+    rating_prior = state.get("exemplar_rating_prior")
+    rating_prior_line = (
+        f"Empirical rating prior from similar real Jumia reviews: {rating_prior:.2f}/5. "
+        "Anchor your rating around this number unless the product/persona clearly diverges.\n"
+        if rating_prior is not None
+        else ""
+    )
+
     ctx_instruction = (
         "Weave in 1-2 Pidgin markers and/or one ₦ price reference naturally — "
         "don't sprinkle for the sake of it.\n"
@@ -73,16 +83,25 @@ def build_review_prompt(state: AgentState) -> tuple[str, str]:
     regional_block = _regional_block(ctx, fingerprint)
     regional_section = f"\nRegional palette:\n{regional_block}\n" if regional_block else ""
 
+    exemplars_section = (
+        f"\n{exemplars_block}\n\n"
+        f"{rating_prior_line}"
+        if exemplars_block and exemplars_block != "No similar real reviews available."
+        else ""
+    )
+
     user_prompt = (
         f"Persona description:\n{persona}\n\n"
         f"Product being reviewed:\n{product}\n\n"
         f"Persona fingerprint (JSON):\n{json.dumps(fingerprint, ensure_ascii=False)}\n\n"
         f"Nigerian context palette:\n{_ng_lists(ctx)}\n"
-        f"{regional_section}\n"
-        f"Behavioral grounding from similar real users:\n{summary}\n\n"
+        f"{regional_section}"
+        f"{exemplars_section}"
+        f"Cohort behavioral signals:\n{summary}\n\n"
         f"{ctx_instruction}\n"
-        "Write the review in the persona's voice. Be concrete about the product. "
-        "Match rating to the persona's typical rating behaviour.\n\n"
+        "Write the review in the persona's voice, grounded in the exemplar reviews "
+        "above. Match length and register to the exemplars but do not copy their "
+        "wording. Be concrete about THIS specific product.\n\n"
         "Return JSON only with EXACTLY these keys: review (string, 60-400 chars), "
         "rating (float in [1.0, 5.0]), rationale (short string)."
     )
@@ -128,6 +147,17 @@ def review_generator_node(state: AgentState) -> AgentState:
         rating = 3.0
     if math.isnan(rating):
         rating = 3.0
+
+    # Phase-5 calibrated rating: blend the model's rating with the empirical
+    # prior from real exemplar reviews. Heavier weight on the prior when the
+    # model rating is far from it (catches the "rate everything 5" failure
+    # mode that drives RMSE on real Jumia data).
+    prior = state.get("exemplar_rating_prior")
+    if prior is not None and not math.isnan(rating):
+        delta = abs(rating - prior)
+        # alpha = weight on the prior; bigger when the model is more confident-wrong.
+        alpha = 0.25 if delta < 0.5 else (0.40 if delta < 1.5 else 0.55)
+        rating = (1 - alpha) * rating + alpha * float(prior)
 
     confidence = _compute_confidence(
         review=review,
