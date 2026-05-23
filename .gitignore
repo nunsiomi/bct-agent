@@ -9,10 +9,11 @@ venv/
 # Notebook checkpoints
 .ipynb_checkpoints/
 
-# Data artifacts (large binaries)
+# Data artifacts: ignore large binaries, but COMMIT the catalog (runtime dep).
 data_prep/raw/
 data_prep/artifacts/*
 !data_prep/artifacts/.gitkeep
+!data_prep/artifacts/catalog.json
 
 # OS / IDE
 .DS_Store

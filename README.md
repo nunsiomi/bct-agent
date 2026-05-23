@@ -13,8 +13,8 @@ Both tasks share a common persona builder and Nigerian-context layer, but each r
 
 - FastAPI (HTTP layer)
 - LangGraph (agent graph orchestration)
-- Anthropic Python SDK (direct `anthropic.Anthropic()` client — no LangChain LLM wrappers)
-- pandas, numpy, scikit-learn, sentence-transformers (data + retrieval utilities)
+- Anthropic Python SDK (direct `anthropic.Anthropic()` client — no LangChain LLM wrappers), behind a swappable provider layer (`core/llm/`)
+- pandas, numpy, scikit-learn for the data layer; Task B retrieval scores a committed item catalog (`data_prep/artifacts/catalog.json`)
 
 ## Project Structure
 
@@ -46,7 +46,15 @@ This is where the data-preparation notebook lives. The notebook is run **once, o
    cp .env.example .env
    # then edit .env and set ANTHROPIC_API_KEY=sk-ant-...
    ```
-3. (Optional) Run the data-prep notebook in `data_prep/` to regenerate artifacts.
+3. The Task B catalog (`data_prep/artifacts/catalog.json`) is committed, so the
+   services work on a fresh clone with no extra steps. To regenerate or extend it:
+   ```
+   python -m data_pipeline.build_catalog
+   ```
+4. Smoke-test the data + retrieval layer (no API key needed):
+   ```
+   python -m pytest tests/test_smoke.py -q
+   ```
 
 ## Run with Docker Compose
 

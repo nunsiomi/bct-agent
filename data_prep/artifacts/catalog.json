@@ -1,0 +1,2345 @@
+{
+  "movies": [
+    {
+      "item_id": "the-wedding-party",
+      "title": "The Wedding Party",
+      "categories": [
+        "comedy",
+        "romance"
+      ],
+      "niches": [
+        "nollywood",
+        "comedy"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "The Wedding Party | comedy, romance | nollywood, comedy | nigerian"
+    },
+    {
+      "item_id": "king-of-boys",
+      "title": "King of Boys",
+      "categories": [
+        "crime",
+        "drama",
+        "political"
+      ],
+      "niches": [
+        "nollywood",
+        "thriller"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "King of Boys | crime, drama, political | nollywood, thriller | nigerian"
+    },
+    {
+      "item_id": "gangs-of-lagos",
+      "title": "Gangs of Lagos",
+      "categories": [
+        "crime",
+        "action",
+        "drama"
+      ],
+      "niches": [
+        "nollywood",
+        "action"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Gangs of Lagos | crime, action, drama | nollywood, action | nigerian"
+    },
+    {
+      "item_id": "citation",
+      "title": "Citation",
+      "categories": [
+        "drama"
+      ],
+      "niches": [
+        "nollywood",
+        "drama"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Citation | drama | nollywood, drama | nigerian"
+    },
+    {
+      "item_id": "anikulapo",
+      "title": "Anikulapo",
+      "categories": [
+        "fantasy",
+        "drama"
+      ],
+      "niches": [
+        "nollywood",
+        "epic",
+        "yoruba"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Anikulapo | fantasy, drama | nollywood, epic, yoruba | nigerian"
+    },
+    {
+      "item_id": "jagun-jagun",
+      "title": "Jagun Jagun",
+      "categories": [
+        "action",
+        "epic"
+      ],
+      "niches": [
+        "nollywood",
+        "yoruba",
+        "action"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Jagun Jagun | action, epic | nollywood, yoruba, action | nigerian"
+    },
+    {
+      "item_id": "lionheart",
+      "title": "Lionheart",
+      "categories": [
+        "drama",
+        "family"
+      ],
+      "niches": [
+        "nollywood",
+        "drama"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Lionheart | drama, family | nollywood, drama | nigerian"
+    },
+    {
+      "item_id": "the-black-book",
+      "title": "The Black Book",
+      "categories": [
+        "thriller",
+        "action"
+      ],
+      "niches": [
+        "nollywood",
+        "thriller"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "The Black Book | thriller, action | nollywood, thriller | nigerian"
+    },
+    {
+      "item_id": "brotherhood",
+      "title": "Brotherhood",
+      "categories": [
+        "crime",
+        "action"
+      ],
+      "niches": [
+        "nollywood",
+        "action"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Brotherhood | crime, action | nollywood, action | nigerian"
+    },
+    {
+      "item_id": "oppenheimer",
+      "title": "Oppenheimer",
+      "categories": [
+        "drama",
+        "history",
+        "biopic"
+      ],
+      "niches": [
+        "hollywood",
+        "drama"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Oppenheimer | drama, history, biopic | hollywood, drama | "
+    },
+    {
+      "item_id": "dune-part-two",
+      "title": "Dune: Part Two",
+      "categories": [
+        "sci-fi",
+        "adventure"
+      ],
+      "niches": [
+        "hollywood",
+        "sci-fi"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Dune: Part Two | sci-fi, adventure | hollywood, sci-fi | "
+    },
+    {
+      "item_id": "inception",
+      "title": "Inception",
+      "categories": [
+        "sci-fi",
+        "thriller"
+      ],
+      "niches": [
+        "hollywood",
+        "thriller"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Inception | sci-fi, thriller | hollywood, thriller | "
+    },
+    {
+      "item_id": "spider-man-across-the-spider-verse",
+      "title": "Spider-Man: Across the Spider-Verse",
+      "categories": [
+        "animation",
+        "action"
+      ],
+      "niches": [
+        "hollywood",
+        "animation"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Spider-Man: Across the Spider-Verse | animation, action | hollywood, animation | "
+    },
+    {
+      "item_id": "parasite",
+      "title": "Parasite",
+      "categories": [
+        "thriller",
+        "drama"
+      ],
+      "niches": [
+        "world cinema",
+        "thriller"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Parasite | thriller, drama | world cinema, thriller | "
+    },
+    {
+      "item_id": "black-panther",
+      "title": "Black Panther",
+      "categories": [
+        "action",
+        "sci-fi"
+      ],
+      "niches": [
+        "hollywood",
+        "action"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Black Panther | action, sci-fi | hollywood, action | "
+    }
+  ],
+  "food": [
+    {
+      "item_id": "jollof-rice",
+      "title": "Jollof Rice",
+      "categories": [
+        "rice",
+        "main"
+      ],
+      "niches": [
+        "nigerian",
+        "party food"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 2500,
+      "attributes": {},
+      "text_blob": "Jollof Rice | rice, main | nigerian, party food | nigerian"
+    },
+    {
+      "item_id": "egusi-soup-with-pounded-yam",
+      "title": "Egusi Soup with Pounded Yam",
+      "categories": [
+        "soup",
+        "swallow"
+      ],
+      "niches": [
+        "nigerian",
+        "igbo",
+        "yoruba"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 3000,
+      "attributes": {},
+      "text_blob": "Egusi Soup with Pounded Yam | soup, swallow | nigerian, igbo, yoruba | nigerian"
+    },
+    {
+      "item_id": "amala-and-ewedu",
+      "title": "Amala and Ewedu",
+      "categories": [
+        "swallow",
+        "soup"
+      ],
+      "niches": [
+        "nigerian",
+        "yoruba"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 2200,
+      "attributes": {},
+      "text_blob": "Amala and Ewedu | swallow, soup | nigerian, yoruba | nigerian"
+    },
+    {
+      "item_id": "suya",
+      "title": "Suya",
+      "categories": [
+        "grill",
+        "snack"
+      ],
+      "niches": [
+        "nigerian",
+        "hausa",
+        "street food"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 1500,
+      "attributes": {},
+      "text_blob": "Suya | grill, snack | nigerian, hausa, street food | nigerian"
+    },
+    {
+      "item_id": "pepper-soup",
+      "title": "Pepper Soup",
+      "categories": [
+        "soup"
+      ],
+      "niches": [
+        "nigerian",
+        "spicy"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 2800,
+      "attributes": {},
+      "text_blob": "Pepper Soup | soup | nigerian, spicy | nigerian"
+    },
+    {
+      "item_id": "ofada-rice-and-ayamase",
+      "title": "Ofada Rice and Ayamase",
+      "categories": [
+        "rice",
+        "main"
+      ],
+      "niches": [
+        "nigerian",
+        "yoruba"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 3200,
+      "attributes": {},
+      "text_blob": "Ofada Rice and Ayamase | rice, main | nigerian, yoruba | nigerian"
+    },
+    {
+      "item_id": "nkwobi",
+      "title": "Nkwobi",
+      "categories": [
+        "delicacy"
+      ],
+      "niches": [
+        "nigerian",
+        "igbo"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 3500,
+      "attributes": {},
+      "text_blob": "Nkwobi | delicacy | nigerian, igbo | nigerian"
+    },
+    {
+      "item_id": "moi-moi",
+      "title": "Moi Moi",
+      "categories": [
+        "beans",
+        "side"
+      ],
+      "niches": [
+        "nigerian",
+        "side"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 800,
+      "attributes": {},
+      "text_blob": "Moi Moi | beans, side | nigerian, side | nigerian"
+    },
+    {
+      "item_id": "akara-and-pap",
+      "title": "Akara and Pap",
+      "categories": [
+        "breakfast"
+      ],
+      "niches": [
+        "nigerian",
+        "breakfast"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 700,
+      "attributes": {},
+      "text_blob": "Akara and Pap | breakfast | nigerian, breakfast | nigerian"
+    },
+    {
+      "item_id": "tuwo-shinkafa-and-miyan-kuka",
+      "title": "Tuwo Shinkafa and Miyan Kuka",
+      "categories": [
+        "swallow",
+        "soup"
+      ],
+      "niches": [
+        "nigerian",
+        "hausa"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 2400,
+      "attributes": {},
+      "text_blob": "Tuwo Shinkafa and Miyan Kuka | swallow, soup | nigerian, hausa | nigerian"
+    },
+    {
+      "item_id": "shawarma",
+      "title": "Shawarma",
+      "categories": [
+        "wrap",
+        "fast food"
+      ],
+      "niches": [
+        "street food"
+      ],
+      "tags": [],
+      "price_naira": 2000,
+      "attributes": {},
+      "text_blob": "Shawarma | wrap, fast food | street food | "
+    },
+    {
+      "item_id": "chicken-and-chips",
+      "title": "Chicken and Chips",
+      "categories": [
+        "fast food"
+      ],
+      "niches": [
+        "fast food"
+      ],
+      "tags": [],
+      "price_naira": 3000,
+      "attributes": {},
+      "text_blob": "Chicken and Chips | fast food | fast food | "
+    },
+    {
+      "item_id": "fried-rice-and-chicken",
+      "title": "Fried Rice and Chicken",
+      "categories": [
+        "rice",
+        "main"
+      ],
+      "niches": [
+        "nigerian",
+        "party food"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 2800,
+      "attributes": {},
+      "text_blob": "Fried Rice and Chicken | rice, main | nigerian, party food | nigerian"
+    },
+    {
+      "item_id": "catfish-pepper-soup",
+      "title": "Catfish Pepper Soup",
+      "categories": [
+        "soup",
+        "fish"
+      ],
+      "niches": [
+        "nigerian",
+        "spicy"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 4000,
+      "attributes": {},
+      "text_blob": "Catfish Pepper Soup | soup, fish | nigerian, spicy | nigerian"
+    }
+  ],
+  "books": [
+    {
+      "item_id": "things-fall-apart",
+      "title": "Things Fall Apart",
+      "categories": [
+        "fiction",
+        "classic"
+      ],
+      "niches": [
+        "nigerian",
+        "literary"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Things Fall Apart | fiction, classic | nigerian, literary | nigerian"
+    },
+    {
+      "item_id": "half-of-a-yellow-sun",
+      "title": "Half of a Yellow Sun",
+      "categories": [
+        "fiction",
+        "historical"
+      ],
+      "niches": [
+        "nigerian",
+        "literary"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Half of a Yellow Sun | fiction, historical | nigerian, literary | nigerian"
+    },
+    {
+      "item_id": "purple-hibiscus",
+      "title": "Purple Hibiscus",
+      "categories": [
+        "fiction",
+        "coming-of-age"
+      ],
+      "niches": [
+        "nigerian",
+        "literary"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Purple Hibiscus | fiction, coming-of-age | nigerian, literary | nigerian"
+    },
+    {
+      "item_id": "americanah",
+      "title": "Americanah",
+      "categories": [
+        "fiction",
+        "contemporary"
+      ],
+      "niches": [
+        "nigerian",
+        "literary"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Americanah | fiction, contemporary | nigerian, literary | nigerian"
+    },
+    {
+      "item_id": "stay-with-me",
+      "title": "Stay With Me",
+      "categories": [
+        "fiction",
+        "contemporary"
+      ],
+      "niches": [
+        "nigerian",
+        "literary"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Stay With Me | fiction, contemporary | nigerian, literary | nigerian"
+    },
+    {
+      "item_id": "the-fishermen",
+      "title": "The Fishermen",
+      "categories": [
+        "fiction",
+        "literary"
+      ],
+      "niches": [
+        "nigerian",
+        "literary"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "The Fishermen | fiction, literary | nigerian, literary | nigerian"
+    },
+    {
+      "item_id": "born-a-crime",
+      "title": "Born a Crime",
+      "categories": [
+        "memoir",
+        "non-fiction"
+      ],
+      "niches": [
+        "african",
+        "memoir"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Born a Crime | memoir, non-fiction | african, memoir | "
+    },
+    {
+      "item_id": "atomic-habits",
+      "title": "Atomic Habits",
+      "categories": [
+        "self-help",
+        "non-fiction"
+      ],
+      "niches": [
+        "productivity",
+        "self-help"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Atomic Habits | self-help, non-fiction | productivity, self-help | "
+    },
+    {
+      "item_id": "rich-dad-poor-dad",
+      "title": "Rich Dad Poor Dad",
+      "categories": [
+        "finance",
+        "non-fiction"
+      ],
+      "niches": [
+        "finance",
+        "self-help"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Rich Dad Poor Dad | finance, non-fiction | finance, self-help | "
+    },
+    {
+      "item_id": "the-alchemist",
+      "title": "The Alchemist",
+      "categories": [
+        "fiction",
+        "philosophical"
+      ],
+      "niches": [
+        "inspirational",
+        "fiction"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "The Alchemist | fiction, philosophical | inspirational, fiction | "
+    },
+    {
+      "item_id": "sapiens",
+      "title": "Sapiens",
+      "categories": [
+        "non-fiction",
+        "history"
+      ],
+      "niches": [
+        "history",
+        "science"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Sapiens | non-fiction, history | history, science | "
+    },
+    {
+      "item_id": "dune",
+      "title": "Dune",
+      "categories": [
+        "sci-fi",
+        "fiction"
+      ],
+      "niches": [
+        "sci-fi",
+        "fantasy"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Dune | sci-fi, fiction | sci-fi, fantasy | "
+    }
+  ],
+  "music": [
+    {
+      "item_id": "essence-wizkid-ft-tems",
+      "title": "Essence — Wizkid ft. Tems",
+      "categories": [
+        "afrobeats"
+      ],
+      "niches": [
+        "afrobeats",
+        "rnb"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Essence — Wizkid ft. Tems | afrobeats | afrobeats, rnb | nigerian"
+    },
+    {
+      "item_id": "last-last-burna-boy",
+      "title": "Last Last — Burna Boy",
+      "categories": [
+        "afrobeats"
+      ],
+      "niches": [
+        "afrobeats"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Last Last — Burna Boy | afrobeats | afrobeats | nigerian"
+    },
+    {
+      "item_id": "calm-down-rema",
+      "title": "Calm Down — Rema",
+      "categories": [
+        "afrobeats"
+      ],
+      "niches": [
+        "afrobeats",
+        "pop"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Calm Down — Rema | afrobeats | afrobeats, pop | nigerian"
+    },
+    {
+      "item_id": "unavailable-davido",
+      "title": "Unavailable — Davido",
+      "categories": [
+        "afrobeats"
+      ],
+      "niches": [
+        "afrobeats"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Unavailable — Davido | afrobeats | afrobeats | nigerian"
+    },
+    {
+      "item_id": "city-boys-burna-boy",
+      "title": "City Boys — Burna Boy",
+      "categories": [
+        "afrobeats"
+      ],
+      "niches": [
+        "afrobeats"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "City Boys — Burna Boy | afrobeats | afrobeats | nigerian"
+    },
+    {
+      "item_id": "soso-omah-lay",
+      "title": "Soso — Omah Lay",
+      "categories": [
+        "afrobeats"
+      ],
+      "niches": [
+        "afrobeats",
+        "rnb"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Soso — Omah Lay | afrobeats | afrobeats, rnb | nigerian"
+    },
+    {
+      "item_id": "rush-ayra-starr",
+      "title": "Rush — Ayra Starr",
+      "categories": [
+        "afrobeats"
+      ],
+      "niches": [
+        "afrobeats",
+        "pop"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Rush — Ayra Starr | afrobeats | afrobeats, pop | nigerian"
+    },
+    {
+      "item_id": "ojapiano-kcee",
+      "title": "Ojapiano — Kcee",
+      "categories": [
+        "afrobeats",
+        "highlife"
+      ],
+      "niches": [
+        "afrobeats",
+        "igbo"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Ojapiano — Kcee | afrobeats, highlife | afrobeats, igbo | nigerian"
+    },
+    {
+      "item_id": "amapiano-mix",
+      "title": "Amapiano Mix",
+      "categories": [
+        "amapiano"
+      ],
+      "niches": [
+        "amapiano",
+        "dance"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Amapiano Mix | amapiano | amapiano, dance | "
+    },
+    {
+      "item_id": "gospel-praise-medley",
+      "title": "Gospel Praise Medley",
+      "categories": [
+        "gospel"
+      ],
+      "niches": [
+        "gospel",
+        "worship"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Gospel Praise Medley | gospel | gospel, worship | nigerian"
+    },
+    {
+      "item_id": "fuji-classics-kwam-1",
+      "title": "Fuji Classics — KWAM 1",
+      "categories": [
+        "fuji"
+      ],
+      "niches": [
+        "fuji",
+        "yoruba"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Fuji Classics — KWAM 1 | fuji | fuji, yoruba | nigerian"
+    },
+    {
+      "item_id": "highlife-legends",
+      "title": "Highlife Legends",
+      "categories": [
+        "highlife"
+      ],
+      "niches": [
+        "highlife",
+        "igbo"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Highlife Legends | highlife | highlife, igbo | nigerian"
+    }
+  ],
+  "skincare": [
+    {
+      "item_id": "shea-butter-body-cream",
+      "title": "Shea Butter Body Cream",
+      "categories": [
+        "moisturizer"
+      ],
+      "niches": [
+        "natural",
+        "dry skin"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 3500,
+      "attributes": {},
+      "text_blob": "Shea Butter Body Cream | moisturizer | natural, dry skin | nigerian"
+    },
+    {
+      "item_id": "african-black-soap",
+      "title": "African Black Soap",
+      "categories": [
+        "cleanser"
+      ],
+      "niches": [
+        "natural",
+        "acne"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 2000,
+      "attributes": {},
+      "text_blob": "African Black Soap | cleanser | natural, acne | nigerian"
+    },
+    {
+      "item_id": "niacinamide-serum",
+      "title": "Niacinamide Serum",
+      "categories": [
+        "serum"
+      ],
+      "niches": [
+        "brightening",
+        "oily skin"
+      ],
+      "tags": [],
+      "price_naira": 6500,
+      "attributes": {},
+      "text_blob": "Niacinamide Serum | serum | brightening, oily skin | "
+    },
+    {
+      "item_id": "vitamin-c-serum",
+      "title": "Vitamin C Serum",
+      "categories": [
+        "serum"
+      ],
+      "niches": [
+        "brightening",
+        "anti-aging"
+      ],
+      "tags": [],
+      "price_naira": 8000,
+      "attributes": {},
+      "text_blob": "Vitamin C Serum | serum | brightening, anti-aging | "
+    },
+    {
+      "item_id": "sunscreen-spf-50",
+      "title": "Sunscreen SPF 50",
+      "categories": [
+        "sunscreen"
+      ],
+      "niches": [
+        "protection",
+        "daily"
+      ],
+      "tags": [],
+      "price_naira": 7000,
+      "attributes": {},
+      "text_blob": "Sunscreen SPF 50 | sunscreen | protection, daily | "
+    },
+    {
+      "item_id": "hyaluronic-acid-moisturizer",
+      "title": "Hyaluronic Acid Moisturizer",
+      "categories": [
+        "moisturizer"
+      ],
+      "niches": [
+        "hydration"
+      ],
+      "tags": [],
+      "price_naira": 9000,
+      "attributes": {},
+      "text_blob": "Hyaluronic Acid Moisturizer | moisturizer | hydration | "
+    },
+    {
+      "item_id": "salicylic-acid-cleanser",
+      "title": "Salicylic Acid Cleanser",
+      "categories": [
+        "cleanser"
+      ],
+      "niches": [
+        "acne",
+        "oily skin"
+      ],
+      "tags": [],
+      "price_naira": 5500,
+      "attributes": {},
+      "text_blob": "Salicylic Acid Cleanser | cleanser | acne, oily skin | "
+    },
+    {
+      "item_id": "cocoa-butter-lotion",
+      "title": "Cocoa Butter Lotion",
+      "categories": [
+        "moisturizer"
+      ],
+      "niches": [
+        "natural",
+        "dry skin"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 3000,
+      "attributes": {},
+      "text_blob": "Cocoa Butter Lotion | moisturizer | natural, dry skin | nigerian"
+    },
+    {
+      "item_id": "retinol-night-cream",
+      "title": "Retinol Night Cream",
+      "categories": [
+        "treatment"
+      ],
+      "niches": [
+        "anti-aging"
+      ],
+      "tags": [],
+      "price_naira": 12000,
+      "attributes": {},
+      "text_blob": "Retinol Night Cream | treatment | anti-aging | "
+    },
+    {
+      "item_id": "aloe-vera-gel",
+      "title": "Aloe Vera Gel",
+      "categories": [
+        "soothing"
+      ],
+      "niches": [
+        "natural",
+        "sensitive skin"
+      ],
+      "tags": [],
+      "price_naira": 2500,
+      "attributes": {},
+      "text_blob": "Aloe Vera Gel | soothing | natural, sensitive skin | "
+    }
+  ],
+  "hotel": [
+    {
+      "item_id": "eko-hotels-suites-lagos",
+      "title": "Eko Hotels & Suites, Lagos",
+      "categories": [
+        "luxury",
+        "5-star"
+      ],
+      "niches": [
+        "lagos",
+        "business"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 150000,
+      "attributes": {},
+      "text_blob": "Eko Hotels & Suites, Lagos | luxury, 5-star | lagos, business | nigerian"
+    },
+    {
+      "item_id": "transcorp-hilton-abuja",
+      "title": "Transcorp Hilton, Abuja",
+      "categories": [
+        "luxury",
+        "5-star"
+      ],
+      "niches": [
+        "abuja",
+        "business"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 180000,
+      "attributes": {},
+      "text_blob": "Transcorp Hilton, Abuja | luxury, 5-star | abuja, business | nigerian"
+    },
+    {
+      "item_id": "the-wheatbaker-lagos",
+      "title": "The Wheatbaker, Lagos",
+      "categories": [
+        "boutique",
+        "luxury"
+      ],
+      "niches": [
+        "lagos",
+        "boutique"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 130000,
+      "attributes": {},
+      "text_blob": "The Wheatbaker, Lagos | boutique, luxury | lagos, boutique | nigerian"
+    },
+    {
+      "item_id": "radisson-blu-lagos",
+      "title": "Radisson Blu, Lagos",
+      "categories": [
+        "luxury",
+        "4-star"
+      ],
+      "niches": [
+        "lagos",
+        "business"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 120000,
+      "attributes": {},
+      "text_blob": "Radisson Blu, Lagos | luxury, 4-star | lagos, business | nigerian"
+    },
+    {
+      "item_id": "bon-hotel-ibadan",
+      "title": "BON Hotel, Ibadan",
+      "categories": [
+        "midrange",
+        "3-star"
+      ],
+      "niches": [
+        "ibadan",
+        "budget"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 45000,
+      "attributes": {},
+      "text_blob": "BON Hotel, Ibadan | midrange, 3-star | ibadan, budget | nigerian"
+    },
+    {
+      "item_id": "whispering-palms-resort-badagry",
+      "title": "Whispering Palms Resort, Badagry",
+      "categories": [
+        "resort"
+      ],
+      "niches": [
+        "leisure",
+        "beach"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 60000,
+      "attributes": {},
+      "text_blob": "Whispering Palms Resort, Badagry | resort | leisure, beach | nigerian"
+    },
+    {
+      "item_id": "obudu-mountain-resort",
+      "title": "Obudu Mountain Resort",
+      "categories": [
+        "resort",
+        "mountain"
+      ],
+      "niches": [
+        "leisure",
+        "nature"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 75000,
+      "attributes": {},
+      "text_blob": "Obudu Mountain Resort | resort, mountain | leisure, nature | nigerian"
+    },
+    {
+      "item_id": "ibom-icon-hotel-uyo",
+      "title": "Ibom Icon Hotel, Uyo",
+      "categories": [
+        "luxury",
+        "resort"
+      ],
+      "niches": [
+        "leisure",
+        "golf"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 90000,
+      "attributes": {},
+      "text_blob": "Ibom Icon Hotel, Uyo | luxury, resort | leisure, golf | nigerian"
+    },
+    {
+      "item_id": "budget-guesthouse-enugu",
+      "title": "Budget Guesthouse, Enugu",
+      "categories": [
+        "budget",
+        "guesthouse"
+      ],
+      "niches": [
+        "enugu",
+        "budget"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 20000,
+      "attributes": {},
+      "text_blob": "Budget Guesthouse, Enugu | budget, guesthouse | enugu, budget | nigerian"
+    }
+  ],
+  "travel": [
+    {
+      "item_id": "lekki-conservation-centre",
+      "title": "Lekki Conservation Centre",
+      "categories": [
+        "nature",
+        "attraction"
+      ],
+      "niches": [
+        "lagos",
+        "nature"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Lekki Conservation Centre | nature, attraction | lagos, nature | nigerian"
+    },
+    {
+      "item_id": "idanre-hills",
+      "title": "Idanre Hills",
+      "categories": [
+        "nature",
+        "hiking"
+      ],
+      "niches": [
+        "ondo",
+        "adventure"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Idanre Hills | nature, hiking | ondo, adventure | nigerian"
+    },
+    {
+      "item_id": "olumo-rock-abeokuta",
+      "title": "Olumo Rock, Abeokuta",
+      "categories": [
+        "landmark",
+        "hiking"
+      ],
+      "niches": [
+        "ogun",
+        "history"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Olumo Rock, Abeokuta | landmark, hiking | ogun, history | nigerian"
+    },
+    {
+      "item_id": "yankari-national-park",
+      "title": "Yankari National Park",
+      "categories": [
+        "safari",
+        "nature"
+      ],
+      "niches": [
+        "bauchi",
+        "wildlife"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Yankari National Park | safari, nature | bauchi, wildlife | nigerian"
+    },
+    {
+      "item_id": "zuma-rock-abuja",
+      "title": "Zuma Rock, Abuja",
+      "categories": [
+        "landmark"
+      ],
+      "niches": [
+        "abuja",
+        "sightseeing"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Zuma Rock, Abuja | landmark | abuja, sightseeing | nigerian"
+    },
+    {
+      "item_id": "tarkwa-bay-beach",
+      "title": "Tarkwa Bay Beach",
+      "categories": [
+        "beach"
+      ],
+      "niches": [
+        "lagos",
+        "beach"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Tarkwa Bay Beach | beach | lagos, beach | nigerian"
+    },
+    {
+      "item_id": "erin-ijesha-waterfalls",
+      "title": "Erin Ijesha Waterfalls",
+      "categories": [
+        "nature",
+        "waterfall"
+      ],
+      "niches": [
+        "osun",
+        "nature"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Erin Ijesha Waterfalls | nature, waterfall | osun, nature | nigerian"
+    },
+    {
+      "item_id": "nike-art-gallery-lagos",
+      "title": "Nike Art Gallery, Lagos",
+      "categories": [
+        "culture",
+        "art"
+      ],
+      "niches": [
+        "lagos",
+        "culture"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Nike Art Gallery, Lagos | culture, art | lagos, culture | nigerian"
+    },
+    {
+      "item_id": "calabar-carnival",
+      "title": "Calabar Carnival",
+      "categories": [
+        "festival",
+        "culture"
+      ],
+      "niches": [
+        "cross river",
+        "festival"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Calabar Carnival | festival, culture | cross river, festival | nigerian"
+    },
+    {
+      "item_id": "obudu-cattle-ranch",
+      "title": "Obudu Cattle Ranch",
+      "categories": [
+        "resort",
+        "mountain"
+      ],
+      "niches": [
+        "cross river",
+        "nature"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Obudu Cattle Ranch | resort, mountain | cross river, nature | nigerian"
+    }
+  ],
+  "fitness": [
+    {
+      "item_id": "home-hiit-program",
+      "title": "Home HIIT Program",
+      "categories": [
+        "workout",
+        "cardio"
+      ],
+      "niches": [
+        "weight loss",
+        "home"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Home HIIT Program | workout, cardio | weight loss, home | "
+    },
+    {
+      "item_id": "strength-training-plan",
+      "title": "Strength Training Plan",
+      "categories": [
+        "workout",
+        "strength"
+      ],
+      "niches": [
+        "muscle gain",
+        "gym"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Strength Training Plan | workout, strength | muscle gain, gym | "
+    },
+    {
+      "item_id": "yoga-for-beginners",
+      "title": "Yoga for Beginners",
+      "categories": [
+        "yoga",
+        "flexibility"
+      ],
+      "niches": [
+        "wellness",
+        "home"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Yoga for Beginners | yoga, flexibility | wellness, home | "
+    },
+    {
+      "item_id": "lagos-running-club",
+      "title": "Lagos Running Club",
+      "categories": [
+        "running",
+        "community"
+      ],
+      "niches": [
+        "lagos",
+        "cardio"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Lagos Running Club | running, community | lagos, cardio | nigerian"
+    },
+    {
+      "item_id": "resistance-bands-set",
+      "title": "Resistance Bands Set",
+      "categories": [
+        "equipment"
+      ],
+      "niches": [
+        "home",
+        "strength"
+      ],
+      "tags": [],
+      "price_naira": 8000,
+      "attributes": {},
+      "text_blob": "Resistance Bands Set | equipment | home, strength | "
+    },
+    {
+      "item_id": "adjustable-dumbbells",
+      "title": "Adjustable Dumbbells",
+      "categories": [
+        "equipment"
+      ],
+      "niches": [
+        "gym",
+        "strength"
+      ],
+      "tags": [],
+      "price_naira": 45000,
+      "attributes": {},
+      "text_blob": "Adjustable Dumbbells | equipment | gym, strength | "
+    },
+    {
+      "item_id": "pilates-mat-routine",
+      "title": "Pilates Mat Routine",
+      "categories": [
+        "pilates",
+        "core"
+      ],
+      "niches": [
+        "wellness",
+        "home"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Pilates Mat Routine | pilates, core | wellness, home | "
+    },
+    {
+      "item_id": "marathon-training-plan",
+      "title": "Marathon Training Plan",
+      "categories": [
+        "running",
+        "endurance"
+      ],
+      "niches": [
+        "cardio",
+        "advanced"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Marathon Training Plan | running, endurance | cardio, advanced | "
+    },
+    {
+      "item_id": "calisthenics-park-workout",
+      "title": "Calisthenics Park Workout",
+      "categories": [
+        "bodyweight"
+      ],
+      "niches": [
+        "outdoor",
+        "strength"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Calisthenics Park Workout | bodyweight | outdoor, strength | "
+    }
+  ],
+  "tech": [
+    {
+      "item_id": "tecno-camon-30",
+      "title": "Tecno Camon 30",
+      "categories": [
+        "smartphone"
+      ],
+      "niches": [
+        "budget",
+        "android"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 320000,
+      "attributes": {},
+      "text_blob": "Tecno Camon 30 | smartphone | budget, android | nigerian"
+    },
+    {
+      "item_id": "infinix-hot-40-pro",
+      "title": "Infinix Hot 40 Pro",
+      "categories": [
+        "smartphone"
+      ],
+      "niches": [
+        "budget",
+        "android"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 230000,
+      "attributes": {},
+      "text_blob": "Infinix Hot 40 Pro | smartphone | budget, android | nigerian"
+    },
+    {
+      "item_id": "samsung-galaxy-a55",
+      "title": "Samsung Galaxy A55",
+      "categories": [
+        "smartphone"
+      ],
+      "niches": [
+        "midrange",
+        "android"
+      ],
+      "tags": [],
+      "price_naira": 480000,
+      "attributes": {},
+      "text_blob": "Samsung Galaxy A55 | smartphone | midrange, android | "
+    },
+    {
+      "item_id": "iphone-15",
+      "title": "iPhone 15",
+      "categories": [
+        "smartphone"
+      ],
+      "niches": [
+        "premium",
+        "ios"
+      ],
+      "tags": [],
+      "price_naira": 1300000,
+      "attributes": {},
+      "text_blob": "iPhone 15 | smartphone | premium, ios | "
+    },
+    {
+      "item_id": "oraimo-freepods",
+      "title": "Oraimo FreePods",
+      "categories": [
+        "audio",
+        "earbuds"
+      ],
+      "niches": [
+        "budget",
+        "accessories"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 25000,
+      "attributes": {},
+      "text_blob": "Oraimo FreePods | audio, earbuds | budget, accessories | nigerian"
+    },
+    {
+      "item_id": "anker-power-bank-20000mah",
+      "title": "Anker Power Bank 20000mAh",
+      "categories": [
+        "accessories",
+        "power"
+      ],
+      "niches": [
+        "essential",
+        "portable"
+      ],
+      "tags": [],
+      "price_naira": 35000,
+      "attributes": {},
+      "text_blob": "Anker Power Bank 20000mAh | accessories, power | essential, portable | "
+    },
+    {
+      "item_id": "hp-pavilion-laptop",
+      "title": "HP Pavilion Laptop",
+      "categories": [
+        "laptop"
+      ],
+      "niches": [
+        "productivity",
+        "midrange"
+      ],
+      "tags": [],
+      "price_naira": 750000,
+      "attributes": {},
+      "text_blob": "HP Pavilion Laptop | laptop | productivity, midrange | "
+    },
+    {
+      "item_id": "macbook-air-m3",
+      "title": "MacBook Air M3",
+      "categories": [
+        "laptop"
+      ],
+      "niches": [
+        "premium",
+        "productivity"
+      ],
+      "tags": [],
+      "price_naira": 1900000,
+      "attributes": {},
+      "text_blob": "MacBook Air M3 | laptop | premium, productivity | "
+    },
+    {
+      "item_id": "solar-inverter-1-5kva",
+      "title": "Solar Inverter 1.5kVA",
+      "categories": [
+        "power",
+        "home"
+      ],
+      "niches": [
+        "essential",
+        "power backup"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 450000,
+      "attributes": {},
+      "text_blob": "Solar Inverter 1.5kVA | power, home | essential, power backup | nigerian"
+    },
+    {
+      "item_id": "smart-tv-43-inch",
+      "title": "Smart TV 43-inch",
+      "categories": [
+        "tv",
+        "home entertainment"
+      ],
+      "niches": [
+        "midrange",
+        "home"
+      ],
+      "tags": [],
+      "price_naira": 320000,
+      "attributes": {},
+      "text_blob": "Smart TV 43-inch | tv, home entertainment | midrange, home | "
+    }
+  ],
+  "fashion": [
+    {
+      "item_id": "ankara-print-dress",
+      "title": "Ankara Print Dress",
+      "categories": [
+        "dress",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "ankara"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 18000,
+      "attributes": {},
+      "text_blob": "Ankara Print Dress | dress, traditional | nigerian, ankara | nigerian"
+    },
+    {
+      "item_id": "agbada-set",
+      "title": "Agbada Set",
+      "categories": [
+        "traditional",
+        "formal"
+      ],
+      "niches": [
+        "nigerian",
+        "yoruba",
+        "owambe"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 55000,
+      "attributes": {},
+      "text_blob": "Agbada Set | traditional, formal | nigerian, yoruba, owambe | nigerian"
+    },
+    {
+      "item_id": "aso-oke-cap",
+      "title": "Aso Oke Cap",
+      "categories": [
+        "accessory",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "yoruba"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 12000,
+      "attributes": {},
+      "text_blob": "Aso Oke Cap | accessory, traditional | nigerian, yoruba | nigerian"
+    },
+    {
+      "item_id": "senator-wear",
+      "title": "Senator Wear",
+      "categories": [
+        "traditional",
+        "formal"
+      ],
+      "niches": [
+        "nigerian",
+        "menswear"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 35000,
+      "attributes": {},
+      "text_blob": "Senator Wear | traditional, formal | nigerian, menswear | nigerian"
+    },
+    {
+      "item_id": "adire-shirt",
+      "title": "Adire Shirt",
+      "categories": [
+        "casual",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "yoruba"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 15000,
+      "attributes": {},
+      "text_blob": "Adire Shirt | casual, traditional | nigerian, yoruba | nigerian"
+    },
+    {
+      "item_id": "sneakers-unisex",
+      "title": "Sneakers (Unisex)",
+      "categories": [
+        "footwear",
+        "casual"
+      ],
+      "niches": [
+        "streetwear"
+      ],
+      "tags": [],
+      "price_naira": 25000,
+      "attributes": {},
+      "text_blob": "Sneakers (Unisex) | footwear, casual | streetwear | "
+    },
+    {
+      "item_id": "leather-slippers-palm",
+      "title": "Leather Slippers (Palm)",
+      "categories": [
+        "footwear",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "menswear"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 14000,
+      "attributes": {},
+      "text_blob": "Leather Slippers (Palm) | footwear, traditional | nigerian, menswear | nigerian"
+    },
+    {
+      "item_id": "denim-jacket",
+      "title": "Denim Jacket",
+      "categories": [
+        "outerwear",
+        "casual"
+      ],
+      "niches": [
+        "streetwear"
+      ],
+      "tags": [],
+      "price_naira": 22000,
+      "attributes": {},
+      "text_blob": "Denim Jacket | outerwear, casual | streetwear | "
+    },
+    {
+      "item_id": "gele-headtie",
+      "title": "Gele Headtie",
+      "categories": [
+        "accessory",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "owambe"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 9000,
+      "attributes": {},
+      "text_blob": "Gele Headtie | accessory, traditional | nigerian, owambe | nigerian"
+    },
+    {
+      "item_id": "corporate-suit",
+      "title": "Corporate Suit",
+      "categories": [
+        "formal",
+        "menswear"
+      ],
+      "niches": [
+        "business",
+        "formal"
+      ],
+      "tags": [],
+      "price_naira": 70000,
+      "attributes": {},
+      "text_blob": "Corporate Suit | formal, menswear | business, formal | "
+    }
+  ],
+  "sport": [
+    {
+      "item_id": "premier-league-match-pass",
+      "title": "Premier League Match Pass",
+      "categories": [
+        "football",
+        "subscription"
+      ],
+      "niches": [
+        "football",
+        "epl"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Premier League Match Pass | football, subscription | football, epl | "
+    },
+    {
+      "item_id": "super-eagles-jersey",
+      "title": "Super Eagles Jersey",
+      "categories": [
+        "football",
+        "merchandise"
+      ],
+      "niches": [
+        "nigerian",
+        "football"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 25000,
+      "attributes": {},
+      "text_blob": "Super Eagles Jersey | football, merchandise | nigerian, football | nigerian"
+    },
+    {
+      "item_id": "local-football-viewing-centre",
+      "title": "Local Football Viewing Centre",
+      "categories": [
+        "football",
+        "experience"
+      ],
+      "niches": [
+        "nigerian",
+        "community"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 500,
+      "attributes": {},
+      "text_blob": "Local Football Viewing Centre | football, experience | nigerian, community | nigerian"
+    },
+    {
+      "item_id": "lawn-tennis-lessons",
+      "title": "Lawn Tennis Lessons",
+      "categories": [
+        "tennis",
+        "coaching"
+      ],
+      "niches": [
+        "coaching",
+        "racquet"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Lawn Tennis Lessons | tennis, coaching | coaching, racquet | "
+    },
+    {
+      "item_id": "basketball-court-booking",
+      "title": "Basketball Court Booking",
+      "categories": [
+        "basketball",
+        "facility"
+      ],
+      "niches": [
+        "facility",
+        "team"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Basketball Court Booking | basketball, facility | facility, team | "
+    },
+    {
+      "item_id": "table-tennis-set",
+      "title": "Table Tennis Set",
+      "categories": [
+        "equipment"
+      ],
+      "niches": [
+        "indoor",
+        "racquet"
+      ],
+      "tags": [],
+      "price_naira": 35000,
+      "attributes": {},
+      "text_blob": "Table Tennis Set | equipment | indoor, racquet | "
+    },
+    {
+      "item_id": "gym-membership-monthly",
+      "title": "Gym Membership (Monthly)",
+      "categories": [
+        "fitness",
+        "subscription"
+      ],
+      "niches": [
+        "gym",
+        "membership"
+      ],
+      "tags": [],
+      "price_naira": 20000,
+      "attributes": {},
+      "text_blob": "Gym Membership (Monthly) | fitness, subscription | gym, membership | "
+    },
+    {
+      "item_id": "cycling-group-ride",
+      "title": "Cycling Group Ride",
+      "categories": [
+        "cycling",
+        "community"
+      ],
+      "niches": [
+        "outdoor",
+        "cardio"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Cycling Group Ride | cycling, community | outdoor, cardio | "
+    }
+  ],
+  "drink": [
+    {
+      "item_id": "zobo-hibiscus-drink",
+      "title": "Zobo (Hibiscus Drink)",
+      "categories": [
+        "non-alcoholic",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "healthy"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 500,
+      "attributes": {},
+      "text_blob": "Zobo (Hibiscus Drink) | non-alcoholic, traditional | nigerian, healthy | nigerian"
+    },
+    {
+      "item_id": "chapman-cocktail",
+      "title": "Chapman Cocktail",
+      "categories": [
+        "cocktail",
+        "non-alcoholic"
+      ],
+      "niches": [
+        "nigerian",
+        "party"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 1500,
+      "attributes": {},
+      "text_blob": "Chapman Cocktail | cocktail, non-alcoholic | nigerian, party | nigerian"
+    },
+    {
+      "item_id": "palm-wine",
+      "title": "Palm Wine",
+      "categories": [
+        "alcoholic",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "traditional"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 1000,
+      "attributes": {},
+      "text_blob": "Palm Wine | alcoholic, traditional | nigerian, traditional | nigerian"
+    },
+    {
+      "item_id": "kunu",
+      "title": "Kunu",
+      "categories": [
+        "non-alcoholic",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "hausa",
+        "healthy"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 400,
+      "attributes": {},
+      "text_blob": "Kunu | non-alcoholic, traditional | nigerian, hausa, healthy | nigerian"
+    },
+    {
+      "item_id": "star-lager-beer",
+      "title": "Star Lager Beer",
+      "categories": [
+        "beer",
+        "alcoholic"
+      ],
+      "niches": [
+        "nigerian",
+        "beer"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 800,
+      "attributes": {},
+      "text_blob": "Star Lager Beer | beer, alcoholic | nigerian, beer | nigerian"
+    },
+    {
+      "item_id": "smoov-chapman-bottled",
+      "title": "Smoov Chapman (Bottled)",
+      "categories": [
+        "non-alcoholic",
+        "bottled"
+      ],
+      "niches": [
+        "nigerian",
+        "party"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 700,
+      "attributes": {},
+      "text_blob": "Smoov Chapman (Bottled) | non-alcoholic, bottled | nigerian, party | nigerian"
+    },
+    {
+      "item_id": "fresh-coconut-water",
+      "title": "Fresh Coconut Water",
+      "categories": [
+        "non-alcoholic",
+        "natural"
+      ],
+      "niches": [
+        "healthy",
+        "natural"
+      ],
+      "tags": [],
+      "price_naira": 600,
+      "attributes": {},
+      "text_blob": "Fresh Coconut Water | non-alcoholic, natural | healthy, natural | "
+    },
+    {
+      "item_id": "tigernut-drink-kunu-aya",
+      "title": "Tigernut Drink (Kunu Aya)",
+      "categories": [
+        "non-alcoholic",
+        "traditional"
+      ],
+      "niches": [
+        "nigerian",
+        "healthy"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": 800,
+      "attributes": {},
+      "text_blob": "Tigernut Drink (Kunu Aya) | non-alcoholic, traditional | nigerian, healthy | nigerian"
+    },
+    {
+      "item_id": "espresso-coffee",
+      "title": "Espresso / Coffee",
+      "categories": [
+        "coffee",
+        "hot drink"
+      ],
+      "niches": [
+        "cafe",
+        "caffeine"
+      ],
+      "tags": [],
+      "price_naira": 1500,
+      "attributes": {},
+      "text_blob": "Espresso / Coffee | coffee, hot drink | cafe, caffeine | "
+    },
+    {
+      "item_id": "smoothie-bowl-drink",
+      "title": "Smoothie Bowl Drink",
+      "categories": [
+        "non-alcoholic",
+        "healthy"
+      ],
+      "niches": [
+        "healthy",
+        "fruit"
+      ],
+      "tags": [],
+      "price_naira": 2500,
+      "attributes": {},
+      "text_blob": "Smoothie Bowl Drink | non-alcoholic, healthy | healthy, fruit | "
+    }
+  ],
+  "general lifestyle": [
+    {
+      "item_id": "spa-day-package",
+      "title": "Spa Day Package",
+      "categories": [
+        "wellness",
+        "self-care"
+      ],
+      "niches": [
+        "relaxation",
+        "self-care"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Spa Day Package | wellness, self-care | relaxation, self-care | "
+    },
+    {
+      "item_id": "weekend-getaway-plan",
+      "title": "Weekend Getaway Plan",
+      "categories": [
+        "travel",
+        "leisure"
+      ],
+      "niches": [
+        "leisure",
+        "relaxation"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Weekend Getaway Plan | travel, leisure | leisure, relaxation | "
+    },
+    {
+      "item_id": "owambe-party-planning",
+      "title": "Owambe Party Planning",
+      "categories": [
+        "event",
+        "social"
+      ],
+      "niches": [
+        "nigerian",
+        "owambe"
+      ],
+      "tags": [
+        "nigerian"
+      ],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Owambe Party Planning | event, social | nigerian, owambe | nigerian"
+    },
+    {
+      "item_id": "home-organization-service",
+      "title": "Home Organization Service",
+      "categories": [
+        "home",
+        "service"
+      ],
+      "niches": [
+        "home",
+        "lifestyle"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Home Organization Service | home, service | home, lifestyle | "
+    },
+    {
+      "item_id": "personal-styling-session",
+      "title": "Personal Styling Session",
+      "categories": [
+        "fashion",
+        "service"
+      ],
+      "niches": [
+        "fashion",
+        "self-care"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Personal Styling Session | fashion, service | fashion, self-care | "
+    },
+    {
+      "item_id": "meal-prep-subscription",
+      "title": "Meal Prep Subscription",
+      "categories": [
+        "food",
+        "service"
+      ],
+      "niches": [
+        "healthy",
+        "convenience"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Meal Prep Subscription | food, service | healthy, convenience | "
+    },
+    {
+      "item_id": "book-club-membership",
+      "title": "Book Club Membership",
+      "categories": [
+        "books",
+        "community"
+      ],
+      "niches": [
+        "reading",
+        "community"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Book Club Membership | books, community | reading, community | "
+    },
+    {
+      "item_id": "photography-session",
+      "title": "Photography Session",
+      "categories": [
+        "creative",
+        "service"
+      ],
+      "niches": [
+        "lifestyle",
+        "creative"
+      ],
+      "tags": [],
+      "price_naira": null,
+      "attributes": {},
+      "text_blob": "Photography Session | creative, service | lifestyle, creative | "
+    }
+  ]
+}
