@@ -33,12 +33,14 @@ def _load_catalog() -> dict[str, list[dict[str, Any]]]:
     global _CATALOG
     if _CATALOG is not None:
         return _CATALOG
+    catalog: dict[str, list[dict[str, Any]]]
     try:
-        _CATALOG = json.loads(_CATALOG_PATH.read_text(encoding="utf-8"))
+        catalog = json.loads(_CATALOG_PATH.read_text(encoding="utf-8"))
     except FileNotFoundError:
         warn(f"retrieval_node: catalog.json not found at {_CATALOG_PATH}; using empty catalog")
-        _CATALOG = {}
-    return _CATALOG
+        catalog = {}
+    _CATALOG = catalog
+    return catalog
 
 
 def load_corpus(domain: str) -> list[dict[str, Any]]:
@@ -87,7 +89,14 @@ def _is_cold_start(state: AgentState) -> bool:
     return not affinity and not cohort
 
 
-def _popularity_fallback(domain: str, k: int = 10) -> list[dict[str, Any]]:
+# Wider retrieval pool feeds more candidates to the LLM ranker, which then
+# picks the final 5. With a 287-item catalog and ~60 items per domain, k=30
+# gives the ranker meaningful choice while staying well within Llama-3.3's
+# context window.
+_RETRIEVAL_K = 30
+
+
+def _popularity_fallback(domain: str, k: int = _RETRIEVAL_K) -> list[dict[str, Any]]:
     """Top-k items by ``avg_rating * log(total_ratings)`` within a domain.
 
     Used when retrieval finds nothing OR the persona is fully cold-start.
@@ -101,7 +110,7 @@ def _popularity_fallback(domain: str, k: int = 10) -> list[dict[str, Any]]:
 
 
 def retrieve_candidates(state: AgentState) -> list[dict[str, Any]]:
-    """Retrieve top-10 candidates via hybrid TF-IDF + BM25 + RRF."""
+    """Retrieve top-K candidates via hybrid TF-IDF + BM25 + RRF (K=30)."""
     domain = state.get("resolved_domain") or "general lifestyle"
     fallback_used = bool(state.get("fallback_used", False))
 
@@ -116,7 +125,7 @@ def retrieve_candidates(state: AgentState) -> list[dict[str, Any]]:
 
     try:
         retriever = get_retriever()
-        hits = retriever.retrieve(query=query, domain=domain_filter, k=10)
+        hits = retriever.retrieve(query=query, domain=domain_filter, k=_RETRIEVAL_K)
     except FileNotFoundError as exc:
         warn(f"retrieval_node: hybrid index unavailable ({exc}); falling back to popularity")
         hits = []
@@ -125,7 +134,7 @@ def retrieve_candidates(state: AgentState) -> list[dict[str, Any]]:
         hits = []
 
     if not hits:
-        return _popularity_fallback(domain, k=10)
+        return _popularity_fallback(domain, k=_RETRIEVAL_K)
 
     # Join back with full catalog item records (retriever returns lightweight rows).
     catalog = _load_catalog()
@@ -144,11 +153,11 @@ def retrieve_candidates(state: AgentState) -> list[dict[str, Any]]:
     if _is_cold_start(state):
         # Blend in a popularity tail so cold-start personas still see canonical items.
         seen = {c["item_id"] for c in out}
-        for it in _popularity_fallback(domain, k=10):
-            if it["item_id"] not in seen and len(out) < 10:
+        for it in _popularity_fallback(domain, k=_RETRIEVAL_K):
+            if it["item_id"] not in seen and len(out) < _RETRIEVAL_K:
                 out.append({**it, "raw_score": 0.0})
 
-    return out[:10]
+    return out[:_RETRIEVAL_K]
 
 
 def retrieval_node(state: AgentState) -> AgentState:

@@ -29,8 +29,9 @@ def route_after_validation(state: AgentState) -> str:
 def build_graph():
     """Construct and compile the Task B LangGraph."""
     g = StateGraph(AgentState)
-    g.add_node("persona_builder", persona_builder_node)
-    g.add_node("nigerian_context", nigerian_context_node)
+    # See task_a/agent/graph.py for why these two need a type-ignore.
+    g.add_node("persona_builder", persona_builder_node)  # type: ignore[arg-type]
+    g.add_node("nigerian_context", nigerian_context_node)  # type: ignore[arg-type]
     g.add_node("domain_resolver", domain_resolver_node)
     g.add_node("domain_validator", domain_validator_node)
     g.add_node("clarification", clarification_node)

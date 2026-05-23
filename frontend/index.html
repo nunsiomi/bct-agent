@@ -991,15 +991,16 @@ function clearMetrics() {
 }
 
 // ---------- Held-Out Benchmark (real ground-truth metrics) ----------
-// Offline baseline numbers from `python -m eval.run_eval --n 200` (no LLM).
-// Used to colour-code the current model's deltas.
+// Offline baseline from
+// `python -m eval.run_eval --n 200 --min-relevance-rating 4`
+// (deterministic, no LLM; n_task_b_positives=168 of 200 holdout rows).
 const BASELINE_OFFLINE = {
   rmse: 1.416,
   mae: 1.097,
   rouge_l: 0.052,
-  ndcg: 0.099,
-  hr: 0.195,
-  mrr: 0.058,
+  ndcg: 0.106,
+  hr: 0.214,
+  mrr: 0.074,
 };
 
 function fmtDelta(curr, base, lowerBetter) {
@@ -1088,8 +1089,9 @@ async function loadBenchmark() {
     </div>
     <div class="metrics-note">
       Real metrics from <code>${esc(file)}</code>. Status colours = delta vs offline baseline
-      (RMSE 1.416, ROUGE-L 0.052, NDCG@10 0.099, HR@10 0.195, MRR@10 0.058 over n=200).
-      Re-run via <code>python -m eval.run_eval --in-process --use-reviewer-id --n 20</code>.
+      (RMSE 1.416, ROUGE-L 0.052, NDCG@10 0.106, HR@10 0.214, MRR@10 0.074 over n=200,
+      min_relevance_rating=4). Re-run via
+      <code>python -m eval.run_eval --in-process --use-reviewer-id --min-relevance-rating 4 --n 20</code>.
     </div>`;
   el.hidden = false;
 }

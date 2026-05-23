@@ -169,7 +169,13 @@ def evaluate(
     task_a_url: str = "http://localhost:8001",
     task_b_url: str = "http://localhost:8002",
     use_reviewer_id: bool = False,
+    min_relevance_rating: int = 4,
 ) -> dict[str, Any]:
+    """Run the eval. ``min_relevance_rating`` is the canonical recsys positive-
+    threshold for Task B: only (reviewer, item) pairs where the reviewer rated
+    the item >= this value count as relevant positives for NDCG / HR / MRR.
+    Rows with lower ratings still contribute to Task A's RMSE/ROUGE-L (we
+    still need to predict the rating, even when the rating is bad)."""
     train, holdout = _load()
     sample = _sample(holdout, n=n, seed=seed)
 
@@ -226,23 +232,29 @@ def evaluate(
             print(f"[eval] task_b row {i} failed: {exc}", file=sys.stderr)
             continue
 
-        ndcg = ndcg_at_k(ranked, item_id, k=10)
-        hit = hit_rate_at_k(ranked, item_id, k=10)
-        mrr = reciprocal_rank(ranked, item_id)
-        b_ndcg.append(ndcg)
-        b_hit.append(hit)
-        b_mrr.append(mrr)
+        # Only treat (reviewer, item) where rating >= threshold as a positive
+        # interaction for Task B. Predicting items a user *disliked* should
+        # not be punished as a miss.
+        if true_rating >= min_relevance_rating:
+            ndcg = ndcg_at_k(ranked, item_id, k=10)
+            hit = hit_rate_at_k(ranked, item_id, k=10)
+            mrr = reciprocal_rank(ranked, item_id)
+            b_ndcg.append(ndcg)
+            b_hit.append(hit)
+            b_mrr.append(mrr)
 
-        slot = per_domain.setdefault(domain, {"ndcg": [], "hit": [], "mrr": []})
-        slot["ndcg"].append(ndcg)
-        slot["hit"].append(hit)
-        slot["mrr"].append(mrr)
+            slot = per_domain.setdefault(domain, {"ndcg": [], "hit": [], "mrr": []})
+            slot["ndcg"].append(ndcg)
+            slot["hit"].append(hit)
+            slot["mrr"].append(mrr)
 
     results = {
         "mode": mode,
         "llm_provider": LLM_PROVIDER,
         "llm_model": LLM_MODEL,
         "n_evaluated": len(a_pred_ratings),
+        "n_task_b_positives": len(b_ndcg),
+        "min_relevance_rating": min_relevance_rating,
         "task_a": {
             "rmse": rmse(a_pred_ratings, a_true_ratings),
             "mae": mae(a_pred_ratings, a_true_ratings),
@@ -284,6 +296,8 @@ def main() -> None:
     p.add_argument("--in-process", action="store_true", help="shortcut for --mode in_process")
     p.add_argument("--use-reviewer-id", action="store_true",
                    help="(in_process Task A only) pass the held-out reviewer's id into grounding")
+    p.add_argument("--min-relevance-rating", type=int, default=4,
+                   help="Task B positives only when held-out rating >= this (default 4)")
     p.add_argument("--task-a-url", default="http://localhost:8001")
     p.add_argument("--task-b-url", default="http://localhost:8002")
     p.add_argument("--out", default=str(RESULTS_PATH))
@@ -302,6 +316,7 @@ def main() -> None:
         task_a_url=args.task_a_url,
         task_b_url=args.task_b_url,
         use_reviewer_id=args.use_reviewer_id,
+        min_relevance_rating=args.min_relevance_rating,
     )
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)

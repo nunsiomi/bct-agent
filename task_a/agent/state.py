@@ -29,6 +29,13 @@ class AgentState(TypedDict, total=False):
     draft_rating: float
     draft_confidence: float
 
+    # Phase 6 self-critique loop
+    critique_passes: bool
+    critique_issues: list[str]
+    critique_score: float
+    revision_count: int
+    max_revisions: int
+
     review: str
     rating: float
     confidence: float
