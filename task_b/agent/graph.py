@@ -18,6 +18,7 @@ from task_b.agent.persona_builder import persona_builder_node
 from task_b.agent.reasoning_ranker import reasoning_ranker_node
 from task_b.agent.retrieval_node import retrieval_node
 from task_b.agent.state import AgentState
+from task_b.agent.verify_node import verify_node
 
 
 def route_after_validation(state: AgentState) -> str:
@@ -35,6 +36,7 @@ def build_graph():
     g.add_node("clarification", clarification_node)
     g.add_node("retrieval", retrieval_node)
     g.add_node("reasoning_ranker", reasoning_ranker_node)
+    g.add_node("verify", verify_node)
 
     g.set_entry_point("persona_builder")
     g.add_edge("persona_builder", "nigerian_context")
@@ -47,6 +49,7 @@ def build_graph():
     )
     g.add_edge("clarification", "retrieval")
     g.add_edge("retrieval", "reasoning_ranker")
-    g.add_edge("reasoning_ranker", END)
+    g.add_edge("reasoning_ranker", "verify")
+    g.add_edge("verify", END)
 
     return g.compile()

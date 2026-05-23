@@ -1,4 +1,16 @@
-"""Retrieval node — scores candidate items from the catalog against persona signals."""
+"""Retrieval node -- hybrid TF-IDF + BM25 retrieval against the committed catalog.
+
+Replaces the legacy substring-overlap scorer. The heavy lifting lives in
+``core.retrieval.HybridRetriever``; this node is a thin adapter that builds a
+query from persona signals and writes candidates into graph state.
+
+Cold-start: when the fingerprint has no category affinity and the cohort has
+no signal, falls back to popularity-based retrieval over the domain (the
+top-rated items from the catalog).
+
+Cross-domain: when the resolved domain is unknown / fallback, retrieves
+across all domains so the persona's interests can pull matches.
+"""
 
 from __future__ import annotations
 
@@ -7,6 +19,7 @@ from pathlib import Path
 from typing import Any
 
 from core.json_utils import warn
+from core.retrieval import get_retriever
 from task_b.agent.state import AgentState
 
 
@@ -17,13 +30,11 @@ _CATALOG: dict[str, list[dict[str, Any]]] | None = None
 
 
 def _load_catalog() -> dict[str, list[dict[str, Any]]]:
-    """Load and memoize the JSON catalog from data_prep/artifacts/."""
     global _CATALOG
     if _CATALOG is not None:
         return _CATALOG
     try:
-        with _CATALOG_PATH.open("r", encoding="utf-8") as fh:
-            _CATALOG = json.load(fh)
+        _CATALOG = json.loads(_CATALOG_PATH.read_text(encoding="utf-8"))
     except FileNotFoundError:
         warn(f"retrieval_node: catalog.json not found at {_CATALOG_PATH}; using empty catalog")
         _CATALOG = {}
@@ -36,67 +47,108 @@ def load_corpus(domain: str) -> list[dict[str, Any]]:
     return catalog.get(domain) or catalog.get("general lifestyle") or []
 
 
-def _overlap(a: list[str], b: list[str]) -> int:
-    """Number of elements in `a` that appear as a substring of any element in `b` (case-insensitive)."""
-    if not a or not b:
-        return 0
-    lower_b = [str(x).lower() for x in b]
-    hits = 0
-    for x in a:
-        sx = str(x).lower()
-        for y in lower_b:
-            if sx == y or sx in y or y in sx:
-                hits += 1
-                break
-    return hits
+def _build_query(state: AgentState) -> str:
+    """Compose a retrieval query from persona signals, niche, and population priors.
 
+    Order matters for TF-IDF / BM25: niche first (highest specificity), then
+    fingerprint affinity tags, then persona free-text, then cohort priors.
+    """
+    parts: list[str] = []
 
-def _population_priors(state: AgentState) -> list[str]:
-    """Flatten the top_categories of the matched cohort into a single list."""
-    out: list[str] = []
+    niche = (state.get("resolved_niche") or "").strip()
+    if niche:
+        parts.append(niche)
+
+    fingerprint = state.get("fingerprint", {}) or {}
+    affinity = fingerprint.get("category_affinity") or []
+    if affinity:
+        parts.append(" ".join(str(x) for x in affinity))
+    markers = fingerprint.get("nigerian_markers") or []
+    if markers:
+        parts.append(" ".join(str(x) for x in markers))
+
+    persona = (state.get("persona") or "").strip()
+    if persona:
+        parts.append(persona)
+
+    # Cohort priors (cold-start backstop).
     for row in state.get("similar_users", []) or []:
         cats = row.get("top_categories") or []
         if isinstance(cats, list):
-            out.extend(str(c) for c in cats)
-    return out
+            parts.extend(str(c) for c in cats[:3])
+
+    return " ".join(parts).strip() or "popular nigerian product"
 
 
-def _score(item: dict[str, Any], state: AgentState) -> float:
+def _is_cold_start(state: AgentState) -> bool:
     fingerprint = state.get("fingerprint", {}) or {}
-    affinity = [str(x).lower() for x in (fingerprint.get("category_affinity") or [])]
-    niche = (state.get("resolved_niche") or "").strip().lower()
-    ng_applied = bool(state.get("nigerian_context_applied", False))
+    affinity = fingerprint.get("category_affinity") or []
+    cohort = state.get("similar_users", []) or []
+    return not affinity and not cohort
 
-    cats = [str(c).lower() for c in (item.get("categories") or [])]
-    niches = [str(n).lower() for n in (item.get("niches") or [])]
-    tags = [str(t).lower() for t in (item.get("tags") or [])]
 
-    score = 0.0
-    score += 2.0 * _overlap(affinity, cats)
+def _popularity_fallback(domain: str, k: int = 10) -> list[dict[str, Any]]:
+    """Top-k items by ``avg_rating * log(total_ratings)`` within a domain.
 
-    if niche:
-        if any(niche in n or n in niche for n in niches):
-            score += 3.0
-
-    if ng_applied and "nigerian" in tags:
-        score += 1.0
-
-    if not affinity:
-        priors = _population_priors(state)
-        score += 0.5 * _overlap(priors, cats)
-
-    return score
+    Used when retrieval finds nothing OR the persona is fully cold-start.
+    """
+    import math
+    items = load_corpus(domain)
+    def pop(it: dict[str, Any]) -> float:
+        attr = it.get("attributes") or {}
+        return float(attr.get("avg_rating", 0.0)) * math.log(1 + float(attr.get("total_ratings", 0)))
+    return sorted(items, key=pop, reverse=True)[:k]
 
 
 def retrieve_candidates(state: AgentState) -> list[dict[str, Any]]:
-    """Score the corpus and return the top-10 candidates."""
-    items = load_corpus(state.get("resolved_domain") or "general lifestyle")
-    scored = []
-    for item in items:
-        s = _score(item, state)
-        scored.append({**item, "raw_score": float(s)})
-    scored.sort(key=lambda x: x["raw_score"], reverse=True)
-    return scored[:10]
+    """Retrieve top-10 candidates via hybrid TF-IDF + BM25 + RRF."""
+    domain = state.get("resolved_domain") or "general lifestyle"
+    fallback_used = bool(state.get("fallback_used", False))
+
+    query = _build_query(state)
+
+    # Cross-domain expansion when the domain validator routed to fallback.
+    domain_filter: str | list[str] | None
+    if fallback_used or domain == "general lifestyle":
+        domain_filter = None  # search the whole catalog; persona signals will steer
+    else:
+        domain_filter = domain
+
+    try:
+        retriever = get_retriever()
+        hits = retriever.retrieve(query=query, domain=domain_filter, k=10)
+    except FileNotFoundError as exc:
+        warn(f"retrieval_node: hybrid index unavailable ({exc}); falling back to popularity")
+        hits = []
+    except Exception as exc:  # noqa: BLE001
+        warn(f"retrieval_node: hybrid retrieval failed ({exc}); falling back to popularity")
+        hits = []
+
+    if not hits:
+        return _popularity_fallback(domain, k=10)
+
+    # Join back with full catalog item records (retriever returns lightweight rows).
+    catalog = _load_catalog()
+    by_id: dict[str, dict[str, Any]] = {}
+    for items in catalog.values():
+        for it in items:
+            by_id[it["item_id"]] = it
+
+    out: list[dict[str, Any]] = []
+    for h in hits:
+        full = by_id.get(h["item_id"], {})
+        merged = {**full, **h}
+        merged["raw_score"] = float(h.get("score", 0.0))
+        out.append(merged)
+
+    if _is_cold_start(state):
+        # Blend in a popularity tail so cold-start personas still see canonical items.
+        seen = {c["item_id"] for c in out}
+        for it in _popularity_fallback(domain, k=10):
+            if it["item_id"] not in seen and len(out) < 10:
+                out.append({**it, "raw_score": 0.0})
+
+    return out[:10]
 
 
 def retrieval_node(state: AgentState) -> AgentState:

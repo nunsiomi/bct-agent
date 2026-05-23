@@ -41,7 +41,7 @@ from eval.metrics import (
     rouge_l,
 )
 from eval.persona_reconstruction import reconstruct_persona
-from eval.retrieval_baseline import get_index
+from core.retrieval import get_retriever
 
 HOLDOUT_PATH = ARTIFACTS_DIR / "eval_holdout.csv"
 TRAIN_PATH = ARTIFACTS_DIR / "eval_train.csv"
@@ -100,8 +100,8 @@ def _task_a_live(persona_text: str, product: str, base_url: str) -> dict[str, An
 # --------------------------------------------------------------------------- #
 
 def _task_b_offline(persona_text: str, domain: str, k: int = 10) -> list[str]:
-    idx = get_index()
-    hits = idx.retrieve(persona_text, domain=domain, k=k)
+    """Offline Task B baseline: hybrid TF-IDF + BM25 retrieval (same code as Task B's runtime)."""
+    hits = get_retriever().retrieve(persona_text, domain=domain, k=k)
     return [h["item_id"] for h in hits]
 
 
