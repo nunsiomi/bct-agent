@@ -11,8 +11,6 @@ from __future__ import annotations
 from functools import lru_cache
 from typing import Any
 
-import anthropic
-
 from core.config import LLM_PROVIDER
 from core.llm.base import LLMProvider
 
@@ -33,17 +31,22 @@ def get_llm() -> LLMProvider:
 # Backward-compatible shims for existing call sites.
 # --------------------------------------------------------------------------- #
 
-def get_anthropic_client() -> anthropic.Anthropic:
-    """Legacy: return the Anthropic SDK client (only if anthropic provider in use).
+def get_anthropic_client() -> Any:
+    """Legacy: return the Anthropic SDK client when the Anthropic provider is in use.
 
-    Most call sites should migrate to `get_llm().complete(...)` directly.
+    When a non-Anthropic provider is active (e.g. Groq via openai_compatible),
+    return None -- the ``call_claude`` shim ignores the ``client`` arg and
+    routes through ``get_llm().complete()`` regardless.
     """
     provider = get_llm()
     client = getattr(provider, "client", None)
-    if client is None:
-        # Fall back to a fresh client so old code that bypasses the provider works.
+    if client is not None:
+        return client
+    try:
+        import anthropic
         return anthropic.Anthropic()
-    return client
+    except Exception:  # noqa: BLE001 -- missing key / SDK not configured
+        return None
 
 
 def call_claude(
