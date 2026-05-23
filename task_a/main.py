@@ -12,6 +12,9 @@ from pydantic import BaseModel
 
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
+import json
+
+from core.config import ARTIFACTS_DIR, LLM_MODEL, LLM_PROVIDER
 from core.persona_signals import load_persona_signals
 from core.validation import is_gibberish, is_keyboard_mash, is_too_short
 from task_a.agent.graph import build_graph
@@ -144,3 +147,37 @@ def generate_review(req: ReviewRequest):
 def health() -> dict[str, str]:
     """Liveness probe."""
     return {"status": "ok"}
+
+
+@app.get("/eval_metrics")
+def eval_metrics():
+    """Return the most-recent held-out evaluation results, if available.
+
+    The frontend renders these as ``Held-Out Benchmark`` -- real ground-truth
+    metrics computed against the Jumia holdout via ``eval/run_eval.py``. This
+    is distinct from the per-call ``self-consistency`` metrics computed in
+    the browser, which only check whether re-running the same persona gives
+    the same answer.
+    """
+    canonical = ARTIFACTS_DIR / "evaluation_results.json"
+    candidates = sorted(
+        [p for p in ARTIFACTS_DIR.glob("eval_*.json")] + ([canonical] if canonical.exists() else []),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    if not candidates:
+        return {
+            "available": False,
+            "current_provider": LLM_PROVIDER,
+            "current_model": LLM_MODEL,
+        }
+    latest = candidates[0]
+    try:
+        body = json.loads(latest.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"available": False, "error": "could not read latest eval file"}
+    body["available"] = True
+    body["source_file"] = latest.name
+    body["current_provider"] = LLM_PROVIDER
+    body["current_model"] = LLM_MODEL
+    return body

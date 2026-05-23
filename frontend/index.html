@@ -809,6 +809,7 @@ html[data-theme="light"] {
           </div>
         </div>
         <div id="a-metrics" class="metrics-panel" hidden aria-live="polite"></div>
+        <div id="a-benchmark" class="metrics-panel" hidden aria-live="polite"></div>
       </div>
     </div>
 
@@ -989,6 +990,113 @@ function clearMetrics() {
   el.hidden = true;
 }
 
+// ---------- Held-Out Benchmark (real ground-truth metrics) ----------
+// Offline baseline numbers from `python -m eval.run_eval --n 200` (no LLM).
+// Used to colour-code the current model's deltas.
+const BASELINE_OFFLINE = {
+  rmse: 1.416,
+  mae: 1.097,
+  rouge_l: 0.052,
+  ndcg: 0.099,
+  hr: 0.195,
+  mrr: 0.058,
+};
+
+function fmtDelta(curr, base, lowerBetter) {
+  if (curr == null || base == null) return ['', ''];
+  const diff = curr - base;
+  const better = lowerBetter ? diff < 0 : diff > 0;
+  const same = Math.abs(diff) < 1e-3;
+  const cls = same ? 'warn' : (better ? 'good' : 'bad');
+  const sign = diff > 0 ? '+' : '';
+  return [cls, `${sign}${diff.toFixed(3)} vs baseline`];
+}
+
+async function loadBenchmark() {
+  const el = $('a-benchmark');
+  if (!el) return;
+  let body;
+  try {
+    const resp = await fetch(TASK_A_URL + '/eval_metrics', { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    body = await resp.json();
+  } catch (err) {
+    el.innerHTML = `
+      <div class="metrics-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 3v18h18"/><path d="M7 15l4-4 4 3 5-7"/>
+        </svg>
+        <span>Held-Out Benchmark — unavailable</span>
+      </div>
+      <div class="metrics-note">
+        Couldn't reach <code>${esc(TASK_A_URL)}/eval_metrics</code>. Start Task A on port 8001,
+        then run <code>python -m eval.run_eval --in-process --use-reviewer-id --n 20</code> to populate.
+      </div>`;
+    el.hidden = false;
+    return;
+  }
+  if (!body || !body.available) {
+    el.innerHTML = `
+      <div class="metrics-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 3v18h18"/><path d="M7 15l4-4 4 3 5-7"/>
+        </svg>
+        <span>Held-Out Benchmark — not yet run</span>
+      </div>
+      <div class="metrics-note">
+        Run <code>python -m eval.run_eval --in-process --use-reviewer-id --n 20</code>
+        to score this model against real Jumia holdout reviews.
+      </div>`;
+    el.hidden = false;
+    return;
+  }
+
+  const a = body.task_a || {};
+  const b = body.task_b || {};
+  const model = `${esc(body.llm_provider || '?')} / ${esc(body.llm_model || '?')}`;
+  const n = body.n_evaluated || 0;
+  const file = body.source_file || '';
+
+  const tile = (name, value, status, deltaText) =>
+    `<div class="metric-card status-${status}">
+       <div class="metric-name">${esc(name)}</div>
+       <div class="metric-value"><span>${value}</span></div>
+       <div class="metric-status">${esc(deltaText || '')}</div>
+     </div>`;
+
+  const [rmseCls, rmseD] = fmtDelta(a.rmse, BASELINE_OFFLINE.rmse, true);
+  const [maeCls, maeD]   = fmtDelta(a.mae, BASELINE_OFFLINE.mae, true);
+  const [rougeCls, rougeD] = fmtDelta(a.rouge_l_mean, BASELINE_OFFLINE.rouge_l, false);
+  const [ndcgCls, ndcgD]   = fmtDelta(b.ndcg_at_10, BASELINE_OFFLINE.ndcg, false);
+  const [hrCls, hrD]       = fmtDelta(b.hit_rate_at_10, BASELINE_OFFLINE.hr, false);
+  const [mrrCls, mrrD]     = fmtDelta(b.mrr_at_10, BASELINE_OFFLINE.mrr, false);
+
+  el.innerHTML = `
+    <div class="metrics-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+      <span>Held-Out Benchmark — real Jumia ground truth (${esc(model)}, n=${n})</span>
+    </div>
+    <div class="metrics-grid">
+      ${tile('Task A RMSE',     a.rmse != null ? a.rmse.toFixed(3) : '—', rmseCls, rmseD)}
+      ${tile('Task A MAE',      a.mae != null ? a.mae.toFixed(3) : '—', maeCls, maeD)}
+      ${tile('Task A ROUGE-L',  a.rouge_l_mean != null ? a.rouge_l_mean.toFixed(3) : '—', rougeCls, rougeD)}
+      ${tile('Task B NDCG@10',  b.ndcg_at_10 != null ? b.ndcg_at_10.toFixed(3) : '—', ndcgCls, ndcgD)}
+      ${tile('Task B HR@10',    b.hit_rate_at_10 != null ? b.hit_rate_at_10.toFixed(3) : '—', hrCls, hrD)}
+      ${tile('Task B MRR@10',   b.mrr_at_10 != null ? b.mrr_at_10.toFixed(3) : '—', mrrCls, mrrD)}
+    </div>
+    <div class="metrics-note">
+      Real metrics from <code>${esc(file)}</code>. Status colours = delta vs offline baseline
+      (RMSE 1.416, ROUGE-L 0.052, NDCG@10 0.099, HR@10 0.195, MRR@10 0.058 over n=200).
+      Re-run via <code>python -m eval.run_eval --in-process --use-reviewer-id --n 20</code>.
+    </div>`;
+  el.hidden = false;
+}
+
+// Fetch benchmark on page load, and again on tab switch.
+document.addEventListener('DOMContentLoaded', () => { loadBenchmark(); });
+
 // ---------- Input validation banner helpers ----------
 function showInputBanner(id, message, suggestion) {
   const el = document.getElementById(id);
@@ -1080,10 +1188,10 @@ function renderMetrics(d1, d2) {
         <path d="M3 3v18h18"/>
         <path d="M7 15l4-4 4 3 5-7"/>
       </svg>
-      <span>Live Evaluation Metrics</span>
+      <span>Self-Consistency Check (this run × re-run)</span>
     </div>
     <div class="metrics-grid">
-      ${card('Rating RMSE', `<span>${rmse.toFixed(2)}</span>`, rmseStatus[1], rmseStatus[0])}
+      ${card('Rating |Δ|', `<span>${rmse.toFixed(2)}</span>`, rmseStatus[1], rmseStatus[0])}
       ${card('Text consistency', `<span>${rouge.toFixed(2)}</span>`, rougeStatus[1], rougeStatus[0])}
       ${confCard}
       ${card('Nigerian context', ng ? '✓' : '✗', ngStatus[1], ngStatus[0])}
@@ -1091,7 +1199,9 @@ function renderMetrics(d1, d2) {
       ${card('Rating validity', `<span>${r1.toFixed(1)}</span>`, validStatus[1], validStatus[0])}
     </div>
     <div class="metrics-note">
-      Metrics computed in real time using self-consistency evaluation across two independent runs.
+      <strong>Self-consistency only:</strong> the model was called twice on the same input;
+      these numbers measure how stable its output is, not how accurate it is.
+      Accuracy is shown in the &ldquo;Held-Out Benchmark&rdquo; panel below, scored against real Jumia reviews.
     </div>`;
 
   el.hidden = false;
