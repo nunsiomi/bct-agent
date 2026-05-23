@@ -6,7 +6,8 @@ import json
 import math
 from typing import Any
 
-from datasets.utils import call_claude, get_anthropic_client, parse_json_block, warn
+from core.json_utils import parse_json_block, warn
+from core.llm import call_claude, get_anthropic_client
 from task_a.agent.state import AgentState
 
 

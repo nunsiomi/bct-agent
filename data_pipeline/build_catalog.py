@@ -224,27 +224,43 @@ SEED: dict[str, list[dict[str, Any]]] = {
 }
 
 
-def merge_external(catalog: dict[str, list[dict[str, Any]]]) -> dict[str, list[dict[str, Any]]]:
-    """Phase-2 hook: fold cleaned external dumps into the seed catalog.
+def _merge_grouped(
+    catalog: dict[str, list[dict[str, Any]]],
+    extra: dict[str, list[dict[str, Any]]],
+) -> None:
+    """In-place merge: append items by domain, skipping duplicate item_ids."""
+    for domain, items in extra.items():
+        existing = {i["item_id"] for i in catalog.get(domain, [])}
+        catalog.setdefault(domain, []).extend(
+            i for i in items if isinstance(i, dict) and i.get("item_id") not in existing
+        )
 
-    Looks for `data_prep/raw/<domain>.json` (canonical-item lists produced by
-    the source adapters). Absent files are skipped, so this is a no-op until
-    real datasets (IMDb / MovieLens / Amazon / Jumia-Jiji) are ingested.
+
+def merge_external(catalog: dict[str, list[dict[str, Any]]]) -> dict[str, list[dict[str, Any]]]:
+    """Fold real external datasets into the seed catalog.
+
+    - **Jumia** (committed under ``datasets/``) is always merged when present.
+    - ``data_prep/raw/<domain>.json`` (per-domain canonical-item lists from
+      future IMDb / MovieLens / Amazon adapters) is merged when present.
     """
+    # 1. Jumia -- real Nigerian product catalog, ~150 unique items.
+    try:
+        from data_pipeline.sources.jumia import canonical_items as jumia_items
+        _merge_grouped(catalog, jumia_items())
+    except Exception as exc:  # noqa: BLE001 -- catalog must keep building
+        print(f"[build_catalog] jumia merge skipped: {exc}")
+
+    # 2. Pre-cleaned raw drops (forward-compat for IMDb / MovieLens / Amazon).
     raw_dir = OUT_PATH.parents[1] / "raw"
-    if not raw_dir.exists():
-        return catalog
-    for f in sorted(raw_dir.glob("*.json")):
-        domain = f.stem
-        try:
-            extra = json.loads(f.read_text(encoding="utf-8"))
-        except (ValueError, OSError):
-            continue
-        if isinstance(extra, list):
-            existing = {i["item_id"] for i in catalog.get(domain, [])}
-            catalog.setdefault(domain, []).extend(
-                i for i in extra if isinstance(i, dict) and i.get("item_id") not in existing
-            )
+    if raw_dir.exists():
+        for f in sorted(raw_dir.glob("*.json")):
+            domain = f.stem
+            try:
+                extra = json.loads(f.read_text(encoding="utf-8"))
+            except (ValueError, OSError):
+                continue
+            if isinstance(extra, list):
+                _merge_grouped(catalog, {domain: extra})
     return catalog
 
 

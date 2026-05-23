@@ -12,8 +12,8 @@ from pydantic import BaseModel
 
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
-from datasets.utils import load_persona_signals
-from datasets.validation import is_gibberish, is_keyboard_mash, is_too_short
+from core.persona_signals import load_persona_signals
+from core.validation import is_gibberish, is_keyboard_mash, is_too_short
 from task_a.agent.graph import build_graph
 
 

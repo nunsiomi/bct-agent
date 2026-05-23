@@ -5,7 +5,8 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from datasets.utils import call_claude, get_anthropic_client, parse_json_block, warn
+from core.json_utils import parse_json_block, warn
+from core.llm import call_claude, get_anthropic_client
 from task_b.agent.state import AgentState
 
 

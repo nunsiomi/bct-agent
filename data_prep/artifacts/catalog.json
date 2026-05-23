@@ -507,6 +507,703 @@
       "price_naira": 4000,
       "attributes": {},
       "text_blob": "Catfish Pepper Soup | soup, fish | nigerian, spicy | nigerian"
+    },
+    {
+      "item_id": "portable-insulated-thermal-lunch-bag",
+      "title": "Portable Insulated Thermal Lunch Bag",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food",
+        "kitchen"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2999,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 760,
+        "n_reviews_in_dataset": 232,
+        "product_link": "https://www.jumia.com.ng/generic-portable-insulated-thermal-lunch-bag-348604353.html",
+        "source": "jumia"
+      },
+      "text_blob": "Portable Insulated Thermal Lunch Bag | food | i don't like it, durable, could be better, Not worth it, Good one"
+    },
+    {
+      "item_id": "syinix-swallow-maker-eco-cook-pound-yam-fufu-multi-functional",
+      "title": "Syinix Swallow Maker ECO -Cook & Pound Yam/Fufu Multi Functional",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 80706,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 176,
+        "n_reviews_in_dataset": 38,
+        "product_link": "https://www.jumia.com.ng/syinix-swallow-maker-eco-cook-pound-yamfufu-multi-functional-382691200.html",
+        "source": "jumia"
+      },
+      "text_blob": "Syinix Swallow Maker ECO -Cook & Pound Yam/Fufu Multi Functional | food | It work perfectly., very good product, Great, i love it, Love it"
+    },
+    {
+      "item_id": "syinix-syinix-swallow-maker-fully-automatic-fufu-eba-yam-pounder",
+      "title": "Syinix Syinix Swallow Maker- Fully Automatic -fufu/Eba/Yam Pounder",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 105882,
+      "attributes": {
+        "avg_rating": 4.4,
+        "total_ratings": 167,
+        "n_reviews_in_dataset": 51,
+        "product_link": "https://www.jumia.com.ng/syinix-syinix-swallow-maker-fully-automatic-fufuebayam-pounder-382691144.html",
+        "source": "jumia"
+      },
+      "text_blob": "Syinix Syinix Swallow Maker- Fully Automatic -fufu/Eba/Yam Pounder | food | Excellent, very good, Nice, i like it, perfect buy"
+    },
+    {
+      "item_id": "2-layers-stainless-steel-dish-drainer",
+      "title": "2 Layers Stainless Steel Dish Drainer",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 12400,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 109,
+        "n_reviews_in_dataset": 31,
+        "product_link": "https://www.jumia.com.ng/generic-2-layers-stainless-steel-dish-drainer-150081114.html",
+        "source": "jumia"
+      },
+      "text_blob": "2 Layers Stainless Steel Dish Drainer | food | size, Too small, Manageable, rust so fast, I like it"
+    },
+    {
+      "item_id": "mr-steel-multi-purpose-food-processor-blender-3l",
+      "title": "MR. STEEL Multi-Purpose Food Processor-Blender- 3L",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "appliance",
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 22300,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 102,
+        "n_reviews_in_dataset": 30,
+        "product_link": "https://www.jumia.com.ng/generic-mr.-steel-multi-purpose-food-processor-blender-3l-342418061.html",
+        "source": "jumia"
+      },
+      "text_blob": "MR. STEEL Multi-Purpose Food Processor-Blender- 3L | food | good, functionality, Love it, Product is subpar, strong"
+    },
+    {
+      "item_id": "reusable-drawstring-cheesecloth-mesh-sieve-bag-cheese-cloth",
+      "title": "REUSABLE DRAWSTRING CHEESECLOTH MESH SIEVE BAG CHEESE CLOTH",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": null,
+      "attributes": {
+        "avg_rating": 4.6,
+        "total_ratings": 94,
+        "n_reviews_in_dataset": 24,
+        "product_link": "https://www.jumia.com.ng/generic-reusable-drawstring-cheesecloth-mesh-sieve-bag-cheese-cloth-382438711.html",
+        "source": "jumia"
+      },
+      "text_blob": "REUSABLE DRAWSTRING CHEESECLOTH MESH SIEVE BAG CHEESE CLOTH | food | A life Saver, Fine, I love it, Not too strong, Nice"
+    },
+    {
+      "item_id": "oraimo-thermogo-750ml-stainless-steel-insulated-thermos",
+      "title": "Oraimo ThermoGo 750ml Stainless Steel Insulated Thermos",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "accessories",
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 20492,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 62,
+        "n_reviews_in_dataset": 16,
+        "product_link": "https://www.jumia.com.ng/oraimo-thermogo-750ml-stainless-steel-insulated-thermos-418459600.html",
+        "source": "jumia"
+      },
+      "text_blob": "Oraimo ThermoGo 750ml Stainless Steel Insulated Thermos | food | I don't like it, Excellent, I like it, size, Good"
+    },
+    {
+      "item_id": "nafender-10-pack-reusable-glass-straws-drinking-straws-with-2-brushes",
+      "title": "NAFENDER 10-Pack Reusable Glass Straws Drinking Straws With 2 Brushes",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4321,
+      "attributes": {
+        "avg_rating": 4.5,
+        "total_ratings": 43,
+        "n_reviews_in_dataset": 10,
+        "product_link": "https://www.jumia.com.ng/10-pack-reusable-glass-straws-drinking-straws-with-2-brushes-nafender-mpg11319162.html",
+        "source": "jumia"
+      },
+      "text_blob": "NAFENDER 10-Pack Reusable Glass Straws Drinking Straws With 2 Brushes | food | Very good, Nice with careful packaging, Great product, shorter than what's on the picture, Packaged well"
+    },
+    {
+      "item_id": "stainless-steel-meat-grinder-2l-1-set-of-blades-white",
+      "title": "Stainless Steel Meat Grinder, 2L, 1 Set Of Blades, White",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 16450,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 43,
+        "n_reviews_in_dataset": 9,
+        "product_link": "https://www.jumia.com.ng/generic-stainless-steel-meat-grinder-2l-1-set-of-blades-white-388584302.html",
+        "source": "jumia"
+      },
+      "text_blob": "Stainless Steel Meat Grinder, 2L, 1 Set Of Blades, White | food | Great, too small, Works well, Good For The Money, Excellent"
+    },
+    {
+      "item_id": "pot-cookware-cleaner-rusty-and-burnt-material-cleaner",
+      "title": "Pot / Cookware Cleaner, Rusty And Burnt Material Cleaner",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "cookware",
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2499,
+      "attributes": {
+        "avg_rating": 3.0,
+        "total_ratings": 40,
+        "n_reviews_in_dataset": 13,
+        "product_link": "https://www.jumia.com.ng/generic-pot-cookware-cleaner-rusty-and-burnt-material-cleaner-408169016.html",
+        "source": "jumia"
+      },
+      "text_blob": "Pot / Cookware Cleaner, Rusty And Burnt Material Cleaner | food | does not clean anything, package with a sponge, Good, bad, Bad review"
+    },
+    {
+      "item_id": "mr-steel-multi-purpose-food-processor-blender-yam-pounder-3l",
+      "title": "MR. STEEL Multi-Purpose Food Processor-Blender- Yam Pounder 3L",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "appliance",
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 22900,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 35,
+        "n_reviews_in_dataset": 13,
+        "product_link": "https://www.jumia.com.ng/multi-purpose-food-processor-blender-yam-pounder-3l-mr.-steel-mpg8276521.html",
+        "source": "jumia"
+      },
+      "text_blob": "MR. STEEL Multi-Purpose Food Processor-Blender- Yam Pounder 3L | food | It’s okay, Great, I love it, it's good., good"
+    },
+    {
+      "item_id": "portable-single-burner-electric-hot-plate",
+      "title": "Portable single burner electric Hot Plate",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 15000,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 32,
+        "n_reviews_in_dataset": 7,
+        "product_link": "https://www.jumia.com.ng/generic-portable-single-burner-electric-hot-plate-418571413.html",
+        "source": "jumia"
+      },
+      "text_blob": "Portable single burner electric Hot Plate | food | Nice, hot plate, ok, Excellently perfect, I like it"
+    },
+    {
+      "item_id": "large-capacity-portable-insulated-lunch-bag-for-adults-children-picnics-work-tra",
+      "title": "Large Capacity Portable Insulated Lunch Bag For Adults Children…",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food",
+        "kitchen"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4491,
+      "attributes": {
+        "avg_rating": 3.4,
+        "total_ratings": 29,
+        "n_reviews_in_dataset": 12,
+        "product_link": "https://www.jumia.com.ng/generic-large-capacity-portable-insulated-lunch-bag-for-adults-children-picnics-work-travel-bento-tote-bag-418591664.html",
+        "source": "jumia"
+      },
+      "text_blob": "Large Capacity Portable Insulated Lunch Bag For Adults Children Picnics Work Travel Bento Tote Bag | food | Good product, great, Too small, Not bad, not strong enough"
+    },
+    {
+      "item_id": "unique-straw-water-cup-glass-cup-with-lid",
+      "title": "Unique Straw Water Cup Glass Cup With Lid",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4000,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 28,
+        "n_reviews_in_dataset": 9,
+        "product_link": "https://www.jumia.com.ng/generic-unique-straw-water-cup-glass-cup-with-lid-410245202.html",
+        "source": "jumia"
+      },
+      "text_blob": "Unique Straw Water Cup Glass Cup With Lid | food | Exactly as seen, it's too small, My sunshine is enjoying it, By tightening the rubber by the side, Good product"
+    },
+    {
+      "item_id": "8-covered-food-storage-containers-for-organizing-grain-dry-goods-flour-and-sugar",
+      "title": "8 Covered Food Storage Containers For Organizing Grain, Dry Goods,…",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 18000,
+      "attributes": {
+        "avg_rating": 4.6,
+        "total_ratings": 25,
+        "n_reviews_in_dataset": 15,
+        "product_link": "https://www.jumia.com.ng/generic-8-covered-food-storage-containers-for-organizing-grain-dry-goods-flour-and-sugar-jars-in-the-kitchen-and-food-storage-room-418927611.html",
+        "source": "jumia"
+      },
+      "text_blob": "8 Covered Food Storage Containers For Organizing Grain, Dry Goods, Flour, And Sugar Jars In The Kitchen And Food Storage Room | food | 5 Star, I don't really like it, Extremely good, very beautiful, Love it"
+    },
+    {
+      "item_id": "sink-rack-drain-basket-plastic-storage-hanging-bag-adjustable-pink",
+      "title": "Sink Rack Drain Basket Plastic Storage Hanging Bag Adjustable-Pink",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 1749,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 25,
+        "n_reviews_in_dataset": 9,
+        "product_link": "https://www.jumia.com.ng/generic-sink-rack-drain-basket-plastic-storage-hanging-bag-adjustable-pink-414312658.html",
+        "source": "jumia"
+      },
+      "text_blob": "Sink Rack Drain Basket Plastic Storage Hanging Bag Adjustable-Pink | food | Poor, good, Sink rack, good, Sink rack"
+    },
+    {
+      "item_id": "nicer-dicer-plus-multipurpose-12in1-kitchen-dicing-set",
+      "title": "Nicer Dicer Plus Multipurpose 12in1 Kitchen Dicing Set",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 10999,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 23,
+        "n_reviews_in_dataset": 6,
+        "product_link": "https://www.jumia.com.ng/nicer-dicer-plus-multipurpose-12in1-kitchen-dicing-set-66401047.html",
+        "source": "jumia"
+      },
+      "text_blob": "Nicer Dicer Plus Multipurpose 12in1 Kitchen Dicing Set | food | the plate, Usage not smooth, Good item, good product, product"
+    },
+    {
+      "item_id": "high-power-portable-cordless-high-pressure-multi-purpose-car-washer-48vh-15000ma",
+      "title": "High Power Portable Cordless High Pressure Multi Purpose Car Washer…",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 41990,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 13,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/high-power-portable-cordless-high-pressure-multi-purpose-car-washer-48vh-15000mah-double-batteries-generic-mpg11502353.html",
+        "source": "jumia"
+      },
+      "text_blob": "High Power Portable Cordless High Pressure Multi Purpose Car Washer 48VH 15000mah - Double Batteries | food | good"
+    },
+    {
+      "item_id": "packing-cubes-for-suitcases-travel-luggage-organizers-bag-8",
+      "title": "Packing Cubes For Suitcases, Travel Luggage Organizers Bag 8",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 9584,
+      "attributes": {
+        "avg_rating": 4.6,
+        "total_ratings": 13,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/generic-packing-cubes-for-suitcases-travel-luggage-organizers-bag-8-408151573.html",
+        "source": "jumia"
+      },
+      "text_blob": "Packing Cubes For Suitcases, Travel Luggage Organizers Bag 8 | food | Good, The quality is top notch"
+    },
+    {
+      "item_id": "2pcs-premium-polyamide-cheese-cloth-bags",
+      "title": "2pcs Premium Polyamide Cheese Cloth Bags",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": null,
+      "attributes": {
+        "avg_rating": 4.4,
+        "total_ratings": 12,
+        "n_reviews_in_dataset": 5,
+        "product_link": "https://www.jumia.com.ng/generic-2pcs-premium-polyamide-cheese-cloth-bags-403982627.html",
+        "source": "jumia"
+      },
+      "text_blob": "2pcs Premium Polyamide Cheese Cloth Bags | food | Love it, nice cheese cloth, like it, Cool, Exactly as expected"
+    },
+    {
+      "item_id": "4pcs-silicone-straw-covers-for-stanley-1-cm-diameter-straw-reusable",
+      "title": "4Pcs Silicone Straw Covers For Stanley 1 CM Diameter Straw Reusable",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4621,
+      "attributes": {
+        "avg_rating": 4.7,
+        "total_ratings": 11,
+        "n_reviews_in_dataset": 7,
+        "product_link": "https://www.jumia.com.ng/generic-4pcs-silicone-straw-covers-for-stanley-1-cm-diameter-straw-reusable-419017882.html",
+        "source": "jumia"
+      },
+      "text_blob": "4Pcs Silicone Straw Covers For Stanley 1 CM Diameter Straw Reusable | food | Good, Cute Covers, Beautiful ❤️, Stanley, very nice"
+    },
+    {
+      "item_id": "century-food-processor-cfp-pro",
+      "title": "Century FOOD PROCESSOR CFP-PRO",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 95000,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 10,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/century-food-processor-cfp-pro-417963583.html",
+        "source": "jumia"
+      },
+      "text_blob": "Century FOOD PROCESSOR CFP-PRO | food | Haven’t used it yet, I like it, Very efficient but..., Fantastic Food Processor"
+    },
+    {
+      "item_id": "usb-rechargeable-portable-food-plastic-bag-sealer",
+      "title": "USB Rechargeable Portable Food Plastic Bag Sealer",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 1617,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 10,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/generic-usb-rechargeable-portable-food-plastic-bag-sealer-411851911.html",
+        "source": "jumia"
+      },
+      "text_blob": "USB Rechargeable Portable Food Plastic Bag Sealer | food | It does it work but battery is terrible, The Quality, I don't like the product"
+    },
+    {
+      "item_id": "6-pcs-stainless-steel-square-plate",
+      "title": "6 Pcs Stainless Steel Square Plate",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 37538,
+      "attributes": {
+        "avg_rating": 4.4,
+        "total_ratings": 8,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/generic-6-pcs-stainless-steel-square-plate-405898843.html",
+        "source": "jumia"
+      },
+      "text_blob": "6 Pcs Stainless Steel Square Plate | food | Kitchen Utensils, I like it"
+    },
+    {
+      "item_id": "16-plates-2-layers-stainless-steel-dish-drainer",
+      "title": "16 plates 2 Layers Stainless Steel Dish Drainer",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 12999,
+      "attributes": {
+        "avg_rating": 4.7,
+        "total_ratings": 6,
+        "n_reviews_in_dataset": 5,
+        "product_link": "https://www.jumia.com.ng/generic-16-plates-2-layers-stainless-steel-dish-drainer-419174368.html",
+        "source": "jumia"
+      },
+      "text_blob": "16 plates 2 Layers Stainless Steel Dish Drainer | food | Good, Good, plate rack, I love it, Great"
+    },
+    {
+      "item_id": "rashnik-single-face-electric-hot-plate-1000-watts",
+      "title": "Rashnik Single Face Electric Hot Plate - 1000 Watts",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 14000,
+      "attributes": {
+        "avg_rating": 3.2,
+        "total_ratings": 5,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/rashnik-single-face-electric-hot-plate-1000-watts-418701938.html",
+        "source": "jumia"
+      },
+      "text_blob": "Rashnik Single Face Electric Hot Plate - 1000 Watts | food | hot plate"
+    },
+    {
+      "item_id": "rechargeable-high-pressure-water-spray-gun-car-washer-cleaner-garden-washer-48v-",
+      "title": "Rechargeable/ High Pressure Water Spray Gun Car Washer & Cleaner…",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 41900,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 5,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/generic-rechargeable-high-pressure-water-spray-gun-car-washer-cleaner-garden-washer-48v2-battery-419388090.html",
+        "source": "jumia"
+      },
+      "text_blob": "Rechargeable/ High Pressure Water Spray Gun Car Washer & Cleaner Garden Washer 48V(2 Battery) | food | Dr"
+    },
+    {
+      "item_id": "foldable-travel-duffel-bag-for-women-carry-on-approved",
+      "title": "Foldable Travel Duffel Bag For Women - Carry On Approved",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4330,
+      "attributes": {
+        "avg_rating": 1.5,
+        "total_ratings": 4,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/foldable-travel-duffel-bag-for-women-carry-on-approved-generic-mpg11463710.html",
+        "source": "jumia"
+      },
+      "text_blob": "Foldable Travel Duffel Bag For Women - Carry On Approved | food | Generic foldable bag, very bad and low quality, foldable travel bag"
+    },
+    {
+      "item_id": "oraimo-thermogo-s1200-1-2l-extra-large-insulated-water-bottle",
+      "title": "Oraimo ThermoGo S1200 1.2L Extra Large Insulated Water Bottle",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "accessories",
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 18896,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 3,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/oraimo-thermogo-s1200-1.2l-extra-large-insulated-water-bottle-419167777.html",
+        "source": "jumia"
+      },
+      "text_blob": "Oraimo ThermoGo S1200 1.2L Extra Large Insulated Water Bottle | food | goodproduct"
+    },
+    {
+      "item_id": "stainless-steel-strainer-iron-sieve-3-pieces",
+      "title": "Stainless Steel Strainer/Iron Sieve (3 Pieces",
+      "categories": [
+        "food"
+      ],
+      "niches": [
+        "food"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4300,
+      "attributes": {
+        "avg_rating": 3.0,
+        "total_ratings": 3,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/generic-stainless-steel-straineriron-sieve-3-pieces-377398537.html",
+        "source": "jumia"
+      },
+      "text_blob": "Stainless Steel Strainer/Iron Sieve (3 Pieces | food | Good, Smaller than expected"
     }
   ],
   "books": [
@@ -1071,6 +1768,929 @@
       "price_naira": 2500,
       "attributes": {},
       "text_blob": "Aloe Vera Gel | soothing | natural, sensitive skin | "
+    },
+    {
+      "item_id": "nivea-radiant-beauty-even-glow-body-lotion-for-women-400ml-pack-of-2",
+      "title": "NIVEA Radiant & Beauty Even Glow Body Lotion For Women - 400ml -…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7375,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 8294,
+        "n_reviews_in_dataset": 1502,
+        "product_link": "https://www.jumia.com.ng/nivea-radiant-beauty-even-glow-body-lotion-for-women-400ml-pack-of-2-104325862.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA Radiant & Beauty Even Glow Body Lotion For Women - 400ml - Pack Of 2 | skincare | very affordable and good on my skin, good, Good, content, amazing product"
+    },
+    {
+      "item_id": "nivea-perfect-radiant-body-lotion-for-women-400ml-pack-of-2",
+      "title": "NIVEA Perfect & Radiant Body Lotion For Women - 400ml (Pack Of 2)",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 6451,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 6828,
+        "n_reviews_in_dataset": 1357,
+        "product_link": "https://www.jumia.com.ng/natural-fairness-clarifiant-for-women-400ml-pack-of-2-nivea-mpg1657699.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA Perfect & Radiant Body Lotion For Women - 400ml (Pack Of 2) | skincare | EXCELLENT PRODUCT, perfect, Nivea, exactly itself i love it i rate 5????????????????????, cool and nice"
+    },
+    {
+      "item_id": "nivea-nourishing-cocoa-body-lotion-for-women-400ml-pack-of-2",
+      "title": "NIVEA Nourishing Cocoa Body Lotion For Women - 400ml (Pack Of 2)",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 5846,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 6094,
+        "n_reviews_in_dataset": 1136,
+        "product_link": "https://www.jumia.com.ng/nivea-nourishing-cocoa-body-lotion-for-women-400ml-pack-of-2-104325936.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA Nourishing Cocoa Body Lotion For Women - 400ml (Pack Of 2) | skincare | I like it, i love it., Mrs, the fact that it makes my skin fresh and clear, Will always be my choice"
+    },
+    {
+      "item_id": "nivea-men-deep-body-lotion-400ml-deep-roll-on-50ml",
+      "title": "NIVEA MEN Deep Body Lotion 400ml + Deep Roll-on 50ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4617,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 5271,
+        "n_reviews_in_dataset": 1096,
+        "product_link": "https://www.jumia.com.ng/nourishing-cocoa-body-lotion-400ml-free-dry-fresh-roll-on-for-men-50ml-nivea-mpg1657713.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA MEN Deep Body Lotion 400ml + Deep Roll-on 50ml | skincare | Thank You, Good, very good, Nivea Men Deep, It is satisfactory"
+    },
+    {
+      "item_id": "nivea-men-deep-body-lotion-400ml-pack-of-2",
+      "title": "NIVEA MEN Deep Body Lotion - 400ml (Pack Of 2)",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 6145,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 4460,
+        "n_reviews_in_dataset": 877,
+        "product_link": "https://www.jumia.com.ng/nivea-men-deep-body-lotion-400ml-pack-of-2-117097334.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA MEN Deep Body Lotion - 400ml (Pack Of 2) | skincare | the cream is okay, I really like it, Original Nivea, Like it, Oh I love it"
+    },
+    {
+      "item_id": "roushun-vitamin-c-serum-anti-aging-serum-30ml",
+      "title": "Roushun Vitamin C Serum [Anti-Aging Serum]---30ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2170,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 4245,
+        "n_reviews_in_dataset": 643,
+        "product_link": "https://www.jumia.com.ng/roushun-vitamin-c-serum-anti-aging-serum-30ml-237729207.html",
+        "source": "jumia"
+      },
+      "text_blob": "Roushun Vitamin C Serum [Anti-Aging Serum]---30ml | skincare | my face is glowing, nice, I like it, Dissapointed, love it"
+    },
+    {
+      "item_id": "nivea-radiant-beauty-advanced-care-body-lotion-for-women-400ml-pack-of-2",
+      "title": "NIVEA Radiant & Beauty Advanced Care Body Lotion For Women - 400ml -…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7375,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 3471,
+        "n_reviews_in_dataset": 682,
+        "product_link": "https://www.jumia.com.ng/nivea-radiant-beauty-advanced-care-body-lotion-for-women-400ml-pack-of-2-104334102.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA Radiant & Beauty Advanced Care Body Lotion For Women - 400ml - Pack Of 2 | skincare | good product, Always want more, I love my radiant cream, Lovely, Nivea Product"
+    },
+    {
+      "item_id": "nivea-doshakara-pack-nourishing-cocoa-body-lotion-400ml-pack-of-3",
+      "title": "NIVEA DoShakara Pack - Nourishing Cocoa Body Lotion - 400ml (Pack Of…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 8440,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 3060,
+        "n_reviews_in_dataset": 710,
+        "product_link": "https://www.jumia.com.ng/doshakara-pack-nourishing-cocoa-body-lotion-400mlpack-of-3-nivea-mpg1657642.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA DoShakara Pack - Nourishing Cocoa Body Lotion - 400ml (Pack Of 3) | skincare | Good, Good, nourishing cocoa body lotion, I like it, great"
+    },
+    {
+      "item_id": "aichun-beauty-black-facial-mask-whitening-complex-free-black-head",
+      "title": "Aichun Beauty Black Facial Mask Whitening Complex + Free Black Head",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2346,
+      "attributes": {
+        "avg_rating": 3.6,
+        "total_ratings": 3038,
+        "n_reviews_in_dataset": 422,
+        "product_link": "https://www.jumia.com.ng/aichun-beauty-black-facial-mask-whitening-complex-free-black-head-216691250.html",
+        "source": "jumia"
+      },
+      "text_blob": "Aichun Beauty Black Facial Mask Whitening Complex + Free Black Head | skincare | Good, It make my face smooth, good, not work as expected, Black mask"
+    },
+    {
+      "item_id": "nivea-radiant-beauty-even-glow-body-lotion-for-women-400ml",
+      "title": "NIVEA Radiant & Beauty Even Glow Body Lotion For Women - 400ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4405,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 2515,
+        "n_reviews_in_dataset": 505,
+        "product_link": "https://www.jumia.com.ng/revitalizing-400ml-lotion-harmattan-pack-promo-nivea-mpg1657680.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA Radiant & Beauty Even Glow Body Lotion For Women - 400ml | skincare | Not brightning, excellent product, Very nice and moisturizing, it original, It's not very good on the face"
+    },
+    {
+      "item_id": "green-mask-stick-facial-mask-for-black-spots-pimples",
+      "title": "Green Mask Stick Facial Mask For Black Spots & Pimples",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "cookware",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2399,
+      "attributes": {
+        "avg_rating": 3.3,
+        "total_ratings": 2502,
+        "n_reviews_in_dataset": 384,
+        "product_link": "https://www.jumia.com.ng/green-mask-stick-facial-mask-for-black-spots-and-pimples-generic-mpg1716952.html",
+        "source": "jumia"
+      },
+      "text_blob": "Green Mask Stick Facial Mask For Black Spots & Pimples | skincare | managable, So far,it's working, glow, Ineffective cream, I like it"
+    },
+    {
+      "item_id": "sadoer-8pcs-fruit-face-mask-anti-wrinkle-moisturizing-skin-care",
+      "title": "SADOER 8pcs Fruit Face Mask & Anti Wrinkle Moisturizing Skin Care",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "moisturizer",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2399,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 1731,
+        "n_reviews_in_dataset": 400,
+        "product_link": "https://www.jumia.com.ng/8pcs-fruit-face-mask-anti-wrinkle-moisturizing-skin-care-sadoer-mpg1834845.html",
+        "source": "jumia"
+      },
+      "text_blob": "SADOER 8pcs Fruit Face Mask & Anti Wrinkle Moisturizing Skin Care | skincare | I like it, Goods, Soothes, I like it, great"
+    },
+    {
+      "item_id": "dr-teal-s-b-lot-18oz-vitamin-c",
+      "title": "Dr Teal's B/Lot 18Oz Vitamin C",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "skincare",
+        "tea"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7300,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 1674,
+        "n_reviews_in_dataset": 369,
+        "product_link": "https://www.jumia.com.ng/dr-teals-blot-18oz-vitamin-c-316324699.html",
+        "source": "jumia"
+      },
+      "text_blob": "Dr Teal's B/Lot 18Oz Vitamin C | skincare | nice product, Opened, Greasy and chalky, the lotion was almost half of the container, Awesome product"
+    },
+    {
+      "item_id": "cerave-acne-control-cleanser-with-2-salicylic-acid-237ml",
+      "title": "Cerave Acne Control Cleanser With 2% Salicylic Acid 237ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "cleanser",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 3370,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 1423,
+        "n_reviews_in_dataset": 525,
+        "product_link": "https://www.jumia.com.ng/acne-control-cleanser-with-2-salicylic-acid-237ml-cerave-mpg9491597.html",
+        "source": "jumia"
+      },
+      "text_blob": "Cerave Acne Control Cleanser With 2% Salicylic Acid 237ml | skincare | GOOD, perfection, Good, Good, It works"
+    },
+    {
+      "item_id": "aichun-beauty-black-facial-mask-vitamin-c-serum",
+      "title": "Aichun Beauty Black Facial Mask + Vitamin C Serum",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 3679,
+      "attributes": {
+        "avg_rating": 3.6,
+        "total_ratings": 1055,
+        "n_reviews_in_dataset": 200,
+        "product_link": "https://www.jumia.com.ng/aichun-beauty-black-facial-mask-vitamin-c-serum-255291763.html",
+        "source": "jumia"
+      },
+      "text_blob": "Aichun Beauty Black Facial Mask + Vitamin C Serum | skincare | Nice, i love it, I love it, It will be more easier if there was a brush, still using"
+    },
+    {
+      "item_id": "nivea-men-deep-body-lotion-400ml",
+      "title": "NIVEA MEN Deep Body Lotion - 400ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 3671,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 873,
+        "n_reviews_in_dataset": 208,
+        "product_link": "https://www.jumia.com.ng/nivea-men-deep-body-lotion-400ml-117097332.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA MEN Deep Body Lotion - 400ml | skincare | I like it, I love it, Great product, good, good"
+    },
+    {
+      "item_id": "anua-niacinamide-10-txa-4-dark-spot-correcting-serum-30ml",
+      "title": "Anua Niacinamide 10%+ TXA 4% Dark Spot Correcting Serum -30ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "cookware",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 5299,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 421,
+        "n_reviews_in_dataset": 80,
+        "product_link": "https://www.jumia.com.ng/anua-niacinamide-10-txa-4-dark-spot-correcting-serum-30ml-387912975.html",
+        "source": "jumia"
+      },
+      "text_blob": "Anua Niacinamide 10%+ TXA 4% Dark Spot Correcting Serum -30ml | skincare | nice buy, Anuaaa, I like it small sha, I don’t like it, I love it ????"
+    },
+    {
+      "item_id": "pei-mei-facial-serum-set-three-powerful-formulas-vc-ha-retinol",
+      "title": "Pei Mei Facial Serum Set Three Powerful Formulas VC, HA, Retinol",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "anti-aging",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4830,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 393,
+        "n_reviews_in_dataset": 99,
+        "product_link": "https://www.jumia.com.ng/pei-mei-facial-serum-set-three-powerful-formulas-vc-ha-retinol-385210451.html",
+        "source": "jumia"
+      },
+      "text_blob": "Pei Mei Facial Serum Set Three Powerful Formulas VC, HA, Retinol | skincare | Good, nice, This set is the best I’ve ever used, Great, It’s sad"
+    },
+    {
+      "item_id": "aichun-beauty-collagen-snail-white-ning-and-moisturising-facial-mask-25ml",
+      "title": "Aichun Beauty Collagen Snail White ning and Moisturising Facial Mask…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "moisturizer",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 643,
+      "attributes": {
+        "avg_rating": 3.6,
+        "total_ratings": 181,
+        "n_reviews_in_dataset": 42,
+        "product_link": "https://www.jumia.com.ng/aichun-beauty-collagen-snail-white-ning-and-moisturising-facial-mask-25ml-373470920.html",
+        "source": "jumia"
+      },
+      "text_blob": "Aichun Beauty Collagen Snail White ning and Moisturising Facial Mask -25ml | skincare | I like it, Good, Very good, Good, face mask"
+    },
+    {
+      "item_id": "sadoer-vitamin-c-brightening-face-serum",
+      "title": "SADOER Vitamin C brightening face serum",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 1895,
+      "attributes": {
+        "avg_rating": 3.4,
+        "total_ratings": 109,
+        "n_reviews_in_dataset": 22,
+        "product_link": "https://www.jumia.com.ng/sadoer-vitamin-c-brightening-face-serum-403972400.html",
+        "source": "jumia"
+      },
+      "text_blob": "SADOER Vitamin C brightening face serum | skincare | The cover open, fine, Very active, Good, SADOEVER vitamin"
+    },
+    {
+      "item_id": "collagen-collagen-snail-white-ning-and-moisturising-facial-mask-25ml",
+      "title": "Collagen Collagen Snail White ning and Moisturising Facial Mask -25ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "moisturizer",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 699,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 100,
+        "n_reviews_in_dataset": 20,
+        "product_link": "https://www.jumia.com.ng/collagen-collagen-snail-white-ning-and-moisturising-facial-mask-25ml-350085436.html",
+        "source": "jumia"
+      },
+      "text_blob": "Collagen Collagen Snail White ning and Moisturising Facial Mask -25ml | skincare | Good, A good product, its really nice, best off all, just there"
+    },
+    {
+      "item_id": "sadoer-10pcs-fruit-face-mask-anti-wrinkle-moisturizing-skin-care",
+      "title": "SADOER 10pcs Fruit Face Mask & Anti Wrinkle Moisturizing Skin Care-",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "moisturizer",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 3130,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 73,
+        "n_reviews_in_dataset": 157,
+        "product_link": "https://www.jumia.com.ng/sadoer-10pcs-fruit-face-mask-anti-wrinkle-moisturizing-skin-care-418930360.html",
+        "source": "jumia"
+      },
+      "text_blob": "SADOER 10pcs Fruit Face Mask & Anti Wrinkle Moisturizing Skin Care- | skincare | The texture, I like it, Nice, l love it, I like it"
+    },
+    {
+      "item_id": "green-tea-face-mask-stick-deep-pore-cleansing-80g-detoxifies-tightens-pores",
+      "title": "Green Tea Face Mask Stick - Deep Pore Cleansing, 80g - Detoxifies &…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "skincare",
+        "tea"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2859,
+      "attributes": {
+        "avg_rating": 3.4,
+        "total_ratings": 59,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/generic-green-tea-face-mask-stick-deep-pore-cleansing-80g-detoxifies-tightens-pores-409630567.html",
+        "source": "jumia"
+      },
+      "text_blob": "Green Tea Face Mask Stick - Deep Pore Cleansing, 80g - Detoxifies & Tightens Pores | skincare | I don't know if it's working, deep.cleansing, Awesome Product"
+    },
+    {
+      "item_id": "sadoer-8-pcs-sadoer-botany-and-fruits-skin-care-natural-brightening-hydrating-mo",
+      "title": "SADOER 8 Pcs SADOER Botany And Fruits Skin Care Natural Brightening…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "moisturizer",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2205,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 55,
+        "n_reviews_in_dataset": 13,
+        "product_link": "https://www.jumia.com.ng/sadoer-8-pcs-sadoer-botany-and-fruits-skin-care-natural-brightening-hydrating-moisturiz-ing-facial-mask-309080983.html",
+        "source": "jumia"
+      },
+      "text_blob": "SADOER 8 Pcs SADOER Botany And Fruits Skin Care Natural Brightening Hydrating Moisturiz-ing Facial Mask | skincare | I loved it, Good enough, Nice product, nice product, I like it"
+    },
+    {
+      "item_id": "pouqur-collagen-applied-tear-off-face-mask",
+      "title": "POUQUR collagen applied tear off face mask",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "skincare",
+        "tea"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7054,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 41,
+        "n_reviews_in_dataset": 9,
+        "product_link": "https://www.jumia.com.ng/generic-pouqur-collagen-applied-tear-off-face-mask-418286600.html",
+        "source": "jumia"
+      },
+      "text_blob": "POUQUR collagen applied tear off face mask | skincare | nice, good product, Quick Response, lovely, collagen"
+    },
+    {
+      "item_id": "5-in-1-hyaluronic-acid-face-serum-anti-aging-brightening-30ml",
+      "title": "5 In 1 Hyaluronic Acid Face Serum - Anti-Aging, Brightening, 30ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2646,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 38,
+        "n_reviews_in_dataset": 8,
+        "product_link": "https://www.jumia.com.ng/generic-5-in-1-hyaluronic-acid-face-serum-anti-aging-brightening-30ml-401996787.html",
+        "source": "jumia"
+      },
+      "text_blob": "5 In 1 Hyaluronic Acid Face Serum - Anti-Aging, Brightening, 30ml | skincare | it's been good so far, it's been good so far, works well, can say for now. just started using, if i can have the big size"
+    },
+    {
+      "item_id": "green-mask-stick-for-black-spots-and-pimples",
+      "title": "Green Mask Stick For Black Spots And Pimples",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "cookware",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 1749,
+      "attributes": {
+        "avg_rating": 3.0,
+        "total_ratings": 29,
+        "n_reviews_in_dataset": 7,
+        "product_link": "https://www.jumia.com.ng/generic-green-mask-stick-for-black-spots-and-pimples-412387944.html",
+        "source": "jumia"
+      },
+      "text_blob": "Green Mask Stick For Black Spots And Pimples | skincare | Mask, ????????????, poor, size, I don't like it"
+    },
+    {
+      "item_id": "estelin-rosehip-niacinamide-spots-fading-face-serum-estelin-x1-estelin",
+      "title": "ESTELIN Rosehip Niacinamide Spots Fading Face Serum (Estelin) X1…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "cookware",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 3800,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 26,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/estelin-rosehip-niacinamide-spots-fading-face-serum-estelin-x1-estelin-419298122.html",
+        "source": "jumia"
+      },
+      "text_blob": "ESTELIN Rosehip Niacinamide Spots Fading Face Serum (Estelin) X1 (ESTELIN) | skincare | quanity, good, Good, estelin face serum"
+    },
+    {
+      "item_id": "cosrx-advanced-snail-92-all-in-one-cream-mucin-power-serum",
+      "title": "Cosrx Advanced Snail 92 All In One Cream & Mucin Power Serum",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "cream",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7500,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 21,
+        "n_reviews_in_dataset": 5,
+        "product_link": "https://www.jumia.com.ng/cosrx-advanced-snail-92-all-in-one-cream-mucin-power-serum-419308154.html",
+        "source": "jumia"
+      },
+      "text_blob": "Cosrx Advanced Snail 92 All In One Cream & Mucin Power Serum | skincare | Nice, I love it, Not original, I loveeeeee it, Nice product"
+    },
+    {
+      "item_id": "kormesic-black-head-removal-facial-mask",
+      "title": "KORMESIC Black Head Removal Facial Mask",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2350,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 20,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/kormesic-black-head-removal-facial-mask-418679524.html",
+        "source": "jumia"
+      },
+      "text_blob": "KORMESIC Black Head Removal Facial Mask | skincare | good, nice product, Not bad"
+    },
+    {
+      "item_id": "face-facts-restore-clarify-salicylic-acid-serum-face-fact",
+      "title": "Face Facts Restore + Clarify Salicylic Acid Serum (face fact)",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4300,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 18,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/face-facts-restore-clarify-salicylic-acid-serum-face-fact-419159581.html",
+        "source": "jumia"
+      },
+      "text_blob": "Face Facts Restore + Clarify Salicylic Acid Serum (face fact) | skincare | Effective, It’s effectiveness, good product, Nice"
+    },
+    {
+      "item_id": "sadoer-8-pcs-fruit-face-mask-anti-wrinkle-moisturiz-ing-skin-care",
+      "title": "SADOER 8 Pcs Fruit Face Mask & Anti Wrinkle Moisturiz-ing Skin Care",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "moisturizer",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2337,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 17,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/generic-sadoer-8-pcs-fruit-face-mask-anti-wrinkle-moisturiz-ing-skin-care-413540085.html",
+        "source": "jumia"
+      },
+      "text_blob": "SADOER 8 Pcs Fruit Face Mask & Anti Wrinkle Moisturiz-ing Skin Care | skincare | I love it, excellent"
+    },
+    {
+      "item_id": "nivea-moisturizing-sun-lotion-spf-50-200ml",
+      "title": "NIVEA Moisturizing Sun Lotion SPF 50 – 200ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "lotion",
+        "moisturizer",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 16800,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 12,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/nivea-moisturizing-sun-lotion-spf-50-200ml-419033302.html",
+        "source": "jumia"
+      },
+      "text_blob": "NIVEA Moisturizing Sun Lotion SPF 50 – 200ml | skincare | good product., white marks, Good"
+    },
+    {
+      "item_id": "cosrx-advanced-snail-92-mucin-all-in-one-cream",
+      "title": "Cosrx Advanced Snail 92 Mucin All In One Cream",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "cream",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4500,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 10,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/generic-cosrx-advanced-snail-92-mucin-all-in-one-cream-419218079.html",
+        "source": "jumia"
+      },
+      "text_blob": "Cosrx Advanced Snail 92 Mucin All In One Cream | skincare | I like it, Its not original its fake, I love it"
+    },
+    {
+      "item_id": "cosrx-advanced-snail-96-mucin-power-essence-100ml",
+      "title": "Cosrx Advanced Snail 96 Mucin Power Essence - 100ml",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4500,
+      "attributes": {
+        "avg_rating": 4.5,
+        "total_ratings": 8,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/cosrx-advanced-snail-96-mucin-power-essence-100ml-419218085.html",
+        "source": "jumia"
+      },
+      "text_blob": "Cosrx Advanced Snail 96 Mucin Power Essence - 100ml | skincare | Excellent Product"
+    },
+    {
+      "item_id": "anua-niacinamide-10-txa-4-dark-spot-correcting-serum-1-01-fl-oz-30ml",
+      "title": "Anua Niacinamide 10% + TXA 4% Dark Spot Correcting Serum 1.01 fl.oz…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "cookware",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 5399,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 6,
+        "n_reviews_in_dataset": 13,
+        "product_link": "https://www.jumia.com.ng/anua-niacinamide-10-txa-4-dark-spot-correcting-serum-1.01-fl.oz-30ml-419218060.html",
+        "source": "jumia"
+      },
+      "text_blob": "Anua Niacinamide 10% + TXA 4% Dark Spot Correcting Serum 1.01 fl.oz / 30ml | skincare | I like it, factually correct, Send an empty bottle, I love it, I dont like it"
+    },
+    {
+      "item_id": "anua-niacinamide-10-txa-4-dark-spot-correcting-serum-azelaic-acid-suspension-10",
+      "title": "Anua Niacinamide 10% TXA 4% Dark Spot Correcting Serum + Azelaic…",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "brightening",
+        "cookware",
+        "serum",
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 10000,
+      "attributes": {
+        "avg_rating": 4.8,
+        "total_ratings": 5,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/anua-niacinamide-10-txa-4-dark-spot-correcting-serum-azelaic-acid-suspension-10-419218037.html",
+        "source": "jumia"
+      },
+      "text_blob": "Anua Niacinamide 10% TXA 4% Dark Spot Correcting Serum + Azelaic Acid Suspension 10% | skincare | Nice product"
+    },
+    {
+      "item_id": "dedicated-collagen-night-wrapping-mask",
+      "title": "DEDICATED collagen night wrapping mask",
+      "categories": [
+        "skincare"
+      ],
+      "niches": [
+        "skincare"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 6500,
+      "attributes": {
+        "avg_rating": 5.0,
+        "total_ratings": 1,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/dedicated-collagen-night-wrapping-mask-419221118.html",
+        "source": "jumia"
+      },
+      "text_blob": "DEDICATED collagen night wrapping mask | skincare | super active"
     }
   ],
   "hotel": [
@@ -1723,6 +3343,1276 @@
       "price_naira": 320000,
       "attributes": {},
       "text_blob": "Smart TV 43-inch | tv, home entertainment | midrange, home | "
+    },
+    {
+      "item_id": "xiaomi-redmi-15c-6-9-8gbram-256gb-rom-android-15-midnight-black",
+      "title": "XIAOMI Redmi 15C 6.9'' 8GBRAM/256GB ROM Android 15 -Midnight Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 195193,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 1393,
+        "n_reviews_in_dataset": 489,
+        "product_link": "https://www.jumia.com.ng/redmi-15c-6.9-8gbram256gb-rom-android-15-midnight-black-xiaomi-mpg11537492.html",
+        "source": "jumia"
+      },
+      "text_blob": "XIAOMI Redmi 15C 6.9'' 8GBRAM/256GB ROM Android 15 -Midnight Black | phones | nice phone, The camera is outstanding, It's actually the best at this moment., I like it, batery is not strong has expected"
+    },
+    {
+      "item_id": "samsung-galaxy-a06-6-7-4gb-ram-64gb-rom-android-14-black",
+      "title": "Samsung Galaxy A06 6.7\" 4GB RAM / 64GB ROM Android 14 - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 119999,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 1143,
+        "n_reviews_in_dataset": 379,
+        "product_link": "https://www.jumia.com.ng/samsung-galaxy-a06-6.7-4gb-ram-64gb-rom-android-14-black-384422730.html",
+        "source": "jumia"
+      },
+      "text_blob": "Samsung Galaxy A06 6.7\" 4GB RAM / 64GB ROM Android 14 - Black | phones | Cool, good, Nice Product, Great product, good."
+    },
+    {
+      "item_id": "nokia-105-african-edition-1-77-4mb-4mb-800-mah-dual-sim-charcoal",
+      "title": "Nokia 105_African Edition 1.77\" 4MB/4MB 800 MAh Dual Sim - Charcoal",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 13990,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 1023,
+        "n_reviews_in_dataset": 234,
+        "product_link": "https://www.jumia.com.ng/nokia-105african-edition-1.77-4mb4mb-800-mah-dual-sim-charcoal-378230102.html",
+        "source": "jumia"
+      },
+      "text_blob": "Nokia 105_African Edition 1.77\" 4MB/4MB 800 MAh Dual Sim - Charcoal | phones | Non functional battery, I like it, Affordable, nice product, nokia"
+    },
+    {
+      "item_id": "samsung-galaxy-a06-6-7-4gb-ram-128gb-rom-android-14-black",
+      "title": "Samsung Galaxy A06 6.7\" 4GB RAM/ 128GB ROM Android 14 - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 148678,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 632,
+        "n_reviews_in_dataset": 247,
+        "product_link": "https://www.jumia.com.ng/samsung-galaxy-a06-6.7-4gb-ram-128gb-rom-android-14-black-384423199.html",
+        "source": "jumia"
+      },
+      "text_blob": "Samsung Galaxy A06 6.7\" 4GB RAM/ 128GB ROM Android 14 - Black | phones | Good, I like it, Affordable, Working Fine, good"
+    },
+    {
+      "item_id": "mktel-b310-white-mobile-phone-screen-dual-sim-1200mah-capacity-battery-torch-lig",
+      "title": "MKTEL B310 White mobile phone Screen Dual SIM 1200mAh Capacity…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7115,
+      "attributes": {
+        "avg_rating": 3.6,
+        "total_ratings": 382,
+        "n_reviews_in_dataset": 136,
+        "product_link": "https://www.jumia.com.ng/mktel-b310-white-mobile-phone-screen-dual-sim-1200mah-capacity-battery-torch-light-spare-phone-419142379.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL B310 White mobile phone Screen Dual SIM 1200mAh Capacity Battery Torch Light spare phone | phones | nonsense phone and batterry, The phone is good, Nice phone, friendly to handle, very last"
+    },
+    {
+      "item_id": "xiaomi-redmi-15c-6-9-6gbram-128gb-rom-android-15-midnight-black",
+      "title": "XIAOMI Redmi 15C 6.9'' 6GBRAM/128GB ROM Android 15 -Midnight Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 168685,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 350,
+        "n_reviews_in_dataset": 106,
+        "product_link": "https://www.jumia.com.ng/xiaomi-redmi-15c-6.9-6gbram128gb-rom-android-15-midnight-black-418761371.html",
+        "source": "jumia"
+      },
+      "text_blob": "XIAOMI Redmi 15C 6.9'' 6GBRAM/128GB ROM Android 15 -Midnight Black | phones | Make it Perfect, Excellent and affordable, Nice phone, Good, Nice"
+    },
+    {
+      "item_id": "freeyond-freeyond-m5-8gb-128gb-4g-6-52-smartphone-5000mah-black",
+      "title": "FreeYond FreeYond M5,8GB+128GB,4G 6.52\" Smartphone 5000mAh,Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 98252,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 321,
+        "n_reviews_in_dataset": 113,
+        "product_link": "https://www.jumia.com.ng/freeyond-freeyond-m58gb128gb4g-6.52-smartphone-5000mahblack-209784981.html",
+        "source": "jumia"
+      },
+      "text_blob": "FreeYond FreeYond M5,8GB+128GB,4G 6.52\" Smartphone 5000mAh,Black | phones | freeyond is a very good phone to use, cool but..., its a very nice phone, Great value, very cool and smooth...."
+    },
+    {
+      "item_id": "itel-a100c-6-6-2gb-ram-64gb-rom-5000mah-titanium-gold",
+      "title": "itel A100C 6.6\" 2GB RAM/64GB ROM 5000mAh - Titanium Gold",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 91859,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 316,
+        "n_reviews_in_dataset": 87,
+        "product_link": "https://www.jumia.com.ng/itel-a100c-6.6-2gb-ram64gb-rom-5000mah-titanium-gold-418774434.html",
+        "source": "jumia"
+      },
+      "text_blob": "itel A100C 6.6\" 2GB RAM/64GB ROM 5000mAh - Titanium Gold | phones | good, it's okay. i love it., I like it, improve camera, I like it"
+    },
+    {
+      "item_id": "mktel-5626-button-phone-dual-sim-2500mah-fm-radio-torch-bluetooth-mp3-2-8-big-ke",
+      "title": "MKTEL 5626 Button Phone Dual SIM 2500mAh FM Radio Torch Bluetooth…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 15015,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 295,
+        "n_reviews_in_dataset": 123,
+        "product_link": "https://www.jumia.com.ng/mktel-5626-button-phone-dual-sim-2500mah-fm-radio-torch-bluetooth-mp3-2.8-big-keypad-419255650.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL 5626 Button Phone Dual SIM 2500mAh FM Radio Torch Bluetooth MP3 2.8\" Big Keypad | phones | Defective phone, i love it, MKTEL 5626, good product, Its all good"
+    },
+    {
+      "item_id": "redbeat-d5-smartphone-6-52inch-ips-hd-4gb-64gb-rom-black",
+      "title": "redbeat D5 Smartphone 6.52inch IPS HD 4GB + 64GB ROM-Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 92950,
+      "attributes": {
+        "avg_rating": 3.6,
+        "total_ratings": 270,
+        "n_reviews_in_dataset": 71,
+        "product_link": "https://www.jumia.com.ng/redbeat-d5-smartphone-6.52inch-ips-hd-4gb-64gb-rom-black-367085247.html",
+        "source": "jumia"
+      },
+      "text_blob": "redbeat D5 Smartphone 6.52inch IPS HD 4GB + 64GB ROM-Black | phones | the phone hotes and the b3 deos not last, working perfectly i love it, I like it, Good Phone, It's okay."
+    },
+    {
+      "item_id": "poco-c71-6-88-4gb-ram-128gb-rom-android-15-blue",
+      "title": "Poco C71 6.88\" 4GB RAM / 128GB ROM Android 15 - Blue",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 119721,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 256,
+        "n_reviews_in_dataset": 94,
+        "product_link": "https://www.jumia.com.ng/poco-c71-6.88-4gb-ram-128gb-rom-android-15-blue-417088656.html",
+        "source": "jumia"
+      },
+      "text_blob": "Poco C71 6.88\" 4GB RAM / 128GB ROM Android 15 - Blue | phones | working perfectly i love it, I like it, A gift, I have mixed feeling about this phone, I like it"
+    },
+    {
+      "item_id": "my-tell-feature-phone-dual-sim-camera-bluetooth-wireless-fm-mp3",
+      "title": "my-tell Feature Phone Dual Sim, Camera, Bluetooth, Wireless FM, Mp3",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7350,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 245,
+        "n_reviews_in_dataset": 66,
+        "product_link": "https://www.jumia.com.ng/my-tell-feature-phone-dual-sim-camera-bluetooth-wireless-fm-mp3-407128911.html",
+        "source": "jumia"
+      },
+      "text_blob": "my-tell Feature Phone Dual Sim, Camera, Bluetooth, Wireless FM, Mp3 | phones | good product, The sound, color, my choice, I love it"
+    },
+    {
+      "item_id": "poco-c71-6-88-3gb-ram-64gb-rom-android-15-black",
+      "title": "Poco C71 6.88\" 3GB RAM / 64GB ROM Android 15 - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 102182,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 234,
+        "n_reviews_in_dataset": 80,
+        "product_link": "https://www.jumia.com.ng/poco-c71-6.88-3gb-ram-64gb-rom-android-15-black-418501178.html",
+        "source": "jumia"
+      },
+      "text_blob": "Poco C71 6.88\" 3GB RAM / 64GB ROM Android 15 - Black | phones | I like the product, I like it, perfect, the product is nice, let there be improvement"
+    },
+    {
+      "item_id": "xiaomi-redmi-15-6-9-8gbram-256gb-rom-android-15-black",
+      "title": "XIAOMI Redmi 15 6.9'' 8GBRAM/256GB ROM Android 15 - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 222001,
+      "attributes": {
+        "avg_rating": 4.4,
+        "total_ratings": 222,
+        "n_reviews_in_dataset": 87,
+        "product_link": "https://www.jumia.com.ng/redmi-15-6.9-8gbram256gb-rom-android-15-black-xiaomi-mpg11883477.html",
+        "source": "jumia"
+      },
+      "text_blob": "XIAOMI Redmi 15 6.9'' 8GBRAM/256GB ROM Android 15 - Black | phones | fast and good software, too good, Fantastic, It's Usable, redmi 15"
+    },
+    {
+      "item_id": "mktel-m2023-1-77-big-button-feature-phone-dual-sim-fm-torch-bt-800mah-2000-phone",
+      "title": "MKTEL M2023 1.77\" Big Button Feature Phone Dual SIM FM Torch BT…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 8251,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 206,
+        "n_reviews_in_dataset": 133,
+        "product_link": "https://www.jumia.com.ng/mktel-m2023-1.77-big-button-feature-phone-dual-sim-fm-torch-bt-800mah-2000-phone-book-green-419120323.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL M2023 1.77\" Big Button Feature Phone Dual SIM FM Torch BT 800mAh 2000 Phone Book Green | phones | battery, I love it and I recommend it, Mk, BATTERY CAPACITY, perfect"
+    },
+    {
+      "item_id": "mktel-1280-blue-dual-sim-feature-phone-1500mah-battery-fm-radio-bluetooth-flashl",
+      "title": "MKTEL 1280 Blue Dual SIM Feature Phone 1500mAh Battery FM Radio…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7522,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 153,
+        "n_reviews_in_dataset": 59,
+        "product_link": "https://www.jumia.com.ng/mktel-1280-blue-dual-sim-feature-phone-1500mah-battery-fm-radio-bluetooth-flashlight-spare-phone-419237209.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL 1280 Blue Dual SIM Feature Phone 1500mAh Battery FM Radio Bluetooth Flashlight Spare Phone | phones | Don'tBuy, It works well, I don’t like it, good product, nice buh"
+    },
+    {
+      "item_id": "itel-a100c-6-6-2gb-ram-64gb-rom-5000mah-black",
+      "title": "itel A100C 6.6\" 2GB RAM/64GB ROM 5000mAh - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 91859,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 149,
+        "n_reviews_in_dataset": 37,
+        "product_link": "https://www.jumia.com.ng/itel-a100c-6.6-2gb-ram64gb-rom-5000mah-black-418774433.html",
+        "source": "jumia"
+      },
+      "text_blob": "itel A100C 6.6\" 2GB RAM/64GB ROM 5000mAh - Black | phones | GOOD, It’s worth it price, throw away the phone, I like it., Nice"
+    },
+    {
+      "item_id": "samsung-galaxy-a07-6-7-4gb-ram-128gbgb-rom-black",
+      "title": "Samsung Galaxy A07 6.7\" 4GB RAM/128GBGB ROM - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 162886,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 110,
+        "n_reviews_in_dataset": 42,
+        "product_link": "https://www.jumia.com.ng/samsung-galaxy-a07-6.7-4gb-ram128gbgb-rom-black-418619812.html",
+        "source": "jumia"
+      },
+      "text_blob": "Samsung Galaxy A07 6.7\" 4GB RAM/128GBGB ROM - Black | phones | quite good, screen great, I like it, samsung a07, Nice phone, Smooth"
+    },
+    {
+      "item_id": "samsung-galaxy-a07-6-7-4gb-ram-64gbgb-rom-black",
+      "title": "Samsung Galaxy A07 6.7\" 4GB RAM/64GBGB ROM - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 137821,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 97,
+        "n_reviews_in_dataset": 42,
+        "product_link": "https://www.jumia.com.ng/samsung-galaxy-a07-6.7-4gb-ram64gbgb-rom-black-418619807.html",
+        "source": "jumia"
+      },
+      "text_blob": "Samsung Galaxy A07 6.7\" 4GB RAM/64GBGB ROM - Black | phones | Perfectly working, the process is good, ok, Battery, i love everythingabouttheproduct"
+    },
+    {
+      "item_id": "infinix-hot-60i-smart-phone-with-128gb-rom-4gb-ram-black",
+      "title": "Infinix Hot 60i Smart Phone With 128GB ROM & 4GB RAM (Black)",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 173999,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 92,
+        "n_reviews_in_dataset": 26,
+        "product_link": "https://www.jumia.com.ng/hot-60i-smart-phone-with-128gb-rom-4gb-ram-black-infinix-mpg12005592.html",
+        "source": "jumia"
+      },
+      "text_blob": "Infinix Hot 60i Smart Phone With 128GB ROM & 4GB RAM (Black) | phones | I love the phone, thing to improve on, Nice, good but lag a bit, its nice"
+    },
+    {
+      "item_id": "poco-c85-6-9-6gb-ram-128gb-rom-xiaomi-hyperos-black",
+      "title": "Poco C85 6.9\" 6GB RAM / 128GB ROM Xiaomi HyperOS - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 150295,
+      "attributes": {
+        "avg_rating": 4.4,
+        "total_ratings": 92,
+        "n_reviews_in_dataset": 36,
+        "product_link": "https://www.jumia.com.ng/poco-c85-6.9-6gb-ram-128gb-rom-xiaomi-hyperos-black-418753481.html",
+        "source": "jumia"
+      },
+      "text_blob": "Poco C85 6.9\" 6GB RAM / 128GB ROM Xiaomi HyperOS - Black | phones | poco c85, body, I love it, Poco C85, I like it"
+    },
+    {
+      "item_id": "freeyond-freeyond-m6-8gb-256gb-4g-6-78-smartphone-5000mah-blue",
+      "title": "FreeYond FreeYond M6,8GB+256GB,4G 6.78\" Smartphone 5000mAh,Blue",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 118680,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 64,
+        "n_reviews_in_dataset": 31,
+        "product_link": "https://www.jumia.com.ng/freeyond-freeyond-m68gb256gb4g-6.78-smartphone-5000mahblue-270551706.html",
+        "source": "jumia"
+      },
+      "text_blob": "FreeYond FreeYond M6,8GB+256GB,4G 6.78\" Smartphone 5000mAh,Blue | phones | some how good, Freeyond M6, I love it very much, I don't like the phone “Freeyond M6\", it is actually nice"
+    },
+    {
+      "item_id": "freeyond-freeyond-m5-8gb-128gb-4g-6-52-smartphone-5000mah-blue",
+      "title": "FreeYond FreeYond M5,8GB+128GB,4G 6.52\" Smartphone 5000mAh,Blue",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 96403,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 63,
+        "n_reviews_in_dataset": 27,
+        "product_link": "https://www.jumia.com.ng/freeyond-freeyond-m58gb128gb4g-6.52-smartphone-5000mahblue-209902515.html",
+        "source": "jumia"
+      },
+      "text_blob": "FreeYond FreeYond M5,8GB+128GB,4G 6.52\" Smartphone 5000mAh,Blue | phones | Good product, freeyond, good phone, you delivered phone with 0% battery, SIM Slots ...N....SPEAKER"
+    },
+    {
+      "item_id": "mktel-oye-3-blue-mobile-phone-2500mah-big-battery-dual-sim-dual-standby-1-77-fm-",
+      "title": "MKTEL OYE 3 Blue Mobile Phone 2500mAh Big Battery Dual SIM Dual…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7917,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 63,
+        "n_reviews_in_dataset": 28,
+        "product_link": "https://www.jumia.com.ng/mktel-oye-3-blue-mobile-phone-2500mah-big-battery-dual-sim-dual-standby-1.77-fm-radio-bluetooth-gsm-mobile-phone-419255146.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL OYE 3 Blue Mobile Phone 2500mAh Big Battery Dual SIM Dual Standby 1.77\" FM Radio Bluetooth GSM Mobile Phone | phones | Good, Great, Good service, I like it, Phone"
+    },
+    {
+      "item_id": "nokia-button-dual-sim-small-basic-phone-cheap-black",
+      "title": "Nokia Button Dual Sim, Small Basic Phone Cheap Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 12000,
+      "attributes": {
+        "avg_rating": 3.4,
+        "total_ratings": 50,
+        "n_reviews_in_dataset": 11,
+        "product_link": "https://www.jumia.com.ng/nokia-button-dual-sim-small-basic-phone-cheap-black-419286975.html",
+        "source": "jumia"
+      },
+      "text_blob": "Nokia Button Dual Sim, Small Basic Phone Cheap Black | phones | As expected., Battery life, the phone has good I love them, Improve in network selection, battery"
+    },
+    {
+      "item_id": "mktel-b310-black-mobile-phone-screen-dual-sim-1200mah-capacity-battery-torch-lig",
+      "title": "MKTEL B310 Black mobile phone Screen Dual SIM 1200mAh Capacity…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7204,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 48,
+        "n_reviews_in_dataset": 17,
+        "product_link": "https://www.jumia.com.ng/mktel-b310-black-mobile-phone-screen-dual-sim-1200mah-capacity-battery-torch-light-spare-phone-419142318.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL B310 Black mobile phone Screen Dual SIM 1200mAh Capacity Battery Torch Light spare phone | phones | mktel, GOOD, Worst, Off in the next 5 seconds, I like it, good"
+    },
+    {
+      "item_id": "samsung-galaxy-a17-6-7-hd-4gb-ram-128gb-rom-android-14-black",
+      "title": "Samsung Galaxy A17 6.7\" HD 4GB RAM/128GB ROM Android 14 - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 216396,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 47,
+        "n_reviews_in_dataset": 14,
+        "product_link": "https://www.jumia.com.ng/samsung-galaxy-a17-6.7-hd-4gb-ram128gb-rom-android-14-black-418894257.html",
+        "source": "jumia"
+      },
+      "text_blob": "Samsung Galaxy A17 6.7\" HD 4GB RAM/128GB ROM Android 14 - Black | phones | Just what i wanted, Very good, perfect, intact, Ok"
+    },
+    {
+      "item_id": "samsung-galaxy-a17-6-7-hd-6gb-ram-128gb-rom-android-14-black",
+      "title": "Samsung Galaxy A17 6.7\" HD 6GB RAM/128GB ROM Android 14 - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 236541,
+      "attributes": {
+        "avg_rating": 4.5,
+        "total_ratings": 38,
+        "n_reviews_in_dataset": 18,
+        "product_link": "https://www.jumia.com.ng/samsung-galaxy-a17-6.7-hd-6gb-ram128gb-rom-android-14-black-418894272.html",
+        "source": "jumia"
+      },
+      "text_blob": "Samsung Galaxy A17 6.7\" HD 6GB RAM/128GB ROM Android 14 - Black | phones | Great.phone, splendid, I like it, Samsung A17, Spot On"
+    },
+    {
+      "item_id": "mktel-m9-2-4-dual-sim-feature-phone-big-keypad-1500mah-fm-torch-bluetooth-mp3-mo",
+      "title": "MKTEL M9 2.4\" Dual SIM Feature Phone Big Keypad 1500mAh FM Torch…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 16634,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 35,
+        "n_reviews_in_dataset": 27,
+        "product_link": "https://www.jumia.com.ng/mktel-m9-2.4-dual-sim-feature-phone-big-keypad-1500mah-fm-torch-bluetooth-mp3-mobile-phone-419331297.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL M9 2.4\" Dual SIM Feature Phone Big Keypad 1500mAh FM Torch Bluetooth MP3 Mobile Phone | phones | Flip phone, Smooth Working Phone, I like it, Good, mr"
+    },
+    {
+      "item_id": "umidigi-note-100a-4gb-ram-256gb-rom-android-14-black",
+      "title": "UMIDIGI Note 100A 4GB RAM/256GB ROM Android 14 -Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 112000,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 35,
+        "n_reviews_in_dataset": 12,
+        "product_link": "https://www.jumia.com.ng/umidigi-note-100a-4gb-ram256gb-rom-android-14-black-401077462.html",
+        "source": "jumia"
+      },
+      "text_blob": "UMIDIGI Note 100A 4GB RAM/256GB ROM Android 14 -Black | phones | Umidigi Note100A, The battery is not strong, Is slick and very smooth, Emeka, I really dont like this phone"
+    },
+    {
+      "item_id": "mktel-m15-pro-keypad-phone-dual-sim-2-8-2000mah-bluetooth-torch-fm-mp3-blue",
+      "title": "MKTEL M15 Pro Keypad Phone Dual SIM 2.8\" 2000mAh Bluetooth Torch FM…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 11682,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 27,
+        "n_reviews_in_dataset": 7,
+        "product_link": "https://www.jumia.com.ng/mktel-m15-pro-keypad-phone-dual-sim-2.8-2000mah-bluetooth-torch-fm-mp3-blue-419405775.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL M15 Pro Keypad Phone Dual SIM 2.8\" 2000mAh Bluetooth Torch FM MP3 Blue | phones | The battery, fair, Very weak, very good, fan"
+    },
+    {
+      "item_id": "itel-a100c-6-6-64gb-rom-3gb-ram-5000mah-titanium-gold",
+      "title": "itel A100C 6.6\" 64GB ROM/3GB RAM 5000mAh - Titanium Gold",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 94963,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 25,
+        "n_reviews_in_dataset": 11,
+        "product_link": "https://www.jumia.com.ng/itel-a100c-6.6-64gb-rom3gb-ram-5000mah-titanium-gold-418774431.html",
+        "source": "jumia"
+      },
+      "text_blob": "itel A100C 6.6\" 64GB ROM/3GB RAM 5000mAh - Titanium Gold | phones | itel phone, its entertaining, Is very okay for my child,a good buy., Awesome!!!, works well"
+    },
+    {
+      "item_id": "mktel-m52-button-phone-dual-sim-big-keypad-1-77-1000mah-bluetooth-torch-mp3-fm-r",
+      "title": "MKTEL M52 Button Phone Dual SIM Big Keypad 1.77\" 1000mAh Bluetooth…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7794,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 22,
+        "n_reviews_in_dataset": 6,
+        "product_link": "https://www.jumia.com.ng/mktel-m52-button-phone-dual-sim-big-keypad-1.77-1000mah-bluetooth-torch-mp3-fm-radio-blue-419402363.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL M52 Button Phone Dual SIM Big Keypad 1.77\" 1000mAh Bluetooth Torch MP3 FM Radio blue | phones | Great, Perfect, Good condition, good product, An excellent shopping experience"
+    },
+    {
+      "item_id": "ruioo-ruioo-s25-ultra-android-smartphone-8gb-128gb-6-8-inches",
+      "title": "Ruioo RUIOO S25 Ultra Android Smartphone 8GB + 128GB 6.8 inches",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 110000,
+      "attributes": {
+        "avg_rating": 3.4,
+        "total_ratings": 22,
+        "n_reviews_in_dataset": 12,
+        "product_link": "https://www.jumia.com.ng/ruioo-ruioo-s25-ultra-android-smartphone-8gb-128gb-6.8-inches-419427682.html",
+        "source": "jumia"
+      },
+      "text_blob": "Ruioo RUIOO S25 Ultra Android Smartphone 8GB + 128GB 6.8 inches | phones | I like it, nice, try do something about the screen layout, Very good product, Very good product"
+    },
+    {
+      "item_id": "mktel-m15-pro-keypad-phone-dual-sim-2-8-2000mah-bluetooth-torch-fm-mp3-black-sil",
+      "title": "MKTEL M15 Pro Keypad Phone Dual SIM 2.8\" 2000mAh Bluetooth Torch FM…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 11682,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 20,
+        "n_reviews_in_dataset": 11,
+        "product_link": "https://www.jumia.com.ng/mktel-m15-pro-keypad-phone-dual-sim-2.8-2000mah-bluetooth-torch-fm-mp3-blacksilver-419405782.html",
+        "source": "jumia"
+      },
+      "text_blob": "MKTEL M15 Pro Keypad Phone Dual SIM 2.8\" 2000mAh Bluetooth Torch FM MP3 black+silver | phones | I like it, satisfactory, Speaker not good, I like it, It was not what I expected"
+    },
+    {
+      "item_id": "p47-wireless-gaming-headset-over-ear-bluetooth-5-0-headphones-with-stereo-sound-",
+      "title": "P47 Wireless Gaming Headset, Over-Ear Bluetooth 5.0 Headphones with…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4381,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 20,
+        "n_reviews_in_dataset": 8,
+        "product_link": "https://www.jumia.com.ng/generic-p47-wireless-gaming-headset-over-ear-bluetooth-5.0-headphones-with-stereo-sound-for-pc-phone-418591878.html",
+        "source": "jumia"
+      },
+      "text_blob": "P47 Wireless Gaming Headset, Over-Ear Bluetooth 5.0 Headphones with Stereo Sound for PC & Phone | electronics | did not last, The product is Great!, Sounds Great, Omotosho, improvement"
+    },
+    {
+      "item_id": "dent-remover-for-auto-car-removal-tools-strong-suction-cup-repair-kit-red",
+      "title": "Dent Remover For Auto Car Removal Tools Strong Suction Cup Repair…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 3800,
+      "attributes": {
+        "avg_rating": 3.6,
+        "total_ratings": 14,
+        "n_reviews_in_dataset": 6,
+        "product_link": "https://www.jumia.com.ng/generic-dent-remover-for-auto-car-removal-tools-strong-suction-cup-repair-kit-red-86983525.html",
+        "source": "jumia"
+      },
+      "text_blob": "Dent Remover For Auto Car Removal Tools Strong Suction Cup Repair Kit Red | electronics | Good but small, the, it's ok, Feeling disappointed, Good"
+    },
+    {
+      "item_id": "innovative-led-digital-alarm-clock-with-ambient-light-date-display-usb-powered-p",
+      "title": "Innovative LED Digital Alarm Clock with Ambient Light & Date Display…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 10800,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 14,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/generic-innovative-led-digital-alarm-clock-with-ambient-light-date-display-usb-powered-purple-418736826.html",
+        "source": "jumia"
+      },
+      "text_blob": "Innovative LED Digital Alarm Clock with Ambient Light & Date Display – USB Powered – Purple | electronics | It Works fine, Cozy, Works well, I like it"
+    },
+    {
+      "item_id": "pipe-leak-detector-anti-bugging-device",
+      "title": "Pipe Leak Detector Anti-bugging Device",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 19591,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 13,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/generic-pipe-leak-detector-anti-bugging-device-418523306.html",
+        "source": "jumia"
+      },
+      "text_blob": "Pipe Leak Detector Anti-bugging Device | electronics | very effective, very good work, product is satisfactry, Good"
+    },
+    {
+      "item_id": "doogee-local-stock-note58-6-75-iphone-style-5g-gaming-phone-8-core-processor-rea",
+      "title": "Doogee Local Stock Note58 6.75\" iPhone-Style 5G gaming phone, 8-Core…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "phones",
+        "premium"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 189336,
+      "attributes": {
+        "avg_rating": 4.4,
+        "total_ratings": 11,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/doogee-local-stock-note58-6.75-iphone-style-5g-gaming-phone-8-core-processor-real-8gb128gb-2tb-expandable-16mp8mp-google-ai-lens-6250mah-large-battery-faceunlocknfc-android-16-black-419145223.html",
+        "source": "jumia"
+      },
+      "text_blob": "Doogee Local Stock Note58 6.75\" iPhone-Style 5G gaming phone, 8-Core Processor, Real 8GB+128GB (2TB Expandable), 16MP+8MP Google AI Lens, 6250mAh Large Battery, FaceUnlock/NFC, Android 16, Black | phones | Good"
+    },
+    {
+      "item_id": "infinix-note-60-pro-6-78-8gb-ram-256gb-rom-android-16-ocean-blue-plus-free-trave",
+      "title": "Infinix Note 60 Pro 6.78\" 8GB RAM/ 256GB ROM Android 16- Ocean Blue…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "audio",
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 569999,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 10,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/infinix-note-60-pro-6.78-8gb-ram-256gb-rom-android-16-ocean-blue-plus-free-travel-bag-and-free-earbuds-419278599.html",
+        "source": "jumia"
+      },
+      "text_blob": "Infinix Note 60 Pro 6.78\" 8GB RAM/ 256GB ROM Android 16- Ocean Blue plus free travel bag and free earbuds | phones | Good product, Good"
+    },
+    {
+      "item_id": "rainbow-square-alarm-clock-small-square-led-alarm-clock-with-color-changing-nigh",
+      "title": "Rainbow Square Alarm Clock Small Square LED Alarm Clock with…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 3432,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 10,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/generic-rainbow-square-alarm-clock-small-square-led-alarm-clock-with-color-changing-night-light-418959590.html",
+        "source": "jumia"
+      },
+      "text_blob": "Rainbow Square Alarm Clock Small Square LED Alarm Clock with Color-Changing Night Light | electronics | poor user experience, very good, Great product"
+    },
+    {
+      "item_id": "magic-practice-sank-magic-practice-copybook-4-book-10-refill-1-pen-1-grip-number",
+      "title": "Magic practice Sank Magic Practice Copybook, (4 BOOK + 10 REFILL+ 1…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 6000,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 8,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/jumia-books-magic-practice-sank-magic-practice-copybook-4-book-10-refill-1-pen-1-grip-number-tracing-book-for-preschoolers-with-pen-magic-calligraphy-copybook-set-practical-reusable-writing-tool-simple-hand-lettering-418771804.html",
+        "source": "jumia"
+      },
+      "text_blob": "Magic practice Sank Magic Practice Copybook, (4 BOOK + 10 REFILL+ 1 Pen +1 Grip) Number Tracing Book for Preschoolers with Pen, Magic Calligraphy Copybook Set Practical Reusable Writing Tool Simple Hand Lettering | electronics | 100, it very nice"
+    },
+    {
+      "item_id": "xiaomi-redmi-a7-pro-6-9-4gb-ram-128gb-rom-black",
+      "title": "XIAOMI REDMI A7 PRO - 6.9'' 4GB RAM/128GB ROM - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 149900,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 7,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/xiaomi-redmi-a7-pro-6.9-4gb-ram128gb-rom-black-419511167.html",
+        "source": "jumia"
+      },
+      "text_blob": "XIAOMI REDMI A7 PRO - 6.9'' 4GB RAM/128GB ROM - Black | phones | It’s in a perfect condition"
+    },
+    {
+      "item_id": "edyell-motorcycle-helmet-bluetooth-earphones-outdoor-cycling-voice-communication",
+      "title": "EDYELL Motorcycle helmet Bluetooth earphones, Outdoor Cycling Voice…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 16293,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 6,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/edyell-motorcycle-helmet-bluetooth-earphones-outdoor-cycling-voice-communication-automatic-answering-with-noise-reduction-and-waterproof-417847946.html",
+        "source": "jumia"
+      },
+      "text_blob": "EDYELL Motorcycle helmet Bluetooth earphones, Outdoor Cycling Voice Communication, automatic answering with noise reduction and waterproof | electronics | very good"
+    },
+    {
+      "item_id": "xiaomi-redmi-a7-pro-6-9-4gb-ram-64gb-rom-black",
+      "title": "XIAOMI REDMI A7 PRO - 6.9'' 4GB RAM/64GB ROM - Black",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 131200,
+      "attributes": {
+        "avg_rating": 4.7,
+        "total_ratings": 6,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/xiaomi-redmi-a7-pro-6.9-4gb-ram64gb-rom-black-419510954.html",
+        "source": "jumia"
+      },
+      "text_blob": "XIAOMI REDMI A7 PRO - 6.9'' 4GB RAM/64GB ROM - Black | phones | great phone with wide screen, great phone with wide screen, Redmi A7 Pro, I like it"
+    },
+    {
+      "item_id": "oukitel-c66-android-16-smartphone-64mp-ai-camera-6-73-hd-120hz-display-16gb-ram-",
+      "title": "OUKITEL C66 Android 16 Smartphone 64MP AI Camera,6.73\"HD+120Hz…",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 167310,
+      "attributes": {
+        "avg_rating": 4.6,
+        "total_ratings": 5,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/oukitel-c66-android-16-smartphone-64mp-ai-camera6.73hd120hz-display16gb-ram128gb1tb-rom-phone-gemini-ai-5000mah-battery-phone-with-18w-fast-charging-bluetooth-5.2-4g-dual-sim-mobile-phones-fingerprintface-idnfcgps-grey-419202390.html",
+        "source": "jumia"
+      },
+      "text_blob": "OUKITEL C66 Android 16 Smartphone 64MP AI Camera,6.73\"HD+120Hz Display,16GB RAM+128GB/1TB ROM Phone, Gemini AI, 5000mAh Battery Phone with 18W Fast Charging, Bluetooth 5.2, 4G Dual SIM Mobile Phones, Fingerprint/Face ID/NFC/GPS - Grey | phones | The phone over heats when charging"
+    },
+    {
+      "item_id": "weight-scale-personal-scale-electronic-digital-scale",
+      "title": "Weight Scale Personal Scale Electronic Digital Scale",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7100,
+      "attributes": {
+        "avg_rating": 5.0,
+        "total_ratings": 5,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/generic-weight-scale-personal-scale-electronic-digital-scale-419441043.html",
+        "source": "jumia"
+      },
+      "text_blob": "Weight Scale Personal Scale Electronic Digital Scale | electronics | High Precision, very cool"
+    },
+    {
+      "item_id": "xiaomi-redmi-a7-pro-6-9-4gb-ram-64gb-rom-mist-blue",
+      "title": "XIAOMI REDMI A7 PRO - 6.9'' 4GB RAM/64GB ROM - Mist Blue",
+      "categories": [
+        "phones"
+      ],
+      "niches": [
+        "android",
+        "budget",
+        "phones"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 126737,
+      "attributes": {
+        "avg_rating": 4.5,
+        "total_ratings": 4,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/xiaomi-redmi-a7-pro-6.9-4gb-ram64gb-rom-mist-blue-419510965.html",
+        "source": "jumia"
+      },
+      "text_blob": "XIAOMI REDMI A7 PRO - 6.9'' 4GB RAM/64GB ROM - Mist Blue | phones | Amazing, redmi"
+    },
+    {
+      "item_id": "digital-storage-bag-portable-case-data-cable-storage-box-charger",
+      "title": "Digital storage bag portable case data cable storage box charger",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 2111,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 3,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/generic-digital-storage-bag-portable-case-data-cable-storage-box-charger-417210917.html",
+        "source": "jumia"
+      },
+      "text_blob": "Digital storage bag portable case data cable storage box charger | electronics | hard case storage box, its okay and compact"
+    },
+    {
+      "item_id": "c17-ai-face-tracker-gesture-control-camera-tripod-adjustable-quadrupod-selfie-st",
+      "title": "C17 Ai face tracker Gesture control camera Tripod Adjustable…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 35500,
+      "attributes": {
+        "avg_rating": 4.5,
+        "total_ratings": 2,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/generic-c17-ai-face-tracker-gesture-control-camera-tripod-adjustable-quadrupod-selfie-stick-418602255.html",
+        "source": "jumia"
+      },
+      "text_blob": "C17 Ai face tracker Gesture control camera Tripod Adjustable Quadrupod selfie stick | electronics | great"
+    },
+    {
+      "item_id": "hdmi-to-hdmi-cable-30-meters",
+      "title": "HDMI To HDMI Cable - 30 Meters",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 14500,
+      "attributes": {
+        "avg_rating": 5.0,
+        "total_ratings": 2,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/generic-hdmi-to-hdmi-cable-30-meters-135830950.html",
+        "source": "jumia"
+      },
+      "text_blob": "HDMI To HDMI Cable - 30 Meters | electronics | I do like it"
+    },
+    {
+      "item_id": "1563u-12v-car-audio-stereo-usb-sd-mp3-player-aux-dvd-cd-player-remote",
+      "title": "1563U 12V Car Audio Stereo USB SD Mp3 Player AUX DVD CD Player Remote",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 75000,
+      "attributes": {
+        "avg_rating": 5.0,
+        "total_ratings": 1,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/1563u-12v-car-audio-stereo-usb-sd-mp3-player-aux-dvd-cd-player-remote-generic-mpg288162.html",
+        "source": "jumia"
+      },
+      "text_blob": "1563U 12V Car Audio Stereo USB SD Mp3 Player AUX DVD CD Player Remote | electronics | simple to connect"
+    },
+    {
+      "item_id": "3-in-1-bluetooth-desktop-mobile-phone-holder-mount-multi-function-folding-rotata",
+      "title": "3 In 1 Bluetooth Desktop Mobile Phone Holder Mount Multi-Function…",
+      "categories": [
+        "electronics"
+      ],
+      "niches": [
+        "electronics",
+        "power"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 10430,
+      "attributes": {
+        "avg_rating": 5.0,
+        "total_ratings": 1,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/generic-3-in-1-bluetooth-desktop-mobile-phone-holder-mount-multi-function-folding-rotatable-bracket-call-speaker-audio-power-bank-419024040.html",
+        "source": "jumia"
+      },
+      "text_blob": "3 In 1 Bluetooth Desktop Mobile Phone Holder Mount Multi-Function Folding Rotatable Bracket Call Speaker Audio Power Bank | electronics | Nice"
     }
   ],
   "fashion": [
@@ -2340,6 +5230,654 @@
       "price_naira": null,
       "attributes": {},
       "text_blob": "Photography Session | creative, service | lifestyle, creative | "
+    },
+    {
+      "item_id": "single-coil-hot-plate-electric-stove-burner-compact-reliable-efficient-cooking",
+      "title": "Single Coil Hot Plate Electric= Stove burner – Compact, Reliable &…",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware",
+        "oil"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 11290,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 83,
+        "n_reviews_in_dataset": 19,
+        "product_link": "https://www.jumia.com.ng/generic-single-coil-hot-plate-electric-stove-burner-compact-reliable-efficient-cooking-418606090.html",
+        "source": "jumia"
+      },
+      "text_blob": "Single Coil Hot Plate Electric= Stove burner – Compact, Reliable & Efficient Cooking | cookware | its great, it ok, prince's review, very good, It fine and portable"
+    },
+    {
+      "item_id": "nine-6pcs-stainless-steel-round-multi-purpose-sieve-sz",
+      "title": "Nine 6pcs Stainless Steel Round Multi Purpose Sieve {SZ}",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 4114,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 74,
+        "n_reviews_in_dataset": 33,
+        "product_link": "https://www.jumia.com.ng/nine-6pcs-stainless-steel-round-multi-purpose-sieve-sz-398240620.html",
+        "source": "jumia"
+      },
+      "text_blob": "Nine 6pcs Stainless Steel Round Multi Purpose Sieve {SZ} | cookware | Strainer, good sale, Sieve, lovely, Love it"
+    },
+    {
+      "item_id": "masterchef-3-pieces-non-stick-pots-set",
+      "title": "MASTERCHEF 3-Pieces Non-stick Pots Set",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 49999,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 37,
+        "n_reviews_in_dataset": 11,
+        "product_link": "https://www.jumia.com.ng/masterchef-3-pieces-non-stick-pots-set-generic-mpg4189303.html",
+        "source": "jumia"
+      },
+      "text_blob": "MASTERCHEF 3-Pieces Non-stick Pots Set | cookware | Good, Good, Do better, Not that bad, Fair"
+    },
+    {
+      "item_id": "silver-crest-fast-cooking-electric-hot-plate-inverter-frendly",
+      "title": "SILVER CREST Fast Cooking Electric Hot Plate - inverter frendly",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 29700,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 37,
+        "n_reviews_in_dataset": 18,
+        "product_link": "https://www.jumia.com.ng/silver-crest-fast-cooking-electric-hot-plate-inverter-frendly-418974281.html",
+        "source": "jumia"
+      },
+      "text_blob": "SILVER CREST Fast Cooking Electric Hot Plate - inverter frendly | cookware | Silver Crest Cooking Electric Hot plate., Its a wow!, size, ease of usage and speed. Easy to clean., This is so good. it heats up so fast, exactly what i orderd ????"
+    },
+    {
+      "item_id": "4-set-non-stick-cookware",
+      "title": "4 Set Non -Stick Cookware",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 63000,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 33,
+        "n_reviews_in_dataset": 11,
+        "product_link": "https://www.jumia.com.ng/generic-4-set-non-stick-cookware-406502995.html",
+        "source": "jumia"
+      },
+      "text_blob": "4 Set Non -Stick Cookware | cookware | Nice, Dope stuff, i.like.it, I like the fact that it does not burn food, I love it!"
+    },
+    {
+      "item_id": "brocook-10pcs-die-cast-non-stick-granite-cookware-set-with-glass-lids",
+      "title": "BROCOOK 10Pcs Die-Cast Non-Stick Granite Cookware Set with Glass Lids",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 68633,
+      "attributes": {
+        "avg_rating": 4.4,
+        "total_ratings": 31,
+        "n_reviews_in_dataset": 18,
+        "product_link": "https://www.jumia.com.ng/brocook-10pcs-die-cast-non-stick-granite-cookware-set-with-glass-lids-418866135.html",
+        "source": "jumia"
+      },
+      "text_blob": "BROCOOK 10Pcs Die-Cast Non-Stick Granite Cookware Set with Glass Lids | cookware | It’s a nice product, Nice looking item, very good, Good, Big enough"
+    },
+    {
+      "item_id": "picasso-aluminum-fry-pan-small",
+      "title": "Picasso Aluminum Fry Pan - Small",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 7799,
+      "attributes": {
+        "avg_rating": 4.2,
+        "total_ratings": 28,
+        "n_reviews_in_dataset": 11,
+        "product_link": "https://www.jumia.com.ng/aluminum-fry-pan-small-picasso-mpg3149379.html",
+        "source": "jumia"
+      },
+      "text_blob": "Picasso Aluminum Fry Pan - Small | cookware | too small, good, Good frying pan, It’s a nice fry pan but it’s too small, I like it"
+    },
+    {
+      "item_id": "hoffner-trendy-cooking-pot-3-set",
+      "title": "Hoffner Trendy Cooking Pot 3 Set",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 29777,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 26,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/one-set-of-3-cooking-pots-medium-hoffner-mpg4189361.html",
+        "source": "jumia"
+      },
+      "text_blob": "Hoffner Trendy Cooking Pot 3 Set | cookware | TOO SMALLL NO SIZE DESCRIPTION, The quality is superb, it is smaller than it was displayed."
+    },
+    {
+      "item_id": "piccasso-picasso-cooking-pots-set-of-4-kettle-and-frying-pan",
+      "title": "Piccasso Picasso Cooking Pots Set Of 4, Kettle And Frying Pan",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 34000,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 23,
+        "n_reviews_in_dataset": 7,
+        "product_link": "https://www.jumia.com.ng/piccasso-picasso-cooking-pots-set-of-4-kettle-and-frying-pan-231601655.html",
+        "source": "jumia"
+      },
+      "text_blob": "Piccasso Picasso Cooking Pots Set Of 4, Kettle And Frying Pan | cookware | love it, yeah, Nice pot, I like it, Good"
+    },
+    {
+      "item_id": "tower-tower-pot-set-4-piece-tower-trim-16-18-20-22cm",
+      "title": "Tower Tower Pot Set - 4 Piece (tower Trim)16,18,20,22cm",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 27000,
+      "attributes": {
+        "avg_rating": 4.0,
+        "total_ratings": 17,
+        "n_reviews_in_dataset": 15,
+        "product_link": "https://www.jumia.com.ng/generic-tower-tower-pot-set-4-piece-tower-trim16182022cm-252750675.html",
+        "source": "jumia"
+      },
+      "text_blob": "Tower Tower Pot Set - 4 Piece (tower Trim)16,18,20,22cm | cookware | Nice., dontlike, good, I like it, Good and very nice materials"
+    },
+    {
+      "item_id": "high-quality-stainless-steel-kitchen-experts-sy017",
+      "title": "High Quality Stainless Steel Kitchen Experts (SY017)",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 15000,
+      "attributes": {
+        "avg_rating": 3.1,
+        "total_ratings": 15,
+        "n_reviews_in_dataset": 7,
+        "product_link": "https://www.jumia.com.ng/high-quality-stainless-steel-ware-kitchen-experts-generic-mpg3767134.html",
+        "source": "jumia"
+      },
+      "text_blob": "High Quality Stainless Steel Kitchen Experts (SY017) | cookware | Very good product, it is too light ooo, I don't like them., Cool, Light"
+    },
+    {
+      "item_id": "sauce-pot-set-3pots-with-3-glass-cover",
+      "title": "Sauce Pot Set 3pots With 3 Glass Cover",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 20000,
+      "attributes": {
+        "avg_rating": 3.9,
+        "total_ratings": 15,
+        "n_reviews_in_dataset": 5,
+        "product_link": "https://www.jumia.com.ng/generic-sauce-pot-set-3pots-with-3-glass-cover-403062672.html",
+        "source": "jumia"
+      },
+      "text_blob": "Sauce Pot Set 3pots With 3 Glass Cover | cookware | The size is perfect, Poor, manageable, Exceptional Pots, quality materials"
+    },
+    {
+      "item_id": "tower-3-set-of-tower-cooking-pots-economy",
+      "title": "Tower 3 Set Of Tower Cooking Pots (Economy)",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 18800,
+      "attributes": {
+        "avg_rating": 3.5,
+        "total_ratings": 15,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/3-set-of-tower-cooking-pots-economy-tower-mpg3149403.html",
+        "source": "jumia"
+      },
+      "text_blob": "Tower 3 Set Of Tower Cooking Pots (Economy) | cookware | i dont like it, pots, I like it, I like it"
+    },
+    {
+      "item_id": "big-size-non-stick-pots-with-spoons-cookware-set",
+      "title": "Big Size Non-stick Pots With Spoons Cookware Set -",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 69000,
+      "attributes": {
+        "avg_rating": 4.8,
+        "total_ratings": 14,
+        "n_reviews_in_dataset": 5,
+        "product_link": "https://www.jumia.com.ng/big-size-non-stick-pots-with-spoons-cookware-set-generic-mpg5424676.html",
+        "source": "jumia"
+      },
+      "text_blob": "Big Size Non-stick Pots With Spoons Cookware Set - | cookware | perfect, Neat and works well, Good product, Good product, Awesome Experience"
+    },
+    {
+      "item_id": "tosiba-cooking-pot-set-of-4",
+      "title": "Tosiba Cooking Pot-Set Of 4",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 24999,
+      "attributes": {
+        "avg_rating": 3.6,
+        "total_ratings": 13,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/cooking-pot-set-of-4-tosiba-mpg11488045.html",
+        "source": "jumia"
+      },
+      "text_blob": "Tosiba Cooking Pot-Set Of 4 | cookware | I like it, Not bad, Pot, ok"
+    },
+    {
+      "item_id": "toshiba-pot-set-4-piece",
+      "title": "Toshiba Pot Set - 4 Piece",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 21999,
+      "attributes": {
+        "avg_rating": 4.6,
+        "total_ratings": 12,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/generic-toshiba-pot-set-4-piece-337617081.html",
+        "source": "jumia"
+      },
+      "text_blob": "Toshiba Pot Set - 4 Piece | cookware | I like it"
+    },
+    {
+      "item_id": "master-chef-new-high-quality-pressure-cooker-7-5l",
+      "title": "Master Chef New High Quality Pressure Cooker-7.5L",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 39500,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 10,
+        "n_reviews_in_dataset": 3,
+        "product_link": "https://www.jumia.com.ng/new-high-quality-pressure-cooker-12l-macato-mpg7027951.html",
+        "source": "jumia"
+      },
+      "text_blob": "Master Chef New High Quality Pressure Cooker-7.5L | cookware | Pressure Pot, the way it cooks my beans faster, Pressure pot working well"
+    },
+    {
+      "item_id": "picasso-cooking-pot-set-3-pcs-big-size",
+      "title": "Picasso Cooking Pot Set (3 Pcs) - Big Size",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 21999,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 10,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/picasso-cooking-pot-set-3-pcs-big-size-13772758.html",
+        "source": "jumia"
+      },
+      "text_blob": "Picasso Cooking Pot Set (3 Pcs) - Big Size | cookware | I like the pots"
+    },
+    {
+      "item_id": "cooking-pot-set-and-kettle",
+      "title": "Cooking Pot Set And Kettle",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 28500,
+      "attributes": {
+        "avg_rating": 4.1,
+        "total_ratings": 8,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/generic-cooking-pot-set-and-kettle-418289706.html",
+        "source": "jumia"
+      },
+      "text_blob": "Cooking Pot Set And Kettle | cookware | Exactly as seen, Good, the kettle, Cooking Pot"
+    },
+    {
+      "item_id": "picasso-cooking-pots-set-of-4-with-a-kettle-and-frying-pan",
+      "title": "Picasso Cooking Pots Set Of 4 with a Kettle And Frying Pan",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 32300,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 8,
+        "n_reviews_in_dataset": 5,
+        "product_link": "https://www.jumia.com.ng/picasso-cooking-pots-set-of-4-with-a-kettle-and-frying-pan-419080778.html",
+        "source": "jumia"
+      },
+      "text_blob": "Picasso Cooking Pots Set Of 4 with a Kettle And Frying Pan | cookware | Always nice, I like it, the pot is given, its okay, Moderately om"
+    },
+    {
+      "item_id": "brocook-10-pcs-die-cast-non-stick-granite-cookware-set-20-32cm",
+      "title": "BROCOOK 10 Pcs Die-Cast Non-Stick Granite Cookware Set 20-32cm",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 84915,
+      "attributes": {
+        "avg_rating": 4.3,
+        "total_ratings": 7,
+        "n_reviews_in_dataset": 4,
+        "product_link": "https://www.jumia.com.ng/brocook-10-pcs-die-cast-non-stick-granite-cookware-set-20-32cm-418914891.html",
+        "source": "jumia"
+      },
+      "text_blob": "BROCOOK 10 Pcs Die-Cast Non-Stick Granite Cookware Set 20-32cm | cookware | Sub par, Buy higher grade, Solid, It’s a pot."
+    },
+    {
+      "item_id": "master-chef-crown-star-7pcs-non-stick-aluminium-cooking-pots",
+      "title": "Master Chef Crown Star 7pcs Non Stick Aluminium Cooking Pots",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 60800,
+      "attributes": {
+        "avg_rating": 3.8,
+        "total_ratings": 5,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/master-chef-crown-star-7pcs-non-stick-aluminium-cooking-pots-123292031.html",
+        "source": "jumia"
+      },
+      "text_blob": "Master Chef Crown Star 7pcs Non Stick Aluminium Cooking Pots | cookware | good buy, I love the pots."
+    },
+    {
+      "item_id": "brocook-8-piece-cast-aluminum-non-stick-cookware-set-with-lids-20-24-28-32-cm-du",
+      "title": "BROCOOK 8 Piece Cast Aluminum Non Stick Cookware Set with Lids 20 24…",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware",
+        "rice"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 96115,
+      "attributes": {
+        "avg_rating": 4.8,
+        "total_ratings": 4,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/brocook-8-piece-cast-aluminum-non-stick-cookware-set-with-lids-20-24-28-32-cm-dutch-oven-style-pots-for-stew-jollof-rice-baking-firewood-induction-electric-ceramic-and-oven-use-419105172.html",
+        "source": "jumia"
+      },
+      "text_blob": "BROCOOK 8 Piece Cast Aluminum Non Stick Cookware Set with Lids 20 24 28 32 cm Dutch Oven Style Pots for Stew Jollof Rice Baking Firewood Induction Electric Ceramic and Oven Use | cookware | The size"
+    },
+    {
+      "item_id": "18-piece-stainless-steel-cookware-set-non-stick-includes-pots-pans-spatulas-silv",
+      "title": "18-Piece Stainless Steel Cookware Set - Non-Stick, Includes Pots,…",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 49077,
+      "attributes": {
+        "avg_rating": 3.7,
+        "total_ratings": 3,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/generic-18-piece-stainless-steel-cookware-set-non-stick-includes-pots-pans-spatulas-silver-418777914.html",
+        "source": "jumia"
+      },
+      "text_blob": "18-Piece Stainless Steel Cookware Set - Non-Stick, Includes Pots, Pans & Spatulas, Silver | cookware | Make it bigger, Unsatisfied"
+    },
+    {
+      "item_id": "7pcs-aluminum-cookware-stock-pot-set",
+      "title": "7pcs Aluminum Cookware Stock Pot Set",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 67500,
+      "attributes": {
+        "avg_rating": 5.0,
+        "total_ratings": 2,
+        "n_reviews_in_dataset": 2,
+        "product_link": "https://www.jumia.com.ng/7pcs-aluminum-cookware-stock-pot-set-generic-mpg11949782.html",
+        "source": "jumia"
+      },
+      "text_blob": "7pcs Aluminum Cookware Stock Pot Set | cookware | i love it, mr"
+    },
+    {
+      "item_id": "bichu-2l-electric-pot-cooker-with-stainless-steel-steamer-rice-cooker-with-steam",
+      "title": "BiChu 2L Electric Pot Cooker with Stainless Steel Steamer, rice…",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware",
+        "rice",
+        "tea"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 14663,
+      "attributes": {
+        "avg_rating": 5.0,
+        "total_ratings": 2,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/bichu-2l-electric-pot-cooker-with-stainless-steel-steamer-rice-cooker-with-steamermini-rice-cooker-with-steamermini-multi-function-cooker-with-steamersmall-electric-cooker-with-steamer-2-in-1-electric-hot-pot-steamer-for-home-dorm-use-419034117.html",
+        "source": "jumia"
+      },
+      "text_blob": "BiChu 2L Electric Pot Cooker with Stainless Steel Steamer, rice cooker with steamer,mini rice cooker with steamer,mini multi-function cooker with steamer,small electric cooker with steamer ,2-in-1 Electric Hot Pot & Steamer for Home Dorm Use | cookware | Good"
+    },
+    {
+      "item_id": "kitcha-30cm-non-stick-frying-pan-five-layer-flat-bottom-wok-low-smoke-suitable-f",
+      "title": "KITCHA 30cm Non-Stick Frying Pan, Five-Layer Flat Bottom Wok, Low…",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 18216,
+      "attributes": {
+        "avg_rating": 4.5,
+        "total_ratings": 2,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/kitcha-30cm-non-stick-frying-pan-five-layer-flat-bottom-wok-low-smoke-suitable-for-gas-induction-cookers-without-lid-419127152.html",
+        "source": "jumia"
+      },
+      "text_blob": "KITCHA 30cm Non-Stick Frying Pan, Five-Layer Flat Bottom Wok, Low Smoke, Suitable for Gas & Induction Cookers (Without Lid) | cookware | good quality for money"
+    },
+    {
+      "item_id": "5-pieces-stainless-steel-kitchenware-casserole-set-cooking-pot-set-cooking-utens",
+      "title": "5 pieces stainless steel kitchenware casserole set cooking pot set…",
+      "categories": [
+        "cookware"
+      ],
+      "niches": [
+        "cookware"
+      ],
+      "tags": [
+        "nigerian",
+        "jumia"
+      ],
+      "price_naira": 22350,
+      "attributes": {
+        "avg_rating": 2.0,
+        "total_ratings": 1,
+        "n_reviews_in_dataset": 1,
+        "product_link": "https://www.jumia.com.ng/generic-5-pieces-stainless-steel-kitchenware-casserole-set-cooking-pot-set-cooking-utensil-set-419035862.html",
+        "source": "jumia"
+      },
+      "text_blob": "5 pieces stainless steel kitchenware casserole set cooking pot set cooking utensil set | cookware | Poor Quality"
     }
   ]
 }
