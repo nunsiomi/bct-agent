@@ -1,7 +1,11 @@
 fastapi
-uvicorn
+uvicorn[standard]
 langgraph
 anthropic
+openai
 pandas
 numpy
+scikit-learn
+rank-bm25
+pydantic
 python-dotenv
