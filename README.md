@@ -145,15 +145,11 @@ Results land in `data_prep/artifacts/evaluation_results.json` (or wherever `--ou
 
 ---
 
-## Provider swap — Claude ↔ Groq, no code change
+## Provider — Groq
 
-The LLM is abstracted behind `core.llm.LLMProvider`. Switch providers by editing `.env`:
+The LLM is abstracted behind `core.llm.LLMProvider`:
 
 ```bash
-# Claude (default)
-LLM_PROVIDER=anthropic
-ANTHROPIC_API_KEY=sk-ant-...
-
 # Groq (or any OpenAI-compatible endpoint)
 LLM_PROVIDER=openai_compatible
 LLM_BASE_URL=https://api.groq.com/openai/v1
